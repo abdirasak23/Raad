@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+@media (max-width: 480px) {
+    body{
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    
+    *{
+        overflow-x: hidden;
+    }
+
+    .main{
+        height: 70vh;
+        width: 100%;
+        position: relative;
+        overflow: visible;
+    }
+
+    .navigation{
+        width: 320px;
+        position: relative;
+        left: 20px;
+    }
+
+    .logo{
+        width: 130px;
+        height: 40px;
+        /* background-color: green; */
+        position: relative;
+        top: 15px;
+    }
+
+    .the-navs{
+        display: none;
+
+    }
+    .Login{
+        display: none;;
+    }
+
+
+    .menu{
+        height: 40px;
+        width: 40px;
+        /* background-color: green; */
+        position: absolute;
+        right: 30px;
+        top: 15px;
+        color: #1C2582;
+        display: block;
+    }
+
+    .menu i{
+        font-size: 34px;
+    }
+
+
+    .hero{
+    height: 150px;
+    width: 260px;
+    /* background-color: grey; */
+    position: relative;
+    left: 60px;
+    text-align: center;
+    color: white;
+    top: 10px;
+    overflow: hidden;
+}
+
+.hero h2{
+    font-size: 40px;
+}
+
+.hero-text{
+    height: 140px;
+    width: 340px;
+    position: relative;
+    left:10px;
+    /* background-color: red; */
+    text-align: center;
+    top: 0px;
+}
+
+.hero-text p{
+    font-size: 16px;
+    color: white;
+    position: relative;
+    bottom: 15px;
+}
+
+
+.screen-shots{
+    height: 280px;
+    position: absolute !important;
+    left: 10px;
+    top: 350px;
+    width: 340px;
+    gap: 0px;
+    /* background-color: grey; */
+    position:absolute;
+    overflow: hidden;
+}
+
+
+.screen-shots .mobile{
+    display:none !important;
+}
+
+
+.screen-shots img{
+    display: block;
+}
+
+
+.center{
+    /* background-color: grey; */
+    position: relative;
+    bottom: 180px;
+    /* height: 100px; */
+}
+
+
+.center-text{
+    /* background-color: red; */
+    position: relative;
+    left: 30px;
+    overflow: hidden;
+    width: 300px;
+}
+
+
+.center-text h1{
+    font-size: 22px;
+    position: relative;
+    bottom: 10px;
+}
+
+
+.center-small-text{
+    position: relative;
+    /* background-color: blue; */
+    position: relative;
+    left: 10px;
+    width: 340px;
+    overflow: visible;
+    position: relative;
+    top: 10px !important;
+}
+
+
+.sides{
+    /* background-color: grey; */
+    position: relative;
+    bottom: 160px;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: visible;
+    height: 800px;
+}
+
+
+.left{
+    /* background-color: green; */
+}
+
+.holder{
+    overflow: visible;
+    position: relative;
+    left: 10px;
+    width: 340px;
+}
+
+
+.the-phone{
+    position: relative;
+    left: 20px;
+}
+
+.right{
+    /* background-color: red; */
+    position: relative;
+    left: 10px;
+    overflow: visible;
+}
+
+.right .great-text{
+    position: relative;
+    /* background-color: blue; */
+    width: 300px;
+    top: 10px;
+    left: 10px;
+    overflow: visible;
+}
+
+
+.head-description{
+    width: 340px;
+    position: relative;
+    left: 10px;
+    overflow: visible;
+}
+
+
+.learn-more{
+    position: relative;
+    top: 190px;
+    left: 10px;
+}
+
+.services{
+    /* background-color: grey; */
+    position: relative;
+    top: 120px;
+    overflow: hidden;
+    height: 3650px;
+}
+
+.last{
+    
+    /* background-color: red; */
+    position: absolute;
+    top: 50px !important;
+
+}
+
+
+
+
+.the-services{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    
+}
+
+.service-card{
+    position: relative;
+    left: -15px;
+    width: 300px;
+    top: 60px;
+}
+
+.demo-section{
+    position: relative;
+    top: 100px;
+}
+
+.demo-cards{
+    /* background-color: red; */
+    position: relative;
+    top: 120px;
+    overflow: visible;
+    
+}
+
+
+.demo-card{
+    position: relative;
+    left: 10px;
+    width: 340px;
+    height: 900px ;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.demo-left{
+    /* background-color: grey; */
+    width: 320px;
+    position: relative;
+    left: 5px;
+    overflow: visible;
+}
+
+
+.top-icon{
+    height: 40px;
+    width: 40px;
+}
+
+.top-icon i{
+    font-size: 26px;
+    position: relative;
+    top: 8px;
+}
+
+.in-demo{
+    position: relative;
+    /* background-color: red; */
+    overflow: visible;
+    left: 5px;
+    width: 320px;
+}
+
+
+.in-demo h2{
+    font-size: 24px;
+}
+
+
+.in-demo-desc
+{
+    /* background-color: green; */
+    width: 310px;
+    position: relative;
+    top: 45px;
+    left: 5px;
+}
+
+.in-demo-desc p{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.tick-points{
+    /* background-color: red; */
+    position: relative;
+    top: 120px;
+    left: 5px;
+}
+
+.tick{
+    width: 25px !important;
+    height: 25px !important;
+}
+
+
+.tick-info{
+    /* background-color: green; */
+    /* overflow: visible; */
+    width: 330px;
+}
+
+.tick-info p{
+    font-size: 14px;
+    overflow: visible;
+    width: 300px;
+}
+
+.demo-right{
+    /* background-color: grey; */
+    width: 340px;
+    overflow: hidden;
+}
+
+.phone-case{
+    position: relative;
+    left: 20px;
+    width: 300px;
+
+    top: 70px;
+    overflow: hidden;
+}
+
+.real-phone{
+    width: 280px;
+    overflow: hidden;
+}
+
+
+.about-section{
+    position: relative;
+    top: 2370px;
+}
+
+.about-bar{
+    position: relative;
+    top: 2100px;
+}
+
+}

@@ -1,0 +1,637 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body
+{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Outfit';
+}
+
+.main{
+    height: 100vh;
+    width: 100%;
+    background-color: #1C2582;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.demo{
+    height: 50vh;
+    width: 100%;
+    background-color: #FAF9F6;
+}
+
+.navigation{
+    height: 10vh;
+    width: 900px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+  backdrop-filter: blur(15px); /* main frosted glass blur */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.63);
+    position: fixed;
+    left: 200px;
+    top: 20px;
+    border-radius: 20px;
+    display: flex;
+    z-index: 999;
+}
+
+
+.the-navs{
+    width: 250px;
+    /* background-color: grey; */
+    position: relative;
+    top: 3px;
+    left: 30px;
+}
+
+
+.the-navs ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+}
+
+
+.the-navs ul a{
+    text-decoration: none;
+    font-size: 20px;
+    white-space: nowrap;
+    color: #1C2582;
+}
+
+
+.logo{
+    height: 50px;
+    width: 140px;
+    /* background-color: green; */
+    position: relative;
+    top: 10px;
+    left: 20px;
+    overflow: hidden;
+}
+
+
+.logo img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.Login{
+    height: 40px;
+    width: 100px;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    border: none;
+    background-color: #1C2582;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Outfit';
+}
+
+.menu{
+    display: none;
+}
+
+.hero{
+    height: 120px;
+    width: 450px;
+    /* background-color: grey; */
+    position: relative;
+    position: relative;
+    left: 440px;
+    text-align: center;
+    color: white;
+    top: 60px;
+}
+
+.hero h2{
+    font-size: 70px;
+}
+
+.hero-text{
+    height: 60px;
+    width: 580px;
+    position: relative;
+    left: 360px;
+    /* background-color: red; */
+    text-align: center;
+    top: 100px;
+}
+
+.hero-text p{
+    font-size: 20px;
+    color: white;
+}
+
+
+.screen-shots{
+    height: 500px;
+    width: 900px;
+    /* background-color: green; */
+    position: absolute;
+    left: 180px;
+    top: 390px;
+    display: flex;
+}
+
+
+.screen-shots .mobile{
+    height: 600px;
+    width: 300px;
+    overflow: hidden;
+    /* background-color: grey; */
+    position: relative;
+    left: 50px;
+    display: block;
+}
+
+
+.mobile img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block !important;
+    ;
+}
+
+
+.smaller{
+    height: 500px !important;
+    width: 250px !important;
+    position: relative;
+    top: 50px;
+}
+
+
+
+
+
+.screen-shots img{
+    display: none;
+}
+
+
+.center{
+    height: 230px;
+    width: 100%;
+    /* background-color: grey; */
+}
+
+.center-text{
+    /* background-color: red; */
+    height: 100px;
+    width: 900px;
+    left: 200px;
+    position: relative;
+    top: 30px;
+}
+
+
+.center-text h1{
+    font-size: 45px;
+    text-align: center;
+    font-weight: 900;
+}
+
+
+.center-small-text{
+    /* background-color: green; */
+    height: 40px;
+    position: relative;
+    left: 250px;
+    width: 800px;
+    text-align: center;
+    top: 30px;
+}
+
+.center-small-text p{
+    font-size: 20px;
+
+}
+
+
+.about{
+
+}
+
+
+.sides{
+    height: 540px;
+    width: 100%;
+    /* background-color: green; */
+    display: flex;
+}
+
+
+.left{
+    height: 540px;
+    width: 600px;
+    /* background-color: grey; */
+}
+
+
+.holder{
+    height: 230px;
+    width: 380px;
+    background-color: #1C2582;
+    position: relative;
+    left: 120px;
+    top: 250px;
+    border-radius: 20px;
+}
+
+
+.the-phone{
+    height: 500px;
+    width: 300px;
+    /* background-color: red; */
+    position: absolute;
+    top: -230px;
+    overflow: hidden;
+    left: 40px;
+}
+
+
+.the-phone img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.right{
+    height: 540px;
+    width: 700px;
+    /* background-color: red; */
+}
+
+
+.head-text{
+    height: 40px;
+    width: 500px;
+    /* background-color: grey; */
+    position: relative;
+    left: 40px;
+    text-align: start;
+    top: 60px;
+}
+
+
+.head-text h2{
+    font-size: 40px;
+}
+
+.head-description{
+    height: 220px;
+    width: 600px;
+    /* background-color: grey; */
+    position: relative;
+    left: 40px;
+    top: 60px;
+}
+
+
+
+
+.head-description p{
+    font-size: 22px;
+    text-align: start;
+}
+
+
+.learn-more{
+    height: 50px;
+    width: 250px;
+    background-color: #1C2582;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    position: relative;
+    left: 40px;
+    top: 60px;
+}
+
+
+.services{
+    height: 500px;
+    width: 100%;
+    /* background-color: red; */
+}
+
+.last{
+    position: relative;
+    top: -30px !important;
+    /* background-color: blue; */
+}
+
+.the-services {
+    height: auto;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 40px 20px;
+    bottom: 50px;
+    /* background-color: red; */
+}
+
+.service-card {
+    background-color: rgb(255, 255, 255);
+    border-radius: 16px;
+    padding: 30px 25px;
+    text-align: center;
+    display: flex;
+    border: grey 1px solid;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 400px;
+    width: 320px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.content-in {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.2));
+    backdrop-filter: blur(5px);
+}
+
+.content-in video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: none;
+}
+
+.content-in img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover .content-in video {
+    display: block;
+    opacity: 1;
+}
+
+.service-card:hover .content-in img {
+    opacity: 0;
+    display: none;
+}
+
+.service-head {
+    margin-bottom: 15px;
+}
+
+.service-head h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    letter-spacing: 0.3px;
+}
+
+.service-desc {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.service-card:hover .service-desc {
+    opacity: 0;
+}
+
+.service-desc p {
+    font-size: 24px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.explore {
+    background-color: transparent;
+    color: #390f0f;
+    border: 1px solid #ddd;
+    padding: 17px 54px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.service-card:hover .explore {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.explore:hover {
+    background-color: #e8e8ff;
+    color: #5555ff;
+    border-color: #5555ff;
+}
+
+
+.demo-section{
+    position: relative;
+    top: 820px;
+}
+
+
+.demo-cards{
+    height: 500px;
+    width: 100%;
+    /* background-color: red; */
+    position: relative;
+    top: 800px;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    position: relative;
+    
+}
+
+.demo-card{
+    height: 450px;
+    width: 1100px;
+    background: linear-gradient(135deg, #1C2582 0%, #2a3fb5 25%, #1C2582 50%, #1a1f70 75%, #1C2582 100%);
+    border-radius: 15px;
+    display: flex;
+    left: 80px;
+    position: relative;
+    margin-top: 20px;
+}
+
+
+.top-icon{
+    background-color: white;
+    height: 55px;
+    width: 55px;
+    border-radius: 100%;
+    position: relative;
+    top: 20px;
+    left: 30px;
+    text-align: center;
+    color: #1C2582;
+}
+
+.top-icon i{
+    font-size: 32px;
+    text-align: center;
+    position: relative;
+    top: 11px;
+}
+
+.in-demo{
+    /* background-color: red; */
+    width: 550px;
+    position: relative;
+    top: 10px;
+    left: 30px;
+}
+
+.in-demo h2{
+    font-size: 30px;
+    color: white;
+}
+
+
+.in-demo-desc{
+    position: relative;
+    top: 30px;
+    height: 100px;
+    left: 30px;
+    width: 650px;
+    color: rgba(228, 222, 222, 0.607);
+    /* background-color: red; */
+}
+
+
+.tick-points{
+    height: 150px;
+    width: 500px;
+    /* background-color: grey; */
+    position: relative;
+    top: 30px;
+    position: relative;
+    left: 30px;
+    
+}
+
+
+
+.tick-info{
+    /* background-color: blueviolet; */
+    height: 40px;
+    width: 600px;
+    display: flex;
+    position: relative;
+    
+    
+}
+
+.tick-info p{
+    position: relative;
+    font-size: 20px;
+    bottom: 13px;
+    left: 10px;
+    color: white;
+}
+
+
+.tick{
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border-radius: 100%;
+    text-align: center;
+    position: relative;
+    top: 5px;
+}
+
+
+.tick i{
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    top: 4px;
+}
+
+
+.phone-case{
+    height: 400px;
+    width: 340px;
+    background-color: rgba(239, 235, 235, 0.466);
+    position: relative;
+    left: 80px;
+    top: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: rgba(255, 255, 255, 0.767) 1px solid;
+}
+
+
+.real-phone{
+    width: 320px;
+    height: 390px;
+    background-color: white;
+    position: relative;
+    left: 10px;
+    top: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.real-phone video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+
+.about-section{
+    position: relative;
+    top: 1650px;
+}
+
+
+.about-bar{
+    position: relative;
+    top: 1500px;
+}
+
+
+
