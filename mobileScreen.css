@@ -30,7 +30,7 @@
         height: 40px;
         /* background-color: green; */
         position: relative;
-        top: 15px;
+        top: 20px;
     }
 
     .the-navs{
@@ -47,8 +47,8 @@
         width: 40px;
         /* background-color: green; */
         position: absolute;
-        right: 30px;
-        top: 15px;
+        right: 20px;
+        top: 20px;
         color: #1C2582;
         display: block;
     }
@@ -118,7 +118,7 @@
 .center{
     /* background-color: grey; */
     position: relative;
-    bottom: 180px;
+    bottom: 280px;
     /* height: 100px; */
 }
 
@@ -154,7 +154,7 @@
 .sides{
     /* background-color: grey; */
     position: relative;
-    bottom: 160px;
+    bottom: 280px;
     display: grid;
     grid-template-columns: 1fr;
     overflow: visible;
@@ -184,6 +184,7 @@
     position: relative;
     left: 10px;
     overflow: visible;
+    bottom: 40px;
 }
 
 .right .great-text{
@@ -213,7 +214,7 @@
 .services{
     /* background-color: grey; */
     position: relative;
-    top: 120px;
+    top: -40px;
     overflow: hidden;
     height: 3650px;
 }
@@ -246,13 +247,13 @@
 
 .demo-section{
     position: relative;
-    top: 100px;
+    top: -120px;
 }
 
 .demo-cards{
     /* background-color: red; */
     position: relative;
-    top: 120px;
+    top: -120px;
     overflow: visible;
     
 }
@@ -261,7 +262,7 @@
 .demo-card{
     position: relative;
     left: 10px;
-    width: 340px;
+    width: 345px;
     height: 900px ;
     display: grid;
     grid-template-columns: 1fr;
@@ -363,12 +364,12 @@
 
 .about-section{
     position: relative;
-    top: 2370px;
+    top: 2120px;
 }
 
 .about-bar{
     position: relative;
-    top: 2100px;
+    top: 1890px;
 }
 
 }
