@@ -21,8 +21,9 @@
 
     .navigation{
         width: 320px;
-        position: relative;
+        position: fixed;
         left: 20px;
+        
     }
 
     .logo{
@@ -30,7 +31,7 @@
         height: 40px;
         /* background-color: green; */
         position: relative;
-        top: 25px;
+        top: 20px;
     }
 
     .the-navs{
@@ -48,7 +49,7 @@
         /* background-color: green; */
         position: absolute;
         right: 20px;
-        top: 25px;
+        top: 20px;
         color: #1C2582;
         display: block;
     }
@@ -66,7 +67,7 @@
     left: 60px;
     text-align: center;
     color: white;
-    top: 10px;
+    top: 100px;
     overflow: hidden;
 }
 
@@ -81,7 +82,7 @@
     left:10px;
     /* background-color: red; */
     text-align: center;
-    top: 0px;
+    top: 90px;
 }
 
 .hero-text p{
@@ -96,7 +97,7 @@
     height: 280px;
     position: absolute !important;
     left: 10px;
-    top: 350px;
+    top: 380px;
     width: 340px;
     gap: 0px;
     /* background-color: grey; */
@@ -118,7 +119,7 @@
 .center{
     /* background-color: grey; */
     position: relative;
-    bottom: 180px;
+    bottom: 220px;
     /* height: 100px; */
 }
 
@@ -169,7 +170,7 @@
 .holder{
     overflow: visible;
     position: relative;
-    left: 10px;
+    left: 15px;
     width: 340px;
 }
 
@@ -240,7 +241,7 @@
 
 .service-card{
     position: relative;
-    left: -15px;
+    left: -10px;
     width: 300px;
     top: 60px;
 }
@@ -261,7 +262,7 @@
 
 .demo-card{
     position: relative;
-    left: 10px;
+    left: 15px;
     width: 345px;
     height: 900px ;
     display: grid;
@@ -456,7 +457,7 @@
 
 .the-FAQ{
     position: relative;
-    /* background-color: green; */
+    background-color: green;
     top: 2140px;
     flex-wrap: wrap;
     padding: 10px;
@@ -470,7 +471,7 @@
 .FAQs{
     width: 320px;
     position: relative;
-    left: 0px;
+    left: 5px;
     top: -0px;
     overflow: hidden;
 }
