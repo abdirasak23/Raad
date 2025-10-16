@@ -449,15 +449,20 @@
     height: 340px;
 }
 
+
+
+
 .FAQ{
     position: relative;
     top: 2300px;
 }
 
 
+
+/* all fucking removed */
+
 .the-FAQ{
     position: relative;
-    /* background-color: green; */
     top: 2140px;
     flex-wrap: wrap;
     padding: 10px;
