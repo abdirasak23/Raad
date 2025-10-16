@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-body
-{
+body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     font-family: 'Outfit';
 }
 
-.main{
+.main {
     height: 100vh;
     width: 100%;
     background-color: #1C2582;
@@ -17,19 +16,21 @@ body
     overflow: hidden;
 }
 
-.demo{
+.demo {
     height: 50vh;
     width: 100%;
-    background-color: #FAF9F6;
+    background-color: white;
 }
 
-.navigation{
+.navigation {
     height: 10vh;
     width: 900px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
-  backdrop-filter: blur(15px); /* main frosted glass blur */
-  -webkit-backdrop-filter: blur(15px); /* Safari support */
-  border: 1px solid rgba(255, 255, 255, 0.63);
+    backdrop-filter: blur(15px);
+    /* main frosted glass blur */
+    -webkit-backdrop-filter: blur(15px);
+    /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.63);
     position: fixed;
     left: 200px;
     top: 20px;
@@ -39,7 +40,7 @@ body
 }
 
 
-.the-navs{
+.the-navs {
     width: 250px;
     /* background-color: grey; */
     position: relative;
@@ -48,7 +49,7 @@ body
 }
 
 
-.the-navs ul{
+.the-navs ul {
     list-style: none;
     display: flex;
     gap: 20px;
@@ -56,7 +57,7 @@ body
 }
 
 
-.the-navs ul a{
+.the-navs ul a {
     text-decoration: none;
     font-size: 20px;
     white-space: nowrap;
@@ -64,7 +65,7 @@ body
 }
 
 
-.logo{
+.logo {
     height: 50px;
     width: 140px;
     /* background-color: green; */
@@ -75,13 +76,13 @@ body
 }
 
 
-.logo img{
+.logo img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-.Login{
+.Login {
     height: 40px;
     width: 100px;
     position: absolute;
@@ -95,11 +96,11 @@ body
     font-family: 'Outfit';
 }
 
-.menu{
+.menu {
     display: none;
 }
 
-.hero{
+.hero {
     height: 120px;
     width: 450px;
     /* background-color: grey; */
@@ -111,11 +112,11 @@ body
     top: 60px;
 }
 
-.hero h2{
+.hero h2 {
     font-size: 70px;
 }
 
-.hero-text{
+.hero-text {
     height: 60px;
     width: 580px;
     position: relative;
@@ -125,13 +126,13 @@ body
     top: 100px;
 }
 
-.hero-text p{
+.hero-text p {
     font-size: 20px;
     color: white;
 }
 
 
-.screen-shots{
+.screen-shots {
     height: 500px;
     width: 900px;
     /* background-color: green; */
@@ -142,7 +143,7 @@ body
 }
 
 
-.screen-shots .mobile{
+.screen-shots .mobile {
     height: 600px;
     width: 300px;
     overflow: hidden;
@@ -153,7 +154,7 @@ body
 }
 
 
-.mobile img{
+.mobile img {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -162,7 +163,7 @@ body
 }
 
 
-.smaller{
+.smaller {
     height: 500px !important;
     width: 250px !important;
     position: relative;
@@ -173,18 +174,18 @@ body
 
 
 
-.screen-shots img{
+.screen-shots img {
     display: none;
 }
 
 
-.center{
+.center {
     height: 230px;
     width: 100%;
     /* background-color: grey; */
 }
 
-.center-text{
+.center-text {
     /* background-color: red; */
     height: 100px;
     width: 900px;
@@ -194,14 +195,14 @@ body
 }
 
 
-.center-text h1{
+.center-text h1 {
     font-size: 45px;
     text-align: center;
     font-weight: 900;
 }
 
 
-.center-small-text{
+.center-small-text {
     /* background-color: green; */
     height: 40px;
     position: relative;
@@ -211,18 +212,16 @@ body
     top: 30px;
 }
 
-.center-small-text p{
+.center-small-text p {
     font-size: 20px;
 
 }
 
 
-.about{
-
-}
+.about {}
 
 
-.sides{
+.sides {
     height: 540px;
     width: 100%;
     /* background-color: green; */
@@ -230,14 +229,14 @@ body
 }
 
 
-.left{
+.left {
     height: 540px;
     width: 600px;
     /* background-color: grey; */
 }
 
 
-.holder{
+.holder {
     height: 230px;
     width: 380px;
     background-color: #1C2582;
@@ -248,7 +247,7 @@ body
 }
 
 
-.the-phone{
+.the-phone {
     height: 500px;
     width: 300px;
     /* background-color: red; */
@@ -259,21 +258,21 @@ body
 }
 
 
-.the-phone img{
+.the-phone img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
 
-.right{
+.right {
     height: 540px;
     width: 700px;
     /* background-color: red; */
 }
 
 
-.head-text{
+.head-text {
     height: 40px;
     width: 500px;
     /* background-color: grey; */
@@ -284,11 +283,11 @@ body
 }
 
 
-.head-text h2{
+.head-text h2 {
     font-size: 40px;
 }
 
-.head-description{
+.head-description {
     height: 220px;
     width: 600px;
     /* background-color: grey; */
@@ -300,13 +299,13 @@ body
 
 
 
-.head-description p{
+.head-description p {
     font-size: 22px;
     text-align: start;
 }
 
 
-.learn-more{
+.learn-more {
     height: 50px;
     width: 250px;
     background-color: #1C2582;
@@ -320,13 +319,13 @@ body
 }
 
 
-.services{
+.services {
     height: 500px;
     width: 100%;
     /* background-color: red; */
 }
 
-.last{
+.last {
     position: relative;
     top: -30px !important;
     /* background-color: blue; */
@@ -463,13 +462,13 @@ body
 }
 
 
-.demo-section{
+.demo-section {
     position: relative;
     top: 820px;
 }
 
 
-.demo-cards{
+.demo-cards {
     height: 500px;
     width: 100%;
     /* background-color: red; */
@@ -479,10 +478,10 @@ body
     align-items: center;
     display: block;
     position: relative;
-    
+
 }
 
-.demo-card{
+.demo-card {
     height: 450px;
     width: 1100px;
     background: linear-gradient(135deg, #1C2582 0%, #2a3fb5 25%, #1C2582 50%, #1a1f70 75%, #1C2582 100%);
@@ -494,7 +493,7 @@ body
 }
 
 
-.top-icon{
+.top-icon {
     background-color: white;
     height: 55px;
     width: 55px;
@@ -506,14 +505,14 @@ body
     color: #1C2582;
 }
 
-.top-icon i{
+.top-icon i {
     font-size: 32px;
     text-align: center;
     position: relative;
     top: 11px;
 }
 
-.in-demo{
+.in-demo {
     /* background-color: red; */
     width: 550px;
     position: relative;
@@ -521,13 +520,13 @@ body
     left: 30px;
 }
 
-.in-demo h2{
+.in-demo h2 {
     font-size: 30px;
     color: white;
 }
 
 
-.in-demo-desc{
+.in-demo-desc {
     position: relative;
     top: 30px;
     height: 100px;
@@ -538,7 +537,7 @@ body
 }
 
 
-.tick-points{
+.tick-points {
     height: 150px;
     width: 500px;
     /* background-color: grey; */
@@ -546,22 +545,22 @@ body
     top: 30px;
     position: relative;
     left: 30px;
-    
+
 }
 
 
 
-.tick-info{
+.tick-info {
     /* background-color: blueviolet; */
     height: 40px;
     width: 600px;
     display: flex;
     position: relative;
-    
-    
+
+
 }
 
-.tick-info p{
+.tick-info p {
     position: relative;
     font-size: 20px;
     bottom: 13px;
@@ -570,7 +569,7 @@ body
 }
 
 
-.tick{
+.tick {
     height: 25px;
     width: 25px;
     background-color: white;
@@ -581,7 +580,7 @@ body
 }
 
 
-.tick i{
+.tick i {
     font-size: 18px;
     text-align: center;
     position: relative;
@@ -589,7 +588,7 @@ body
 }
 
 
-.phone-case{
+.phone-case {
     height: 400px;
     width: 340px;
     background-color: rgba(239, 235, 235, 0.466);
@@ -602,7 +601,7 @@ body
 }
 
 
-.real-phone{
+.real-phone {
     width: 320px;
     height: 390px;
     background-color: white;
@@ -613,7 +612,7 @@ body
     border-top-right-radius: 20px;
 }
 
-.real-phone video{
+.real-phone video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -622,15 +621,272 @@ body
 }
 
 
-.about-section{
+.about-section {
     position: relative;
     top: 1650px;
 }
 
 
-.about-bar{
+.about-bar {
     position: relative;
     top: 1500px;
+}
+
+
+
+.the-youtube-center {
+    position: relative;
+    top: 1500px;
+}
+
+.the-youtube-text {
+    position: relative;
+    top: 1500px;
+}
+
+
+.youtube-section {
+    height: 500px;
+    width: 100%;
+    /* background-color: red; */
+    position: relative;
+    top: 1450px;
+}
+
+
+.screen-vedio {
+    height: 450px;
+    width: 1180px;
+    background-color: rgba(227, 227, 227, 0.562);
+    position: relative;
+    top: 20px;
+    left: 40px;
+    border: 1px solid grey;
+    border-radius: 20px;
+}
+
+
+.the-vedio {
+    height: 420px;
+    width: 1140px;
+    /* background-color: rgb(224, 111, 111); */
+    position: relative;
+    top: 15px;
+    left: 20px;
+    border-radius: 20px;
+}
+
+
+.the-vedio iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.FAQ {
+    position: relative;
+    top: 1390px;
+}
+
+
+.the-FAQ {
+    height: 500px;
+    width: 100%;
+    /* background-color: grey; */
+    position: relative;
+    top: 1250px;
+}
+
+.FAQs {
+    height: auto;
+    min-height: 500px;
+    width: 800px;
+    position: relative;
+    top: 20px;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.9) 0%,
+            rgba(245, 245, 245, 0.8) 25%,
+            rgba(230, 230, 230, 0.7) 50%,
+            rgba(255, 255, 255, 0.9) 75%,
+            rgba(210, 210, 210, 0.6) 100%);
+    backdrop-filter: blur(10px);
+    position: relative;
+    left: 220px;
+    border-radius: 20px;
+    border: 1px solid grey;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+    padding: 10px;
+    /* optional: adds space around text */
+    min-height: 50px;
+    /* optional: keeps a minimum height */
+    height: auto;
+}
+
+.question {
+    height: 40px;
+    width: 700px;
+    /* background-color: rgb(0, 47, 128); */
+    position: relative;
+    left: 20px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.question:hover {
+    /* background-color: rgb(0, 57, 148); */
+}
+
+.question h3 {
+    font-size: 24px;
+    color: black;
+    margin: 0;
+    flex: 1;
+}
+
+.question i {
+    font-size: 30px;
+    color: black;
+    transition: transform 0.3s ease;
+}
+
+.answer {
+    width: 750px;
+    /* background-color: green; */
+    position: relative;
+    left: 20px;
+    display: none;
+    padding: 20px;
+    min-height: 50px;
+    height: auto;
+    margin-top: 2px;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+}
+
+.answer.show {
+    display: block;
+}
+
+.answer p {
+    margin: 0;
+    color: black;
+    line-height: 1.6;
+}
+
+
+.footer {
+    height: 200px;
+    width: 100%;
+    /* background-color: grey; */
+    position: relative;
+    top: 1200px;
+}
+
+
+.the-logo {
+    height: 70px;
+    width: 200px;
+    /* background-color: red; */
+    position: relative;
+    overflow: hidden;
+    left: 550px;bottom: 10px;
+}
+
+
+.the-logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.contact {
+    height: 20px;
+    width: 200px;
+    /* background-color: blueviolet; */
+    position: relative;
+    left: 520px;
+    top: -5px;
+    display: flex;
+    /* overflow: visible; */
+    gap: 10px;
+}
+
+
+.contact a {
+    font-size: 22px;
+    position: relative;
+    bottom: 2px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.contact i {
+    font-size: 22px;
+    position: relative;
+    top: 5px;
+}
+
+
+.lastly {
+    height: 90px;
+    width: 100%;
+    position: relative;
+    top: 20px;
+   border-top: 1.5px solid transparent;
+  border-image: linear-gradient(
+    to right,
+    rgba(71, 71, 71, 0) 0%,
+    rgba(71, 71, 71, 0.8) 50%,
+    rgba(71, 71, 71, 0) 100%
+  );
+  border-image-slice: 1;
+  display: flex;
+    /* background-color: greenyellow; */
+}
+
+
+.policies{
+    height: 30px;
+    width: 300px;
+    /* background-color: #666ca9; */
+    gap: 30px;
+    display: flex;
+    position: relative;
+    left: 60px;
+    top: 20px;
+}
+
+
+.policies a{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+
+.rights{
+    height: 30px;
+    width: 300px;
+    /* background-color: #666ca9; */
+    gap: 30px;
+    display: flex;
+    position: absolute;
+    left: 900px;
+    top: 20px;
+
+}
+
+.rights a{
+    font-size: 18px;
+    color: black;
+    position: relative;
+    bottom: 15px;
 }
 
 

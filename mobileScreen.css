@@ -118,7 +118,7 @@
 .center{
     /* background-color: grey; */
     position: relative;
-    bottom: 280px;
+    bottom: 180px;
     /* height: 100px; */
 }
 
@@ -154,7 +154,7 @@
 .sides{
     /* background-color: grey; */
     position: relative;
-    bottom: 280px;
+    bottom: 180px;
     display: grid;
     grid-template-columns: 1fr;
     overflow: visible;
@@ -214,7 +214,7 @@
 .services{
     /* background-color: grey; */
     position: relative;
-    top: -40px;
+    top: 80px;
     overflow: hidden;
     height: 3650px;
 }
@@ -247,13 +247,13 @@
 
 .demo-section{
     position: relative;
-    top: -120px;
+    top: 80px;
 }
 
 .demo-cards{
     /* background-color: red; */
     position: relative;
-    top: -120px;
+    top: 80px;
     overflow: visible;
     
 }
@@ -364,12 +364,174 @@
 
 .about-section{
     position: relative;
-    top: 2120px;
+    top: 2320px;
 }
 
 .about-bar{
     position: relative;
-    top: 1890px;
+    top: 2100px;
+    /* background-color: red; */
 }
 
+
+
+
+
+
+.youtube-bar{
+    /* background-color: aqua;position: relative; */
+    top: 2350px;
+    height: 200px;
 }
+
+
+.the-youtube-center{
+    position: relative;
+    top: 60px;
+}
+
+
+.the-youtube-text{
+    position: relative;
+    bottom: 60px !important;
+    /* background-color: rebeccapurple; */
+}
+
+
+.screen-vedio{
+    height: 250px;
+    width: 350px;
+    position: relative;
+    left: 10px;
+
+}
+
+
+.the-vedio{
+
+    width: 340px;
+    height: 240px;
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+
+
+.youtube-section{
+    position: relative;
+    /* background-color: green; */
+    top: 2380px;
+    height: 340px;
+}
+
+.FAQ{
+    position: relative;
+    top: 2300px;
+}
+
+
+.the-FAQ{
+    position: relative;
+    /* background-color: green; */
+    top: 2140px;
+    flex-wrap: wrap;
+    padding: 10px;
+    /* optional: adds space around text */
+    min-height: 50px;
+    /* optional: keeps a minimum height */
+    height: auto;
+}
+
+.FAQs{
+    width: 340px;
+    position: relative;
+    left: 10px;
+}
+
+
+.question{
+    /* background-color: rgb(0, 117, 128); */
+    width: 300px;
+    position: relative;
+    left: 5px;
+}
+
+
+.question h3{
+    font-size: 14px;
+    position: relative;
+    
+}
+
+
+.answer{
+    /* background-color: grey; */
+    position: relative;
+    left: 5px;
+    width: 300px;
+}
+
+
+.footer{
+    position: relative;
+    /* background-color: grey; */
+    position: relative;
+    top: 2150px;
+    overflow: hidden;
+}
+
+
+.the-logo{
+    position: relative;
+    left: 80px;
+    top: 10px;
+}
+
+.contact{
+    position: relative;
+    left: 40px;
+    width: 290px;
+    /* background-color: red; */
+    height: 30px;
+    top: 5px;
+    overflow: hidden;
+}
+
+
+.contact p{
+    position: relative;
+    left: 10px;
+    top: -70px;
+}
+
+.contact i{
+    overflow: hidden;
+    width: 25px;
+}
+
+
+.lastly{
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+.policies{
+    position: relative;
+    left: 40px;
+    /* background-color: blue; */
+    bottom: 20px;
+}
+
+
+.rights{
+    position: relative;
+    left: 45px;
+    /* background-color: green; */
+    overflow: visible;
+
+}
+}
+
+
