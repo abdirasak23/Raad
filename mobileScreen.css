@@ -457,7 +457,7 @@
 
 .the-FAQ{
     position: relative;
-    background-color: green;
+    /* background-color: green; */
     top: 2140px;
     flex-wrap: wrap;
     padding: 10px;
