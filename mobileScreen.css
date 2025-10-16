@@ -30,7 +30,7 @@
         height: 40px;
         /* background-color: green; */
         position: relative;
-        top: 20px;
+        top: 25px;
     }
 
     .the-navs{
@@ -48,7 +48,7 @@
         /* background-color: green; */
         position: absolute;
         right: 20px;
-        top: 20px;
+        top: 25px;
         color: #1C2582;
         display: block;
     }
@@ -280,6 +280,8 @@
 .top-icon{
     height: 40px;
     width: 40px;
+    position: relative;
+    left: 10px;
 }
 
 .top-icon i{
@@ -288,11 +290,18 @@
     top: 8px;
 }
 
+
+.no-stop{
+    position: relative;
+    top: 5px !important;
+}
+
 .in-demo{
     position: relative;
     /* background-color: red; */
     overflow: visible;
     left: 5px;
+    bottom: 99px;
     width: 320px;
 }
 
@@ -374,6 +383,19 @@
 }
 
 
+.head-text{
+    overflow: visible;
+    position: relative;
+    left: 10px;
+    top: 80px;
+    width: 340px;
+}
+
+.head-text h2{
+    font-size: 26px;
+}
+
+
 
 
 
@@ -382,6 +404,7 @@
     /* background-color: aqua;position: relative; */
     top: 2350px;
     height: 200px;
+    overflow: hidden;
 }
 
 
@@ -403,12 +426,13 @@
     width: 350px;
     position: relative;
     left: 10px;
+    
 
 }
 
 
 .the-vedio{
-
+    overflow: hidden;
     width: 340px;
     height: 240px;
     position: relative;
@@ -440,12 +464,15 @@
     min-height: 50px;
     /* optional: keeps a minimum height */
     height: auto;
+    overflow: hidden;
 }
 
 .FAQs{
-    width: 340px;
+    width: 320px;
     position: relative;
-    left: 10px;
+    left: 0px;
+    top: -0px;
+    overflow: hidden;
 }
 
 
@@ -468,7 +495,7 @@
     /* background-color: grey; */
     position: relative;
     left: 5px;
-    width: 300px;
+    width: 290px;
 }
 
 
@@ -514,6 +541,7 @@
     /* background-color: red; */
     display: grid;
     grid-template-columns: 1fr;
+    overflow: hidden;
 }
 
 

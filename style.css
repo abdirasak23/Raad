@@ -494,7 +494,12 @@ body {
 
 
 .top-icon {
-    background-color: white;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+    backdrop-filter: blur(15px);
+    /* main frosted glass blur */
+    -webkit-backdrop-filter: blur(15px);
+    /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.63);
     height: 55px;
     width: 55px;
     border-radius: 100%;
@@ -502,7 +507,7 @@ body {
     top: 20px;
     left: 30px;
     text-align: center;
-    color: #1C2582;
+    color: white;
 }
 
 .top-icon i {
@@ -572,7 +577,12 @@ body {
 .tick {
     height: 25px;
     width: 25px;
-    background-color: white;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+    backdrop-filter: blur(15px);
+    /* main frosted glass blur */
+    -webkit-backdrop-filter: blur(15px);
+    /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.63);
     border-radius: 100%;
     text-align: center;
     position: relative;
@@ -584,6 +594,7 @@ body {
     font-size: 18px;
     text-align: center;
     position: relative;
+    color: white;
     top: 4px;
 }
 
