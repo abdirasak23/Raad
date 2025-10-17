@@ -59,20 +59,76 @@
     }
 
 
-    .hero{
+.hero {
     height: 150px;
-    width: 260px;
-    /* background-color: grey; */
+    width: 280px;
     position: relative;
-    left: 60px;
+    left: 50px;
     text-align: center;
     color: white;
-    top: 100px;
+    top: 120px;
     overflow: hidden;
 }
 
-.hero h2{
-    font-size: 40px;
+.hero h2 {
+    font-size: 44px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.animated-word {
+    display: inline-block;
+    position: relative;
+    min-width: 180px;  /* Increased to fit "Thrive." */
+    height: 48px;      /* THIS IS KEY! Gives container height */
+}
+
+.word {
+    position: absolute;  /* MUST be absolute */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    overflow: hidden;
+    /* background-color: green; */
+    font-weight: 800;
+    text-align: center;  /* Centers the text */
+    animation: wordRotate 9s infinite;
+}
+
+.word:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.word:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.word:nth-child(3) {
+    animation-delay: 6s;
+}
+
+@keyframes wordRotate {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    5% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    28% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    33% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 }
 
 .hero-text{
@@ -119,7 +175,7 @@
 .center{
     /* background-color: grey; */
     position: relative;
-    bottom: 220px;
+    bottom: 180px;
     /* height: 100px; */
 }
 
@@ -459,7 +515,6 @@
 
 
 
-/* all fucking removed */
 
 .the-FAQ{
     position: relative;
