@@ -40,6 +40,9 @@ body {
 }
 
 
+
+
+
 .the-navs {
     width: 250px;
     /* background-color: grey; */
@@ -62,6 +65,11 @@ body {
     font-size: 20px;
     white-space: nowrap;
     color: #1C2582;
+}
+
+
+.home-link{
+    font-weight: 600;
 }
 
 

@@ -361,12 +361,12 @@
     overflow: visible;
     left: 5px;
     bottom: 99px;
-    width: 320px;
+    width: 300px;
 }
 
 
 .in-demo h2{
-    font-size: 24px;
+    font-size: 22px !important;
 }
 
 

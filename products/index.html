@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit';
+            background: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+            color: #1a1a1a;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px 80px;
+            margin-bottom: 60px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+            color: #000;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: #000;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            background: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover .product-image {
+            background: #f5f5f5;
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-category {
+            color: #999;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .product-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #000;
+            letter-spacing: -0.5px;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000;
+            letter-spacing: -1px;
+        }
+
+        .product-btn {
+            background: #000;
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .product-btn:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
+
+        .product-btn:active {
+            transform: scale(0.98);
+        }
+
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #000;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 10;
+        }
+
+        .badge.sale {
+            background: #fff;
+            color: #000;
+            border: 1px solid #000;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .products-container {
+                grid-template-columns: 1fr;
+            }
+
+            .product-info {
+                padding: 24px;
+            }
+        }
+
+
+        .navigation {
+            height: 10vh;
+            width: 900px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+            backdrop-filter: blur(15px);
+            /* main frosted glass blur */
+            -webkit-backdrop-filter: blur(15px);
+            /* Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.63);
+            position: fixed;
+            left: 200px;
+            top: 20px;
+            border-radius: 20px;
+            display: flex;
+            z-index: 999;
+        }
+
+
+        .the-navs {
+            width: 250px;
+            /* background-color: grey; */
+            position: relative;
+            top: 20px;
+            left: 60px;
+        }
+
+
+        .the-navs ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+
+        }
+
+
+        .the-navs ul a {
+            text-decoration: none;
+            font-size: 20px;
+            white-space: nowrap;
+            color: #1C2582;
+        }
+
+
+        .logo {
+            height: 50px;
+            width: 140px;
+            /* background-color: green; */
+            position: relative;
+            top: 10px;
+            left: 20px;
+            overflow: hidden;
+        }
+
+
+        .logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .Login {
+            height: 40px;
+            width: 100px;
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            border: none;
+            background-color: #1C2582;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            font-family: 'Outfit';
+        }
+
+        .menu {
+            display: none;
+        }
+
+
+        .products {
+            font-weight: 600;
+        }
+
+
+        .product-image {
+            overflow: hidden;
+        }
+
+
+        .product-image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navigation">
+        <div class="logo">
+            <img src="../assets/images/raadlogo.png" alt="">
+        </div>
+
+        <div class="the-navs">
+            <ul>
+                <a href="../">
+                    <li>Home</li>
+                </a>
+                <a href="products/">
+                    <li class="products">Products</li>
+                </a>
+                <a href="#">
+                    <li>Pricing</li>
+                </a>
+                <a href="#">
+                    <li>About Us</li>
+                </a>
+                <a href="#">
+                    <li>Contact Us</li>
+                </a>
+            </ul>
+        </div>
+
+        <button class="Login">Login</button>
+
+        <div class="menu">
+            <i class='bxr  bx-menu'></i>
+        </div>
+
+    </div>
+
+
+    <div class="hero">
+        <h1>Our Products</h1>
+        <p>We provide the powerful app, reliable hardware, and dedicated support you need to run your business effortlessly.</p>
+    </div>
+
+    <div class="products-container">
+        <div class="product-card">
+            <!-- <div class="badge">New</div> -->
+            <div class="product-image">
+                <img src="../assets/images/thermanale.png" alt="">
+            </div>
+            <div class="product-info">
+                <div class="product-category">Hardware</div>
+                <h3 class="product-title">Thermal Receipt Printer</h3>
+                <p class="product-description">Print clear, professional receipts instantly. This high-speed thermal
+                    printer connects seamlessly with your Raad app for a fast, reliable checkout experience.</p>
+                <div class="product-footer">
+                    <div class="product-price">$29.99</div>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="../assets/images/software.png" alt="">
+            </div>
+            <div class="product-info">
+                <div class="product-category">Software</div>
+                <h3 class="product-title">Raad "Smart Book" POS</h3>
+                <p class="product-description">The all-in-one app to run your entire business. Manage your products,
+                    track every sale, control customer credit (Dayn), and get the live insights you need to grow.</p>
+                <div class="product-footer">
+                    <div class="product-price">$99 / year</div>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <!-- <div class="badge sale">Sale</div> -->
+            <div class="product-image">
+                <img src="../assets/images/support.png" alt="">
+            </div>
+            <div class="product-info">
+                <div class="product-category">Support</div>
+                <h3 class="product-title">Setup and Support</h3>
+                <p class="product-description">Get expert help to launch your business smoothly. Our dedicated team is
+                    here to assist with setup, training, and any questions you have along the way.</p>
+                <div class="product-footer">
+                    <div class="product-price">Contact Us</div>
+                    <!-- <button class="product-btn">Add to Cart</button> -->
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
