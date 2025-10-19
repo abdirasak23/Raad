@@ -18,7 +18,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    position: relative;
+    /* position: relative; */
 }
 
 .demo {
@@ -132,7 +132,7 @@ body {
     transform: translateX(-50%);
     text-align: center;
     color: white;
-    top: clamp(120px, 15vh, 150px);
+    top: clamp(80px, 15vh, 150px);
 }
 
 .hero h2 {
@@ -328,7 +328,7 @@ body {
 }
 
 .the-phone {
-    height: clamp(420px, 45vh, 500px);
+    height: clamp(520px, 45vh, 500px);
     width: clamp(250px, 28vw, 300px);
     position: absolute;
     top: clamp(-190px, -20vh, -230px);
@@ -517,7 +517,7 @@ body {
 }
 
 .phone-case {
-    height: clamp(340px, 40vh, 400px);
+    height: clamp(440px, 40vh, 400px);
     width: clamp(280px, 30vw, 340px);
     background-color: rgba(239, 235, 235, 0.466);
     border-top-left-radius: 20px;
@@ -525,6 +525,8 @@ body {
     border: rgba(255, 255, 255, 0.767) 1px solid;
     padding: 10px;
     box-sizing: border-box;
+    position: relative;
+    top: 52px;
 }
 
 .real-phone {
