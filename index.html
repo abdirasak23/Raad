@@ -65,6 +65,29 @@
 
         </div>
 
+
+
+        <div class="the-menu">
+            <ul>
+                <a href="#">
+                    <li class="home-link">Home</li>
+                </a>
+                <a href="products/">
+                    <li>Products</li>
+                </a>
+                <a href="pricing/">
+                    <li>Pricing</li>
+                </a>
+                <a href="aboutus/">
+                    <li>About Us</li>
+                </a>
+                <a href="contactus/">
+                    <li>Contact Us</li>
+                </a>
+            </ul>
+            <button class="Login">Login</button>
+        </div>
+
         <div class="hero">
             <h2>Sell. Manage. <br><span class="animated-word">
                     <span class="word">Grow.</span>
@@ -612,6 +635,64 @@
                 } else {
                     icon.classList.remove('bx-chevron-up');
                     icon.classList.add('bx-chevron-down');
+                }
+            });
+        });
+
+
+        // Mobile Menu Toggle Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.querySelector('.menu');
+            const menuIcon = menuButton.querySelector('i');
+            const theMenu = document.querySelector('.the-menu');
+            const menuLinks = theMenu.querySelectorAll('a');
+
+            // Toggle menu on button click
+            menuButton.addEventListener('click', function () {
+                theMenu.classList.toggle('show');
+                theMenu.classList.toggle('hidden');
+
+                // Change icon from menu to X and back
+                if (theMenu.classList.contains('show')) {
+                    menuIcon.classList.remove('bx-menu');
+                    menuIcon.classList.add('bx-x');
+                } else {
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                }
+            });
+
+            // Close menu when a link is clicked
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    theMenu.classList.remove('show');
+                    theMenu.classList.add('hidden');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                });
+            });
+
+            // Close menu when login button is clicked
+            const loginButton = theMenu.querySelector('.Login');
+            if (loginButton) {
+                loginButton.addEventListener('click', function () {
+                    theMenu.classList.remove('show');
+                    theMenu.classList.add('hidden');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                });
+            }
+
+            // Optional: Close menu when clicking outside of it
+            document.addEventListener('click', function (event) {
+                const isClickInsideMenu = theMenu.contains(event.target);
+                const isClickOnMenuButton = menuButton.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnMenuButton && theMenu.classList.contains('show')) {
+                    theMenu.classList.remove('show');
+                    theMenu.classList.add('hidden');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
                 }
             });
         });
