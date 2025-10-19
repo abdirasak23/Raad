@@ -221,83 +221,102 @@
         }
 
 
-        .navigation {
-            height: 10vh;
-            width: 900px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
-            backdrop-filter: blur(15px);
-            /* main frosted glass blur */
-            -webkit-backdrop-filter: blur(15px);
-            /* Safari support */
-            border: 1px solid rgba(255, 255, 255, 0.63);
-            position: fixed;
-            left: 200px;
-            top: 20px;
-            border-radius: 20px;
-            display: flex;
-            z-index: 999;
-        }
+        .Login{
+    display: none;
+}
 
-
-        .the-navs {
-            width: 250px;
-            /* background-color: grey; */
-            position: relative;
-            top: 20px;
-            left: 60px;
-        }
-
-
-        .the-navs ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-
-        }
-
-
-        .the-navs ul a {
-            text-decoration: none;
-            font-size: 20px;
-            white-space: nowrap;
-            color: #1C2582;
-        }
-
-
-        .logo {
-            height: 50px;
-            width: 140px;
-            /* background-color: green; */
-            position: relative;
-            top: 10px;
-            left: 20px;
-            overflow: hidden;
-        }
-
-
-        .logo img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        .Login {
-            height: 40px;
-            width: 100px;
-            position: absolute;
-            right: 30px;
-            top: 10px;
-            border: none;
-            background-color: #1C2582;
-            border-radius: 10px;
-            color: white;
-            font-size: 18px;
-            font-family: 'Outfit';
-        }
-
-        .menu {
+        .the-menu{
             display: none;
         }
+
+        .navigation {
+    height: 10vh;
+    width: min(900px, 90%);
+    max-width: 1200px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    border-radius: 20px;
+    display: flex;
+    z-index: 999;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 50px;
+    width: 140px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.the-navs {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.the-navs ul {
+    list-style: none;
+    display: flex;
+    gap: clamp(15px, 2vw, 20px);
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.the-navs ul a {
+    text-decoration: none;
+    font-size: clamp(16px, 1.5vw, 20px);
+    white-space: nowrap;
+    color: #1C2582;
+    transition: opacity 0.3s;
+}
+
+.the-navs ul a:hover {
+    opacity: 0.7;
+}
+
+.home-link {
+    font-weight: 600;
+}
+
+.Login {
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: #1C2582;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Outfit';
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+.Login:hover {
+    transform: scale(1.05);
+}
+
+.menu {
+    display: none;
+}
+
 
 
         .products {

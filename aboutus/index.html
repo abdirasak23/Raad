@@ -24,80 +24,94 @@
 
         /* Navigation */
         .navigation {
-            height: 10vh;
-            width: 900px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.63);
-            position: fixed;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 20px;
-            border-radius: 20px;
-            display: flex;
-            z-index: 999;
-        }
+    height: 10vh;
+    width: min(900px, 90%);
+    max-width: 1200px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.63);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    border-radius: 20px;
+    display: flex;
+    z-index: 999;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 
-        .logo {
-            height: 50px;
-            width: 140px;
-            position: relative;
-            top: 10px;
-            left: 20px;
-            overflow: hidden;
-        }
+.logo {
+    height: 50px;
+    width: 140px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
 
-        .logo img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
+.logo img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
-        .the-navs {
-            width: 250px;
-            position: relative;
-            top: 20px;
-            left: 60px;
-        }
+.the-navs {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+    position: relative;
+    /* top: -30px; */
+}
 
-        .the-navs ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
+.the-navs ul {
+    list-style: none;
+    display: flex;
+    gap: clamp(15px, 2vw, 20px);
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
 
-        .the-navs ul a {
-            text-decoration: none;
-            font-size: 20px;
-            white-space: nowrap;
-            color: #1C2582;
-            transition: color 0.3s ease;
-        }
+.the-navs ul a {
+    text-decoration: none;
+    font-size: clamp(16px, 1.5vw, 20px);
+    white-space: nowrap;
+    color: #1C2582;
+    transition: opacity 0.3s;
+}
 
-        /* .the-navs ul a:hover {
-            color: #4f46e5;
-        } */
+.the-navs ul a:hover {
+    opacity: 0.7;
+}
 
-        .Login {
-            height: 40px;
-            width: 100px;
-            position: absolute;
-            right: 30px;
-            top: 10px;
-            border: none;
-            background-color: #1C2582;
-            border-radius: 10px;
-            color: white;
-            font-size: 18px;
-            font-family: 'Outfit';
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+.home-link {
+    font-weight: 600;
+}
 
-        .Login:hover {
-            background-color: #4f46e5;
-        }
+.Login {
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: #1C2582;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Outfit';
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+.Login:hover {
+    transform: scale(1.05);
+}
+
+.menu {
+    display: none;
+}
 
         /* Hero Section */
         .hero-section {
@@ -320,6 +334,10 @@
             color: #1a1a1a;
             margin-bottom: 15px;
         }
+        
+        .menu{
+            display: none;
+        }
 
         .value-card p {
             font-size: 1rem;
@@ -342,6 +360,11 @@
             font-weight: 800;
             color: #1a1a1a;
             margin-bottom: 15px;
+        }
+
+
+        .the-menu{
+            display: none;
         }
 
         .team-header p {
