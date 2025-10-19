@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <title>Contact Us - POS System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        .navigation {
+            height: 10vh;
+            width: 900px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.63);
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20px;
+            border-radius: 20px;
+            display: flex;
+            z-index: 999;
+        }
+
+        .logo {
+            height: 50px;
+            width: 140px;
+            position: relative;
+            top: 10px;
+            left: 20px;
+            overflow: hidden;
+        }
+
+        .logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .the-navs {
+            width: 250px;
+            position: relative;
+            top: 20px;
+            left: 60px;
+        }
+
+        .the-navs ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .the-navs ul a {
+            text-decoration: none;
+            font-size: 20px;
+            white-space: nowrap;
+            color: #1C2582;
+            transition: color 0.3s ease;
+        }
+
+        /* .the-navs ul a:hover {
+            color: #4f46e5;
+        } */
+
+        .Login {
+            height: 40px;
+            width: 100px;
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            border: none;
+            background-color: #1C2582;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            font-family: 'Outfit';
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .Login:hover {
+            background-color: #1C2582;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 20px 40px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Main Contact Section */
+        .contact-main-section {
+            padding: 40px 20px 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* Contact Form */
+        .contact-form-container {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            animation: fadeInLeft 0.8s ease;
+        }
+
+        .contact-form-container h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .contact-form-container .form-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: 'Outfit';
+            transition: border-color 0.3s ease;
+            background: #f9fafb;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1C2582;
+            background: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            background: #1C2582;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Outfit';
+        }
+
+        .submit-button:hover {
+            background: #4338ca;
+            transform: scale(1.02);
+        }
+
+        /* Contact Info */
+        .contact-info-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            animation: fadeInRight 0.8s ease;
+        }
+
+        .info-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: #1C2582;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-right: 15px;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        .info-card p {
+            font-size: 1rem;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .info-card a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .info-card a:hover {
+            color: #4338ca;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .faq-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+        }
+
+        .faq-header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            padding: 25px 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateX(5px);
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            font-size: 1rem;
+            color: #4b5563;
+            line-height: 1.6;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #d1d5db;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 80px 20px;
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .map-container h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navigation {
+                width: 90%;
+                left: 5%;
+                transform: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-container,
+            .map-container {
+                padding: 30px 25px;
+            }
+
+            .faq-header h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navigation {
+                width: 340px;
+                position: fixed;
+                left: 20px;
+
+            }
+
+            .logo {
+                width: 130px;
+                height: 40px;
+                /* background-color: green; */
+                position: relative;
+                top: 25px;
+            }
+
+            .the-navs {
+                display: none;
+
+            }
+
+            .Login {
+                display: none;
+                ;
+            }
+
+
+            .menu {
+                height: 40px;
+                width: 40px;
+                /* background-color: green; */
+                position: absolute;
+                right: 20px;
+                top: 25px;
+                color: #1C2582;
+                display: block;
+            }
+
+            .menu i {
+                font-size: 34px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="navigation">
+        <div class="logo">
+            <img src="../assets/images/raadlogo.png" alt="">
+        </div>
+
+        <div class="the-navs">
+            <ul>
+                <a href="../">
+                    <li>Home</li>
+                </a>
+                <a href="../products/">
+                    <li class="products">Products</li>
+                </a>
+                <a href="../pricing/">
+                    <li class="pricing">Pricing</li>
+                </a>
+                <a href="../aboutus/">
+                    <li>About Us</li>
+                </a>
+                <a href="../contact">
+                    <li style="font-weight: 600;">Contact Us</li>
+                </a>
+            </ul>
+        </div>
+
+        <button class="Login">Login</button>
+
+        <div class="menu">
+            <i class='bxr  bx-menu'></i>
+        </div>
+
+    </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>GET IN TOUCH WITH US</h1>
+            <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+        </div>
+    </section>
+
+    <!-- Main Contact Section -->
+    <section class="contact-main-section">
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h2>Send us a Message</h2>
+                <p class="form-subtitle">Fill out the form below and our team will get back to you within 24 hours.</p>
+
+                <form>
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address *</label>
+                        <input type="email" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" placeholder="+1 (555) 000-0000">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subject *</label>
+                        <select required>
+                            <option value="">Select a topic</option>
+                            <option value="sales">Sales Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="billing">Billing Question</option>
+                            <option value="demo">Request a Demo</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message *</label>
+                        <textarea placeholder="Tell us more about your inquiry..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info-container">
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-icon"><i class='bxr  bx-envelope-open'></i> </div>
+                        <h3>Email Us</h3>
+                    </div>
+                    <p>For general inquiries:</p>
+                    <p><a href="mailto:info@posystem.com">info@raadapp.com</a></p>
+                    <p style="margin-top: 15px;">For support:</p>
+                    <p><a href="mailto:support@posystem.com">support@raadapp.com</a></p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-header">
+                        <div class="info-icon"><i class='bxr  bx-phone'></i> </div>
+                        <h3>Call Us</h3>
+                    </div>
+                    <p>Sales: <a href="tel:+15551234567">+252906753517</a></p>
+                    <p>Support: <a href="tel:+15557654321">+252906753517</a></p>
+                    <p style="margin-top: 15px; color: #666; font-size: 0.9rem;">24/7</p>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Quick answers to common questions</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    How quickly can I get started?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    You can get started immediately! Sign up for a free account and you'll have access to our platform
+                    within minutes. Our onboarding process is simple and we provide step-by-step guides to help you set
+                    up your first store.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    What payment methods do you accept?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers
+                    for annual plans. All payments are processed securely through our encrypted payment gateway.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I switch plans later?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Absolutely! You can upgrade or downgrade your plan at any time from your account dashboard. Changes
+                    take effect immediately and we'll prorate any price differences.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do you offer training and support?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Yes! We provide comprehensive training resources including video tutorials, documentation, and live
+                    webinars. Pro and Premium plans include dedicated support with priority response times.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Is my data secure?
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    Security is our top priority. We use bank-level encryption (256-bit SSL), regular security audits,
+                    and comply with industry standards including PCI DSS. Your data is backed up daily and stored in
+                    secure data centers.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="contact.js"></script>
+
+    <!-- Map Section -->
+
+</body>
+
+</html>

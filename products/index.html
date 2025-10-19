@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Products</title>
     <style>
@@ -313,6 +315,54 @@
             width: 100%;
             object-fit: cover;
         }
+
+
+
+        @media (max-width: 480px) {
+            .navigation {
+                width: 340px;
+                position: fixed;
+                left: 20px;
+
+            }
+
+            .logo {
+                width: 130px;
+                height: 40px;
+                /* background-color: green; */
+                position: relative;
+                top: 25px;
+            }
+
+            .the-navs {
+                display: none;
+
+            }
+
+            .Login {
+                display: none;
+                ;
+            }
+
+
+            .menu {
+                height: 40px;
+                width: 40px;
+                /* background-color: green; */
+                position: absolute;
+                right: 20px;
+                top: 25px;
+                color: #1C2582;
+                display: block;
+            }
+
+            .menu i {
+                font-size: 34px;
+            }
+
+        }
+      
+
     </style>
 </head>
 
@@ -331,10 +381,10 @@
                 <a href="products/">
                     <li class="products">Products</li>
                 </a>
-                <a href="#">
+                <a href="../pricing/">
                     <li>Pricing</li>
                 </a>
-                <a href="#">
+                <a href="../aboutus/">
                     <li>About Us</li>
                 </a>
                 <a href="#">

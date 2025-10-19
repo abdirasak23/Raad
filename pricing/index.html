@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <title>POS Pricing Plans</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit';
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-top: 80px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .header a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+            position: relative;
+            top: 80px;
+            padding-bottom: 100px;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            animation: fadeInUp 0.8s ease;
+            animation-fill-mode: both;
+        }
+
+        .pricing-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .pricing-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .pricing-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid #4f46e5;
+            transform: scale(1.05);
+        }
+
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #1a1a1a;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .plan-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .price {
+            display: flex;
+            align-items: baseline;
+            text-decoration: line-through;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .currency {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .amount {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1;
+        }
+
+        .period {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .billing-info {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .cta-button.primary {
+            background: #4f46e5;
+            color: white;
+        }
+
+        .cta-button.primary:hover {
+            background: #4338ca;
+            transform: scale(1.02);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #1a1a1a;
+            border: 2px solid #e5e7eb;
+        }
+
+        .cta-button.secondary:hover {
+            background: #f9fafb;
+            border-color: #d1d5db;
+        }
+
+        .additional-link {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .additional-link a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .additional-link a:hover {
+            color: #4338ca;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 25px 0;
+        }
+
+        .highlights-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            color: #4b5563;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+            line-height: 1.5;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-text {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+
+            .pricing-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .navigation {
+            height: 10vh;
+            width: 900px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+            backdrop-filter: blur(15px);
+            /* main frosted glass blur */
+            -webkit-backdrop-filter: blur(15px);
+            /* Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.63);
+            position: fixed;
+            left: 200px;
+            top: 20px;
+            border-radius: 20px;
+            display: flex;
+            z-index: 999;
+        }
+
+
+        .the-navs {
+            width: 250px;
+            /* background-color: grey; */
+            position: relative;
+            top: 20px;
+            left: 60px;
+        }
+
+
+        .the-navs ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+
+        }
+
+
+        .the-navs ul a {
+            text-decoration: none;
+            font-size: 20px;
+            white-space: nowrap;
+            color: #1C2582;
+        }
+
+
+        .logo {
+            height: 50px;
+            width: 140px;
+            /* background-color: green; */
+            position: relative;
+            top: 10px;
+            left: 20px;
+            overflow: hidden;
+        }
+
+
+        .logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .Login {
+            height: 40px;
+            width: 100px;
+            position: absolute;
+            right: 30px;
+            top: 10px;
+            border: none;
+            background-color: #1C2582;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            font-family: 'Outfit';
+        }
+
+        .menu {
+            display: none;
+        }
+
+
+
+        @media (max-width: 480px) {
+            .navigation {
+                width: 340px;
+                position: fixed;
+                left: 20px;
+
+            }
+
+            .logo {
+                width: 130px;
+                height: 40px;
+                /* background-color: green; */
+                position: relative;
+                top: 25px;
+            }
+
+            .the-navs {
+                display: none;
+
+            }
+
+            .Login {
+                display: none;
+                ;
+            }
+
+
+            .menu {
+                height: 40px;
+                width: 40px;
+                /* background-color: green; */
+                position: absolute;
+                right: 20px;
+                top: 25px;
+                color: #1C2582;
+                display: block;
+            }
+
+            .menu i {
+                font-size: 34px;
+            }
+
+        }
+
+
+        .pricing {
+            font-weight: 600;
+        }
+
+
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            min-height: 100vh;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .comparison-container {
+            max-width: 1200px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .header-section p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+        }
+
+        .comparison-table thead {
+            background: #f8f9fa;
+        }
+
+        .comparison-table th {
+            padding: 20px 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #1a1a1a;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .comparison-table th:first-child {
+            text-align: left;
+            padding-left: 30px;
+        }
+
+        .comparison-table th.highlight {
+            background: #e0e7ff;
+            color: #4f46e5;
+            position: relative;
+        }
+
+        .comparison-table tbody tr {
+            transition: background 0.2s ease;
+        }
+
+        .comparison-table tbody tr:hover {
+            background: #f9fafb;
+        }
+
+        .comparison-table td {
+            padding: 18px 15px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #4b5563;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+            color: #1a1a1a;
+            padding-left: 30px;
+        }
+
+        .comparison-table td.highlight {
+            background: #f5f7ff;
+        }
+
+        .category-row td {
+            background: #f8f9fa;
+            font-weight: 700;
+            color: #1a1a1a;
+            padding: 25px 15px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .category-row td:first-child {
+            text-align: center;
+        }
+
+        .checkmark {
+            color: #10b981;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .info-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 1px solid #d1d5db;
+            color: #9ca3af;
+            font-size: 0.75rem;
+            margin-left: 8px;
+            cursor: help;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-container {
+                padding: 30px 20px;
+                overflow-x: auto;
+            }
+
+            .header-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .comparison-table {
+                min-width: 600px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 10px;
+                font-size: 0.85rem;
+            }
+
+            .comparison-table th:first-child,
+            .comparison-table td:first-child {
+                padding-left: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navigation">
+        <div class="logo">
+            <img src="../assets/images/raadlogo.png" alt="">
+        </div>
+
+        <div class="the-navs">
+            <ul>
+                <a href="../">
+                    <li>Home</li>
+                </a>
+                <a href="../products/">
+                    <li class="products">Products</li>
+                </a>
+                <a href="../pricing/">
+                    <li class="pricing">Pricing</li>
+                </a>
+                <a href="../aboutus/">
+                    <li>About Us</li>
+                </a>
+                <a href="../contact">
+                    <li>Contact Us</li>
+                </a>
+            </ul>
+        </div>
+
+        <button class="Login">Login</button>
+
+        <div class="menu">
+            <i class='bxr  bx-menu'></i>
+        </div>
+
+    </div>
+
+    <div class="header">
+        <h1>PERFECT POS FOR YOUR BUSINESS</h1>
+        <p>Start managing your business with our <a href="#">Free Plan</a></p>
+    </div>
+
+    <div class="pricing-container">
+        <!-- Free Plan -->
+        <div class="pricing-card">
+            <div class="plan-name">Free</div>
+            <div class="plan-description">Perfect for small shops and startups</div>
+
+            <div class="price">
+                <span class="currency">$</span>
+                <span class="amount">0</span>
+            </div>
+            <div class="period">Forever</div>
+            <div class="billing-info">No credit card required</div>
+
+            <button class="cta-button secondary">Get Started Free</button>
+            <div class="additional-link">
+                <a href="#">Try Now</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="highlights-title">Highlights</div>
+            <ul class="features-list">
+                <li>Up to 50 products</li>
+                <li>1 user account</li>
+                <li>Basic sales tracking</li>
+                <li>Simple inventory management</li>
+                <li>Receipt printer support</li>
+                <li>Email support</li>
+                <li>Mobile app access (iOS & Android)</li>
+                <li>Basic reports & analytics</li>
+            </ul>
+        </div>
+
+        <!-- Pro Plan (Featured) -->
+        <div class="pricing-card featured">
+            <div class="badge">MOST POPULAR</div>
+            <div class="plan-name">Pro</div>
+            <div class="plan-description">Advanced features for growing businesses</div>
+
+            <div class="price">
+                <span class="currency">$</span>
+                <span class="amount">49</span>
+            </div>
+            <div class="period">Per month</div>
+            <div class="billing-info">Billed annually at $499, or $69/month</div>
+
+            <button class="cta-button primary">Start Pro Trial</button>
+            <div class="additional-link">
+                <a href="#">14-day free trial</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="highlights-title">Highlights</div>
+            <ul class="features-list">
+                <li>Everything in Free</li>
+                <li>Unlimited products & categories</li>
+                <li>Up to 5 user accounts</li>
+                <li>Advanced inventory management</li>
+                <li>Multiple payment methods (Cards, UPI, Wallets)</li>
+                <li>Customer loyalty program</li>
+                <li>Barcode scanner integration</li>
+                <li>Advanced reports & analytics</li>
+                <li>Tax management & GST billing</li>
+                <li>Cloud backup & sync</li>
+                <li>Priority email & chat support</li>
+                <li>Custom receipt branding</li>
+            </ul>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="pricing-card">
+            <div class="plan-name">Premium</div>
+            <div class="plan-description">Complete solution for enterprise businesses</div>
+
+            <div class="price">
+                <span class="currency">$</span>
+                <span class="amount">149</span>
+            </div>
+            <div class="period">Per month</div>
+            <div class="billing-info">Billed annually at $1499, or $199/month</div>
+
+            <button class="cta-button secondary">Contact Sales</button>
+            <div class="additional-link">
+                <a href="#">Schedule Demo</a>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="highlights-title">Highlights</div>
+            <ul class="features-list">
+                <li>Everything in Pro</li>
+                <li>Unlimited users & locations</li>
+                <li>Multi-store management</li>
+                <li>Advanced employee management</li>
+                <li>Kitchen display system (KDS)</li>
+                <li>Table management for restaurants</li>
+                <li>Online ordering integration</li>
+                <li>Third-party delivery app integration</li>
+                <li>API access for custom integrations</li>
+                <li>Advanced accounting & bookkeeping</li>
+                <li>Dedicated account manager</li>
+                <li>24/7 phone & priority support</li>
+                <li>On-site training & setup assistance</li>
+                <li>Custom feature development</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="comparison-container">
+        <div class="header-section">
+            <h2>Why do we recommend Pro?</h2>
+            <p>Our Pro plan has powerful features and AI tools you need to<br>run your business efficiently and save
+                time</p>
+        </div>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Categories</th>
+                    <th class="highlight">Pro</th>
+                    <th>Lite</th>
+                    <th>Free</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="category-row">
+                    <td colspan="4">Pricing</td>
+                </tr>
+                <tr>
+                    <td>Billed Yearly</td>
+                    <td class="highlight"><strong>$499/year</strong></td>
+                    <td>$299/year</td>
+                    <td>$0</td>
+                </tr>
+
+                <tr class="category-row">
+                    <td colspan="4">Sales & Orders</td>
+                </tr>
+                <tr>
+                    <td>Transaction Limit</td>
+                    <td class="highlight">Unlimited</td>
+                    <td>500/month</td>
+                    <td>50/month</td>
+                </tr>
+                <tr>
+                    <td>Order Management</td>
+                    <td class="highlight">Advanced</td>
+                    <td>Basic</td>
+                    <td>Basic</td>
+                </tr>
+                <tr>
+                    <td>Multi-Location Support</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Split Payments</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Refunds & Returns</td>
+                    <td class="highlight">Unlimited</td>
+                    <td>Limited</td>
+                    <td>Limited</td>
+                </tr>
+
+                <tr class="category-row">
+                    <td colspan="4">Inventory Management</td>
+                </tr>
+                <tr>
+                    <td>Products</td>
+                    <td class="highlight">Unlimited</td>
+                    <td>500 items</td>
+                    <td>50 items</td>
+                </tr>
+                <tr>
+                    <td>Categories</td>
+                    <td class="highlight">Unlimited</td>
+                    <td>50 categories</td>
+                    <td>10 categories</td>
+                </tr>
+                <tr>
+                    <td>Low Stock Alerts</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Barcode Scanner</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Batch Tracking</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+
+                <tr class="category-row">
+                    <td colspan="4">Customer Management</td>
+                </tr>
+                <tr>
+                    <td>Customer Database</td>
+                    <td class="highlight">Unlimited</td>
+                    <td>1,000 customers</td>
+                    <td>100 customers</td>
+                </tr>
+                <tr>
+                    <td>Loyalty Program</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Customer Analytics</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td>Basic</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>SMS Notifications</td>
+                    <td class="highlight">500/month</td>
+                    <td>50/month</td>
+                    <td>-</td>
+                </tr>
+
+                <tr class="category-row">
+                    <td colspan="4">Reporting & Analytics</td>
+                </tr>
+                <tr>
+                    <td>Sales Reports</td>
+                    <td class="highlight">Advanced</td>
+                    <td>Basic</td>
+                    <td>Basic</td>
+                </tr>
+                <tr>
+                    <td>Profit Margin Analysis</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Employee Performance</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Export Data</td>
+                    <td class="highlight">CSV, Excel, PDF</td>
+                    <td>CSV only</td>
+                    <td>-</td>
+                </tr>
+
+                <tr class="category-row">
+                    <td colspan="4">Integrations</td>
+                </tr>
+                <tr>
+                    <td>Payment Gateways</td>
+                    <td class="highlight">All supported</td>
+                    <td>Limited</td>
+                    <td>Cash only</td>
+                </tr>
+                <tr>
+                    <td>Accounting Software</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>E-commerce Sync</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>API Access</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+
+                <tr class="category-row">
+                    <td colspan="4">Support</td>
+                </tr>
+                <tr>
+                    <td>Email Support</td>
+                    <td class="highlight">Priority 24/7</td>
+                    <td>Business hours</td>
+                    <td>Business hours</td>
+                </tr>
+                <tr>
+                    <td>Phone Support</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Live Chat</td>
+                    <td class="highlight"><span class="checkmark">✓</span></td>
+                    <td><span class="checkmark">✓</span></td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Onboarding Training</td>
+                    <td class="highlight">Free session</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

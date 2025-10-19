@@ -20,7 +20,7 @@
     }
 
     .navigation{
-        width: 320px;
+        width: 340px;
         position: fixed;
         left: 20px;
         
@@ -31,7 +31,7 @@
         height: 40px;
         /* background-color: green; */
         position: relative;
-        top: 20px;
+        top: 25px;
     }
 
     .the-navs{
@@ -49,7 +49,7 @@
         /* background-color: green; */
         position: absolute;
         right: 20px;
-        top: 20px;
+        top: 25px;
         color: #1C2582;
         display: block;
     }
@@ -63,7 +63,7 @@
     height: 150px;
     width: 280px;
     position: relative;
-    left: 50px;
+    left: 55px;
     text-align: center;
     color: white;
     top: 120px;
@@ -135,7 +135,7 @@
     height: 140px;
     width: 340px;
     position: relative;
-    left:10px;
+    left:20px;
     /* background-color: red; */
     text-align: center;
     top: 90px;
@@ -152,7 +152,7 @@
 .screen-shots{
     height: 280px;
     position: absolute !important;
-    left: 10px;
+    left: 20px;
     top: 380px;
     width: 340px;
     gap: 0px;
@@ -175,7 +175,7 @@
 .center{
     /* background-color: grey; */
     position: relative;
-    bottom: 180px;
+    bottom: 380px;
     overflow: hidden;
     /* height: 100px; */
 }
@@ -202,7 +202,7 @@
     position: relative;
     /* background-color: blue; */
     position: relative;
-    left: 10px;
+    left: 20px;
     width: 340px;
     overflow: visible;
     position: relative;
@@ -213,7 +213,7 @@
 .sides{
     /* background-color: grey; */
     position: relative;
-    bottom: 180px;
+    bottom: 380px;
     display: grid;
     grid-template-columns: 1fr;
     overflow: visible;
@@ -306,13 +306,13 @@
 
 .demo-section{
     position: relative;
-    top: 80px;
+    top: -120px;
 }
 
 .demo-cards{
     /* background-color: red; */
     position: relative;
-    top: 80px;
+    top: -160px;
     overflow: visible;
     
 }
@@ -432,12 +432,12 @@
 
 .about-section{
     position: relative;
-    top: 2320px;
+    top: 2120px;
 }
 
 .about-bar{
     position: relative;
-    top: 2100px;
+    top: 1900px;
     /* background-color: red; */
 }
 
@@ -461,7 +461,7 @@
 
 .youtube-bar{
     /* background-color: aqua;position: relative; */
-    top: 2350px;
+    top: 2150px;
     height: 200px;
     overflow: hidden;
 }
@@ -475,8 +475,8 @@
 
 .the-youtube-text{
     position: relative;
-    bottom: 60px !important;
-    /* background-color: rebeccapurple; */
+    top: 50px !important;
+    background-color: rebeccapurple;
 }
 
 
@@ -485,7 +485,7 @@
     width: 350px;
     position: relative;
     left: 10px;
-    
+    /* background-color: green; */
 
 }
 
@@ -513,6 +513,7 @@
 .FAQ{
     position: relative;
     top: 2300px;
+    
 }
 
 
@@ -521,6 +522,7 @@
 .the-FAQ{
     position: relative;
     top: 2140px;
+    
     flex-wrap: wrap;
     padding: 10px;
     /* optional: adds space around text */
@@ -536,6 +538,7 @@
     left: 5px;
     top: -0px;
     overflow: hidden;
+    
 }
 
 

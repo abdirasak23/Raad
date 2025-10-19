@@ -782,6 +782,13 @@ body {
     /* background-color: grey; */
     position: relative;
     top: 430px;
+    flex-wrap: wrap;
+    padding: 10px;
+    /* optional: adds space around text */
+    min-height: 50px;
+    /* optional: keeps a minimum height */
+    height: auto;
+    overflow: hidden;
 }
 
 .FAQs {
@@ -789,7 +796,7 @@ body {
     min-height: 500px;
     width: 800px;
     position: relative;
-    top: 20px;
+    top: 0px;
     background: linear-gradient(135deg,
             rgba(255, 255, 255, 0.9) 0%,
             rgba(245, 245, 245, 0.8) 25%,
@@ -870,7 +877,7 @@ body {
     width: 100%;
     /* background-color: grey; */
     position: relative;
-    top:360px;
+    top:460px;
 }
 
 
@@ -964,7 +971,7 @@ body {
     display: flex;
     position: absolute;
     left: 900px;
-    top: 20px;
+    top: 40px;
 
 }
 
