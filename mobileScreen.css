@@ -31,7 +31,7 @@
         height: 40px;
         /* background-color: green; */
         position: relative;
-        top: 25px;
+        top: 15px;
     }
 
     .the-navs{
@@ -49,7 +49,7 @@
         /* background-color: green; */
         position: absolute;
         right: 20px;
-        top: 25px;
+        top: 15px;
         color: #1C2582;
         display: block;
     }
@@ -175,7 +175,7 @@
 .center{
     /* background-color: grey; */
     position: relative;
-    bottom: 380px;
+    bottom:160px;
     overflow: hidden;
     /* height: 100px; */
 }
@@ -213,7 +213,7 @@
 .sides{
     /* background-color: grey; */
     position: relative;
-    bottom: 380px;
+    bottom: 180px;
     display: grid;
     grid-template-columns: 1fr;
     overflow: visible;
@@ -306,13 +306,13 @@
 
 .demo-section{
     position: relative;
-    top: -120px;
+    top: 120px;
 }
 
 .demo-cards{
     /* background-color: red; */
     position: relative;
-    top: -160px;
+    top: 60px;
     overflow: visible;
     
 }
@@ -432,12 +432,12 @@
 
 .about-section{
     position: relative;
-    top: 2120px;
+    top: 2300px;
 }
 
 .about-bar{
     position: relative;
-    top: 1900px;
+    top: 2090px;
     /* background-color: red; */
 }
 
@@ -461,7 +461,7 @@
 
 .youtube-bar{
     /* background-color: aqua;position: relative; */
-    top: 2150px;
+    top: 2330px;
     height: 200px;
     overflow: hidden;
 }
@@ -476,7 +476,7 @@
 .the-youtube-text{
     position: relative;
     top: 50px !important;
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
 }
 
 
@@ -576,13 +576,16 @@
 
 .the-logo{
     position: relative;
-    left: 80px;
+    left: 130px;
     top: 10px;
+    background-color: green;
+    height: 50px;
+    width: 150px;
 }
 
 .contact{
     position: relative;
-    left: 40px;
+    left: 70px;
     width: 290px;
     /* background-color: red; */
     height: 30px;
@@ -620,10 +623,11 @@
 
 
 .rights{
-    position: relative;
+    position: absolute;
     left: 45px;
     /* background-color: green; */
     overflow: visible;
+    top: 60px !important;
 
 }
 }
