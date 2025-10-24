@@ -111,6 +111,28 @@ body {
     transition: transform 0.3s;
 }
 
+.translation{
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+
+.translation img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.translation-dropdown{
+    position: absolute;
+    right: 20px;
+    top: 50px;
+}
+
 .Login:hover {
     transform: scale(1.05);
 }
