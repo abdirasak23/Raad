@@ -498,7 +498,8 @@
     </div>
 
 
-    <div class="center about-section">
+    <div class="the-about">
+        <div class="center about-section">
         <div class="center-text">
             <h1>About Us</h1>
         </div>
@@ -534,9 +535,11 @@
 
 
     </div>
+    </div>
 
 
 
+<div class="ask">
     <div class="center youtube-bar">
         <div class="center-text the-youtube-center">
             <h1>Watch Raad Start Growth of your Business</h1>
@@ -564,10 +567,13 @@
 
         </div>
     </div>
+</div>
 
 
 
-    <div class="center FAQ">
+
+    <div class="last-thing">
+        <div class="center FAQ">
         <div class="center-text">
             <h1>FAQ</h1>
         </div>
@@ -680,6 +686,7 @@
             </div>
         </div>
     </div>
+    </div>
 
 
 
@@ -765,6 +772,24 @@
                 }
             });
         });
+        
+        const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            // Optional: stop observing after animation triggers once
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.3 // Trigger when 30% of element is visible
+});
+
+// Observe the screen-shots container
+const screenShots = document.querySelector('.screen-shots');
+if (screenShots) {
+    observer.observe(screenShots);
+}
     </script>
 
 
