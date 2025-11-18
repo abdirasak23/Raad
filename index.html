@@ -118,6 +118,9 @@
                     <a href="Contact/">
                         <li>Contact Us</li>
                     </a>
+                    <a href="FAQ/">
+                        <li>Contact Us</li>
+                    </a>
                 </ul>
             </div>
 
@@ -790,6 +793,24 @@ const screenShots = document.querySelector('.screen-shots');
 if (screenShots) {
     observer.observe(screenShots);
 }
+
+
+const holder = document.querySelector('.holder');
+    const leftSection = document.querySelector('.left');
+
+    const observers = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                holder.classList.add('animate');
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    observers.observe(leftSection);
+
+
     </script>
 
 

@@ -61,3 +61,6 @@ dropdownItems.forEach(item => {
 document.addEventListener('click', () => {
   dropdown.style.display = 'none';
 });
+
+
+
