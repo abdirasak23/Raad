@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../favicon/favicon-v2.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon-v2.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon-v2.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon-v2.png" />
+    <link rel="manifest" href="../favicon/site-v2.webmanifest" />
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <title>FAQ - POS System</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navigation {
+            height: 10vh;
+            width: min(900px, 90%);
+            max-width: 1200px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.63);
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20px;
+            border-radius: 20px;
+            display: flex;
+            z-index: 999;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            height: 50px;
+            width: 140px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .the-navs {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .the-navs ul {
+            list-style: none;
+            display: flex;
+            gap: clamp(15px, 2vw, 20px);
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .the-navs ul a {
+            text-decoration: none;
+            font-size: clamp(16px, 1.5vw, 20px);
+            white-space: nowrap;
+            color: #1C2582;
+            transition: opacity 0.3s;
+        }
+
+        .the-navs ul a:hover {
+            opacity: 0.7;
+        }
+
+        .Login {
+            height: 40px;
+            width: 100px;
+            border: none;
+            background-color: #1C2582;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            font-family: 'Outfit';
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .Login:hover {
+            transform: scale(1.05);
+        }
+
+        .menu {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 40px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 20px 100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease;
+            animation-fill-mode: both;
+        }
+
+        .faq-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .faq-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .faq-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .faq-item:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .faq-item:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .faq-question {
+            padding: 30px 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            transition: background 0.3s ease;
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+        }
+
+        .faq-question h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .faq-icon {
+            width: 40px;
+            height: 40px;
+            background: #1C2582;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .faq-icon i {
+            color: white;
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            background: #667eea;
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 40px 30px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .faq-text {
+            font-size: 1.05rem;
+            color: #4b5563;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px 100px;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            padding: 18px 50px;
+            background: #1C2582;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Outfit';
+        }
+
+        .cta-button:hover {
+            background: #667eea;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Menu */
+        .the-menu {
+            display: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navigation {
+                width: 90%;
+                left: 5%;
+                transform: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .faq-question {
+                padding: 25px 25px;
+            }
+
+            .faq-question h3 {
+                font-size: 1.1rem;
+            }
+
+            .faq-answer-content {
+                padding: 0 25px 25px;
+            }
+
+            .faq-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .faq-icon i {
+                font-size: 20px;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navigation {
+                width: 340px;
+                position: fixed;
+                left: 20px;
+            }
+
+            .logo {
+                width: 130px;
+                height: 40px;
+                position: relative;
+                top: 15px;
+            }
+
+            .the-navs {
+                display: none;
+            }
+
+            .Login {
+                display: none;
+            }
+
+            .menu {
+                height: 40px;
+                width: 40px;
+                position: absolute;
+                right: 20px;
+                top: 15px;
+                color: #1C2582;
+                display: block;
+            }
+
+            .menu i {
+                font-size: 34px;
+                position: relative;
+            }
+
+            .the-menu {
+                height: auto;
+                width: 360px;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 244, 255, 0.95) 50%, rgba(255, 255, 255, 0.95) 100%);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.63);
+                position: fixed;
+                z-index: 111;
+                top: 110px;
+                left: 22px;
+                right: 0;
+                border-radius: 10px;
+                padding: 20px 0;
+                display: none;
+                flex-direction: column;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                animation: slideDown 0.3s ease-out;
+            }
+
+            .the-menu ul {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            .the-menu a {
+                text-decoration: none;
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            .the-menu li {
+                padding: 16px 24px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #333;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .the-menu li:hover {
+                background-color: rgba(59, 130, 246, 0.1);
+                color: #3b82f6;
+                padding-left: 28px;
+            }
+
+            .the-menu li:last-child {
+                border-bottom: none;
+                padding-bottom: 20px;
+            }
+
+            .the-menu .Login {
+                display: block;
+                width: calc(100% - 48px);
+                margin: 20px 24px 0;
+                padding: 14px 24px;
+                background: linear-gradient(135deg, #1C2582 0%, #2563eb 100%);
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .the-menu.show {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .faq-question {
+                padding: 20px 20px;
+            }
+
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+
+            .faq-answer-content {
+                padding: 0 20px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="navigation">
+        <div class="logo">
+            <img src="../assets/images/raadlogo.png" alt="">
+        </div>
+        <div class="the-navs">
+            <ul>
+                <a href="../">
+                    <li>Home</li>
+                </a>
+                <a href="../products/">
+                    <li>Products</li>
+                </a>
+                <a href="../pricing/">
+                    <li>Pricing</li>
+                </a>
+                <a href="../aboutus/">
+                    <li>About Us</li>
+                </a>
+                <a href="#">
+                    <li style="font-weight: 600;">FAQ</li>
+                </a>
+            </ul>
+        </div>
+        <button class="Login">Login</button>
+
+        <div class="menu">
+            <i class='bx bx-menu'></i>
+        </div>
+    </div>
+
+    <div class="the-menu">
+        <ul>
+            <a href="../">
+                <li>Home</li>
+            </a>
+            <a href="../products/">
+                <li>Products</li>
+            </a>
+            <a href="../pricing/">
+                <li>Pricing</li>
+            </a>
+            <a href="../aboutus/">
+                <li>About Us</li>
+            </a>
+            <a href="../faq/">
+                <li>FAQ</li>
+            </a>
+        </ul>
+        <button class="Login">Login</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>FREQUENTLY ASKED QUESTIONS</h1>
+            <p class="subtitle">Everything you need to know about our POS system</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <!-- FAQ 1 -->
+            <div class="faq-item active">
+                <div class="faq-question">
+                    <h3>How do I set up my POS system for the first time?</h3>
+                    <div class="faq-icon">
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                        </div>
+                        <p class="faq-text">
+                            Setting up your POS system is quick and easy! After logging in for the first time, our
+                            guided setup wizard will walk you through the essential steps: configuring your business
+                            information, adding products to your inventory, setting up payment methods, and connecting
+                            your hardware. The entire process typically takes 15-20 minutes. Our support team is
+                            available 24/7 if you need any assistance during setup.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What payment methods does your POS system support?</h3>
+                    <div class="faq-icon">
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                        </div>
+                        <p class="faq-text">
+                            Our POS system supports all major payment methods including credit and debit cards (Visa,
+                            Mastercard, American Express), contactless payments (Apple Pay, Google Pay), mobile
+                            wallets, and cash transactions. We also integrate with popular payment processors and offer
+                            split payment options, allowing customers to pay using multiple methods in a single
+                            transaction.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can I manage inventory across multiple locations?</h3>
+                    <div class="faq-icon">
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                        </div>
+                        <p class="faq-text">
+                            Absolutely! Our cloud-based POS system allows you to manage inventory across unlimited
+                            locations from a single dashboard. You can track stock levels in real-time, transfer
+                            inventory between locations, set location-specific pricing, and generate consolidated
+                            reports. The system automatically syncs data across all your stores, ensuring you always
+                            have accurate inventory information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Is my business data secure with your POS system?</h3>
+                    <div class="faq-icon">
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                        </div>
+                        <p class="faq-text">
+                            Security is our top priority. We use enterprise-grade encryption (256-bit SSL) for all data
+                            transmission and storage. Our system is PCI-DSS compliant, ensuring your customers' payment
+                            information is protected. We perform regular security audits, maintain automated backups,
+                            and offer role-based access controls. Your data is stored in secure cloud servers with
+                            99.9% uptime guarantee.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What kind of customer support do you provide?</h3>
+                    <div class="faq-icon">
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                        </div>
+                        <p class="faq-text">
+                            We offer comprehensive 24/7 customer support through multiple channels including live chat,
+                            email, and phone. Our dedicated support team consists of POS experts who can help with
+                            technical issues, training, and best practices. We also provide extensive documentation,
+                            video tutorials, and a knowledge base. Premium support plans include priority assistance
+                            and dedicated account managers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Still Have Questions?</h2>
+            <p>Our team is here to help! Contact us and we'll get back to you within 24 hours.</p>
+            <button class="cta-button" onclick="location.href='../Contact/'">Contact Support</button>
+        </div>
+    </section>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.querySelector('.menu');
+            const menuIcon = menuButton.querySelector('i');
+            const theMenu = document.querySelector('.the-menu');
+            const menuLinks = theMenu.querySelectorAll('a');
+
+            menuButton.addEventListener('click', function () {
+                theMenu.classList.toggle('show');
+
+                if (theMenu.classList.contains('show')) {
+                    menuIcon.classList.remove('bx-menu');
+                    menuIcon.classList.add('bx-x');
+                } else {
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                }
+            });
+
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    theMenu.classList.remove('show');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                });
+            });
+
+            const loginButton = theMenu.querySelector('.Login');
+            if (loginButton) {
+                loginButton.addEventListener('click', function () {
+                    theMenu.classList.remove('show');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                });
+            }
+
+            document.addEventListener('click', function (event) {
+                const isClickInsideMenu = theMenu.contains(event.target);
+                const isClickOnMenuButton = menuButton.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnMenuButton && theMenu.classList.contains('show')) {
+                    theMenu.classList.remove('show');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                }
+            });
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all FAQ items
+                    faqItems.forEach(faq => {
+                        faq.classList.remove('active');
+                    });
+
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

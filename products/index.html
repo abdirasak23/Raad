@@ -347,166 +347,173 @@
 
 
         @media (max-width: 480px) {
-            .navigation {
-                width: 340px;
-                position: fixed;
-                left: 20px;
+            .main {
+        margin-bottom: -180px;
+        width: 100%;
+        overflow-x: hidden;
+        height: 600px;
+    }
 
-            }
-
-            .the-navs ul{
-                display: none;
-            }
-
-            .logo {
-                width: 130px;
-                height: 40px;
-                /* background-color: green; */
-                position: relative;
-                top: 25px;
-            }
-
-            
-
-            .Login {
-                display: none;
-                ;
-            }
+    .navigation {
+        width: 90%;
+        max-width: 360px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 15px;
+        height: 60px;
+    }
 
 
-            .menu {
-                height: 40px;
-                width: 40px;
-                /* background-color: green; */
-                position: absolute;
-                right: 20px;
-                top: 25px;
-                color: #1C2582;
-                display: block;
-            }
+    .the-about{
+        margin-top: -750px;
+        position: relative;
+        bottom: auto;
+        overflow: hidden;
+    }
+    .logo {
+        width: 110px;
+        height: 40px;
+        top: 5px;
+    }
 
-            .the-menu {
-            height: auto;
-            width: 360px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 244, 255, 0.95) 50%, rgba(255, 255, 255, 0.95) 100%);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.63);
-            position: fixed;
-            z-index: 111;
-            top: 110px;
-            left: 22px;
-            right: 0;
-            border-radius: 10px;
-            padding: 20px 0;
-            display: none;
-            flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            animation: slideDown 0.3s ease-out;
+    .the-navs {
+        display: none;
+    }
+
+    .Login {
+        display: none;
+    }
+
+    .menu {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        right: 15px;
+        top: 13px;
+        color: #1C2582;
+        display: block;
+    }
+
+
+    .the-menu {
+        height: auto;
+        width: 360px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 244, 255, 0.95) 50%, rgba(255, 255, 255, 0.95) 100%);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.63);
+        position: fixed;
+        z-index: 111;
+        top: 110px;
+        left: 22px;
+        right: 0;
+        border-radius: 10px;
+        padding: 20px 0;
+        display: none;
+        flex-direction: column;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        animation: slideDown 0.3s ease-out;
+    }
+
+    .the-menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .the-menu a {
+        text-decoration: none;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .the-menu li {
+        padding: 16px 24px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .the-menu li:hover {
+        background-color: rgba(59, 130, 246, 0.1);
+        color: #3b82f6;
+        padding-left: 28px;
+    }
+
+    .the-menu li:last-child {
+        border-bottom: none;
+        padding-bottom: 20px;
+    }
+
+    /* Add some spacing between menu items and login button */
+    .the-menu {
+        margin-bottom: 20px;
+    }
+
+    /* Login Button Styling for Mobile Menu */
+    .the-menu~.Login,
+    .menu+.the-menu .Login {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        width: calc(100% - 40px);
+        padding: 14px 24px;
+        background: linear-gradient(135deg, #1C2582 0%, #2563eb 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 112;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .the-menu~.Login:hover,
+    .menu+.the-menu .Login:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    }
+
+    /* Animation for menu appearance */
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
         }
 
-        .the-menu ul {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            width: 100%;
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
+    }
 
-        .the-menu a {
-            text-decoration: none;
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
+    /* Optional: Add this if you want the menu to hide/show with a toggle */
+    .the-menu.hidden {
+        display: none;
+    }
 
-        .the-menu li {
-            padding: 16px 24px;
-            font-size: 16px;
-            font-weight: 500;
-            color: #333;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            width: 100%;
-            box-sizing: border-box;
-        }
+    .the-menu.show {
+        display: flex;
+    }
 
-        .the-menu li:hover {
-            background-color: rgba(59, 130, 246, 0.1);
-            color: #3b82f6;
-            padding-left: 28px;
-        }
-
-        .the-menu li:last-child {
-            border-bottom: none;
-            padding-bottom: 20px;
-        }
-
-        /* Add some spacing between menu items and login button */
-        .the-menu {
-            margin-bottom: 20px;
-        }
-
-        /* Login Button Styling for Mobile Menu */
-        .the-menu~.Login,
-        .menu+.the-menu .Login {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            width: calc(100% - 40px);
-            padding: 14px 24px;
-            background: linear-gradient(135deg, #1C2582 0%, #2563eb 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 112;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-        }
-
-        .the-menu~.Login:hover,
-        .menu+.the-menu .Login:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-        }
-
-        /* Animation for menu appearance */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Optional: Add this if you want the menu to hide/show with a toggle */
-        .the-menu.hidden {
-            display: none;
-        }
-
-        .the-menu.show {
-            display: flex;
-        }
-
+    .menu i {
+        font-size: 34px;
+    }
         
-
-            .menu i {
-                font-size: 34px;
-            }
-
-
 
         }
       
@@ -535,7 +542,7 @@
                 <a href="../aboutus/">
                     <li>About Us</li>
                 </a>
-                <a href="#">
+                <a href="../Contact/">
                     <li>Contact Us</li>
                 </a>
             </ul>
