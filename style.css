@@ -994,6 +994,8 @@ body {
     margin: 0;
     color: rgb(2, 34, 100);
 
+
+    
     /* fade text to invisible at bottom */
     -webkit-mask-image: linear-gradient(
         to bottom,
