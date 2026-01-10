@@ -899,6 +899,302 @@ body {
     object-fit: cover;
 }
 
+
+.button-download:hover{
+    background-color: #000367;
+    color: white;
+
+}
+
+
+.the-start a
+{
+    position: absolute;
+    bottom: -40px;
+
+}
+
+
+.button-download{
+    height: 60px;
+    width: 300px;
+    background: linear-gradient(
+        to bottom,
+        rgba(229, 235, 241, 0.85),
+        rgba(255, 255, 255, 0.6)
+    );
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow:
+        0 8px 32px rgba(31, 38, 135, 0.12);
+    border: none;
+    border-radius: 30px;
+    color: rgb(95, 123, 214);
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: -40px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-download i{
+    font-size: 26px;
+}
+
+
+.button-download span
+{
+    font-size: 18px;
+}
+
+
+.the-start{
+    height:800px;
+    width: 100%;
+   background: linear-gradient(
+    to bottom,
+    #abc6fc 0%,
+    #dce7ff 45%,
+    #ffffff 100%
+);
+
+
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.the-name-start{
+    height: 130px;
+    width: 71%;
+    /* background-color: green; */
+    position: relative;
+    top: 100px;
+    
+}
+
+.the-name-start h4{
+    font-size: 105px;
+    font-weight: 300;
+    margin: 0;
+    color: rgb(2, 34, 100);
+
+    /* fade text to invisible at bottom */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,1) 45%,
+        rgba(0,0,0,0) 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,1) 45%,
+        rgba(0,0,0,0) 100%
+    );
+}
+
+
+.the-image{
+    height: 400px;
+    width: 300px;
+    position: absolute;
+    top: 150px;
+    overflow: hidden;
+}
+
+.the-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    /* fade image to invisible at bottom */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,1) 55%,
+        rgba(0,0,0,0) 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        rgba(0,0,0,1) 55%,
+        rgba(0,0,0,0) 100%
+    );
+}
+
+
+
+.right-wing{
+    height: 260px;
+    width: 250px;
+    background-color: rgb(242, 246, 248);
+    position: absolute;
+    left: 120px;
+    top: 270px;
+
+    /* one-side curve */
+    border-top-right-radius: 140px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 0px;
+}
+
+
+.the-line{
+    height: 400px;
+    width: 90%;
+    /* background-color: rgba(200, 255, 0, 0.413); */
+    position: absolute;
+    top: 220px;
+}
+
+
+.start-line{
+    height: 130px;
+    width: 350px;
+    /* background-color: black; */
+    border-bottom: 1px solid rgb(227, 227, 227);
+    border-right: 1px solid rgb(227, 227, 227);
+
+    border-bottom-right-radius: 12px;
+
+    border-top: none;
+    border-left: none;
+    position: relative;
+    top: 220px;
+    left: 50px;border-bottom-right-radius:20px ;
+
+}
+
+
+.center-line{
+    height: 40px;
+    width: 380px;
+    border-top: 1px solid rgba(227, 227, 227);
+    border-left: 1px solid rgb(227, 227, 227);
+
+    border-top-left-radius: 12px;
+
+    border-bottom: none;
+    border-right: none;
+    position: absolute;
+    left: 400px;
+    top: 180px;
+}
+
+
+.right-line{
+    height: 130px;
+    width: 50px;
+    position: absolute;
+    top: 50px;
+    right: 320px;
+
+    border-bottom: 1px solid rgb(227, 227, 227);
+    border-right: 1px solid rgb(227, 227, 227);
+
+    border-bottom-right-radius: 12px;
+
+    border-top: none;
+    border-left: none;
+}
+
+.end-line{
+    height: 20px;
+    width: 280px;
+
+
+    border-top: 1px solid rgb(227, 227, 227);
+    border-left: 1px solid rgb(227, 227, 227);
+
+    border-top-left-radius: 12px;
+
+    border-bottom: none;
+    border-right: none;
+
+
+    position: absolute;
+    right: 40px;
+    top: 30px;
+}
+
+.start-point{
+    height: 10px;
+    width: 80px;
+    background-color: rgb(230, 228, 228);
+    position: absolute;
+    bottom: -5px;
+    border-radius: 5px;
+}
+
+.end-point{
+    height: 10px;
+    width: 80px;
+    background-color: rgb(230, 228, 228);
+    position: absolute;
+    bottom: 16px;
+    border-radius: 5px;
+    right: 0px;
+}
+
+
+
+.circle-point{
+    position: absolute;
+    left: 200px;
+    width: 40px;
+    height: 40px;
+    bottom: 19px;
+}
+
+/* center solid dot */
+.circle-point::before{
+    content: "";
+    position: absolute;
+    inset: 45%;
+    background: white;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+/* outer ring */
+.circle-point{
+    border: 2px solid rgba(255,255,255,0.8);
+    border-radius: 50%;
+}
+
+/* inner ring */
+.circle-point::after{
+    content: "";
+    position: absolute;
+    inset: 15%;
+    background-color:  rgba(255,255,255,0.5);
+    border-radius: 50%;
+    z-index: 2;
+
+}
+
+/* horizontal line */
+.circle-point span{
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    width: 200px;
+    height: 2px;
+    background: rgba(255,255,255,0.7);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+
+
+
+
+
 /* ============================================
    MOBILE SPECIFIC - REDUCE GAPS & GRID LAYOUT
    ============================================ */
@@ -1016,6 +1312,7 @@ body {
         margin: 0;
         overflow-x: hidden;
         width: 100%;
+        /* background-color: greenyellow; */
     }
 
     * {
@@ -1045,9 +1342,37 @@ body {
         height: 60px;
     }
 
+    
+    
+
+
+    .button-download{
+        position: absolute;
+        bottom: -60px;
+    }
+
+    .right-wing
+    {
+        display: none;
+    }
+
+
+    .the-name-start{
+        /* background-color: red; */
+        width: 360px;
+        height: 100px;
+        position: absolute;
+        top: 115px;
+    }
+
+
+    .the-name-start h4{
+        font-size: 42px;
+        font-weight: 400;
+    }
 
     .the-about{
-        margin-top: -750px;
+        margin-top: -80px;
         position: relative;
         bottom: auto;
         overflow: hidden;
@@ -1200,7 +1525,7 @@ body {
 
     .center {
         padding: clamp(8px, 1.5vh, 15px) 0;
-        padding-top: 430px;
+        padding-top: 30px;
         width: 100%;
         overflow-x: hidden;
     }
@@ -1238,14 +1563,14 @@ body {
     }
 
     .ask{
-        margin-top: -340px;
+        margin-top: -30px;
         position: relative;
         bottom: auto;
         overflow: hidden;
     }
 
     .last-thing{
-        margin-top: -350px;
+        margin-top: -50px;
         position: relative;
         bottom: auto;
         overflow: hidden;
@@ -1287,13 +1612,13 @@ body {
 
     .demo-section{
         position: relative;
-        bottom: 340px;
+        bottom: 30px;
     }
 
 
     .demo-cards{
         position: relative;
-        bottom: 370px;
+        bottom: 40px;
     }
 
 
@@ -1318,7 +1643,7 @@ body {
     }
 
     .right {
-        margin-top: 40px;
+        margin-top: 10px;
         width: 100%;
         overflow-x: hidden;
         padding: 0 10px;
