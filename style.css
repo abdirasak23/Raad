@@ -1053,11 +1053,12 @@ body {
 }
 
 .the-name-start h4{
-    font-size: 100px;
+    font-size: 94px;
     font-weight: 300;
     margin: 0;
     color: rgb(2, 34, 100);
-
+    position: relative;
+    left: 20px;
 
     
     /* fade text to invisible at bottom */
