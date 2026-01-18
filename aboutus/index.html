@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../newDesign/style.css">
     <title>About Us - POS System</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
@@ -712,56 +713,119 @@
     <!-- Navigation -->
     <div class="navigation">
         <div class="logo">
-            <img src="../assets/images/raadlogo.png" alt="">
+            <img src="../assets/images/raadlogo.png" alt="Raad POS App Home Screen">
         </div>
+
         <div class="the-navs">
             <ul>
                 <a href="../">
-                    <li>Home</li>
+                    <li class="home-link" data-translate="nav_home">Home</li>
                 </a>
                 <a href="../products/">
-                    <li>Products</li>
+                    <li data-translate="nav_products">Products</li>
                 </a>
                 <a href="../pricing/">
-                    <li>Pricing</li>
+                    <li data-translate="nav_pricing">Pricing</li>
                 </a>
-                <a href="#">
-                    <li style="font-weight: 600;">About Us</li>
+                <a href="../aboutus/">
+                    <li data-translate="nav_about">About Us</li>
                 </a>
-                <a href="../Contact/">
-                    <li>Contact Us</li>
+                <a href="../contact/">
+                    <li data-translate="nav_contact">Contact Us</li>
                 </a>
             </ul>
         </div>
-        <button class="Login">Login</button>
+
+        <div class="theme-icon">
+            <i class='bx  bx-sun-bright'></i>
+        </div>
+
+        <div class="language-selector-wrapper">
+            <div class="language-trigger" id="languageTrigger">
+                <div class="language-icon">
+                    <img src="https://flagcdn.com/w40/so.png" alt="Somali" id="currentFlag">
+                </div>
+            </div>
+
+            <div class="language-dropdown" id="languageDropdown">
+                <!-- SOMALI - DEFAULT -->
+                <div class="language-option active" data-lang="so" data-flag="https://flagcdn.com/w40/so.png">
+                    <div class="option-flag">
+                        <img src="https://flagcdn.com/w40/so.png" alt="Somali">
+                    </div>
+                    <span class="option-text" data-translate="lang_somali">Soomaali</span>
+                    <span class="checkmark">✓</span>
+                </div>
+                
+                <!-- ENGLISH -->
+                <div class="language-option" data-lang="en" data-flag="https://flagcdn.com/w40/us.png">
+                    <div class="option-flag">
+                        <img src="https://flagcdn.com/w40/us.png" alt="English">
+                    </div>
+                    <span class="option-text" data-translate="lang_english">English</span>
+                    <span class="checkmark">✓</span>
+                </div>
+            </div>
+        </div>
 
         <div class="menu">
             <i class='bxr  bx-menu'></i>
         </div>
     </div>
 
-
-
     <div class="the-menu">
-        <ul>
-            <a href="../">
-                <li class="home-link">Home</li>
-            </a>
-            <a href="../products/">
-                <li>Products</li>
-            </a>
-            <a href="../pricing/">
-                <li>Pricing</li>
-            </a>
-            <a href="../aboutus/">
-                <li>About Us</li>
-            </a>
-            <a href="../Contact/">
-                <li>Contact Us</li>
-            </a>
-        </ul>
-        <button class="Login">Login</button>
+    <div class="menu-header">
+        <h3 data-translate="nav_home">Navigation</h3>
+        <p>Explore our services</p>
     </div>
+    
+    <ul>
+        <a href="../">
+            <li class="home-link">
+                <i class="fas fa-home"></i>
+                <span data-translate="nav_home">Home</span>
+            </li>
+        </a>
+        <a href="../products/">
+            <li>
+                <i class="fas fa-box"></i>
+                <span data-translate="nav_products">Products</span>
+            </li>
+        </a>
+        <a href="../pricing/">
+            <li>
+                <i class="fas fa-tag"></i>
+                <span data-translate="nav_pricing">Pricing</span>
+            </li>
+        </a>
+        <a href="../aboutus/">
+            <li>
+                <i class="fas fa-info-circle"></i>
+                <span data-translate="nav_about">About Us</span>
+            </li>
+        </a>
+    </ul>
+
+    <div class="language-section">
+        <div class="language-label">
+            <i class="fas fa-globe"></i>
+            <span data-translate="menu_language">Language</span>
+        </div>
+        <div class="language-toggle">
+            <button class="lang-option" data-lang="so" onclick="toggleLanguage('so')">
+                <span data-translate="lang_somali">Soomaali</span>
+            </button>
+            <button class="lang-option" data-lang="en" onclick="toggleLanguage('en')">
+                <span data-translate="lang_english">English</span>
+            </button>
+        </div>
+    </div>
+
+    <button class="Login" style="display: none;">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Login</span>
+    </button>
+</div>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -967,6 +1031,10 @@
             });
         });
     </script>
+
+     <script src="../frontJs/translation.js"></script>
+    <script src="../frontJs/theme.js"></script>
+
 </body>
 
 </html>

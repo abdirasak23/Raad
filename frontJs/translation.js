@@ -30,6 +30,20 @@ const translations = {
         how_desc: "Raad POS simplifies sales, invoices, and taxes so you can focus on what matters growing your business.",
         step_1_title: "Install Raad",
         step_1_desc: "Install Raad Pos App from playstore",
+        step_2_title: "Create Your Account",
+        step_2_desc: "Sign up with your email and personalize your business profile.",
+        step_3_title: "Add & List Your Products",
+        step_3_desc: "Easily add products with barcode",
+        step_4_title: "Make a Sale",
+        step_4_desc: "Select items and bill.",
+        step_5_title: "Track Your Inventory",
+        step_5_desc: "Monitor stock levels in real-time",
+        step_6_title: "Sell on Credit (Debt Sale)",
+        step_6_desc: "Record debt easily.",
+        step_7_title: "Get Business Reports",
+        step_7_desc: "Check daily sales.",
+        step_8_title: "Add & Manage Staff",
+        step_8_desc: "Add team with roles.",
         
         // Business Section
         business_title: "Business We Support",
@@ -83,7 +97,10 @@ const translations = {
         
         // Language dropdown
         lang_english: "English",
-        lang_somali: "Somali"
+        lang_somali: "Somali",
+        
+        // Mobile menu
+        menu_language: "Language"
     },
     so: {
         // Navigation
@@ -115,6 +132,20 @@ const translations = {
         how_desc: "Raad POS wuxuu fududeeyaa iibka, xisaabaadka, iyo canshuuraha si aad ugu diirada saarto waxa muhiimka ah - koritaanka ganacsigaaga.",
         step_1_title: "Ku Rakib Raad",
         step_1_desc: "Ku rakib Raad Pos App ka playstore",
+        step_2_title: "Samee Koontadaada",
+        step_2_desc: "Isdiiwaangeli emailkaaga oo u habeey profile ganacsigaaga.",
+        step_3_title: "Ku Dar & Liisti Alaabta",
+        step_3_desc: "Si fudud u dar alaabta barcode leh",
+        step_4_title: "Samee Iibin",
+        step_4_desc: "Dooro alaabta oo biil.",
+        step_5_title: "Raadi Alaabta Kaydka",
+        step_5_desc: "La soco heerka kaydka wakhtiga dhabta ah",
+        step_6_title: "Iibi Deyn (Iibinta Deynta)",
+        step_6_desc: "Diiwaan geli deynta si fudud.",
+        step_7_title: "Hel Warbixinnada Ganacsiga",
+        step_7_desc: "Hubi iibka maalinlaha ah.",
+        step_8_title: "Ku Dar & Maaree Shaqaalaha",
+        step_8_desc: "Ku dar kooxda doorkooda.",
         
         // Business Section
         business_title: "Ganacsiyada Aan Taageerno",
@@ -127,7 +158,7 @@ const translations = {
         bus_cosmetics_desc: "Makaabka, daryeelka maqaarka, iyo alaabta quruxda.",
         bus_electronics: "Elektarooniga",
         bus_electronics_desc: "Taleefannada, qalabka casriga ah, iyo qalabyada elektarooniga ah.",
-        bus_bookshop: "Dukaamada Buugaagta & Qalabka Qoraalka",
+        bus_bookshop: "Stationery",
         bus_bookshop_desc: "Buugaag, buugaag yaryar, iyo alaabta qoraalka.",
         
         // FAQ Section
@@ -168,7 +199,10 @@ const translations = {
         
         // Language dropdown
         lang_english: "Ingiriisi",
-        lang_somali: "Soomaali"
+        lang_somali: "Soomaali",
+        
+        // Mobile menu
+        menu_language: "Luqadda"
     }
 };
 
@@ -189,18 +223,35 @@ function translatePage(lang) {
     // Save the selected language
     localStorage.setItem('selectedLanguage', lang);
     currentLanguage = lang;
+    
+    // Update both desktop dropdown and mobile menu
+    updateAllLanguageToggles(lang);
+}
+
+// Update all language toggles (desktop dropdown + mobile menu)
+function updateAllLanguageToggles(lang) {
+    // Update desktop dropdown
+    updateDropdownDisplay(lang);
+    
+    // Update mobile menu buttons
+    const mobileLangButtons = document.querySelectorAll('.lang-option');
+    mobileLangButtons.forEach(button => {
+        const buttonLang = button.getAttribute('data-lang');
+        if (buttonLang === lang) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
 }
 
 // Initialize translation on page load
 document.addEventListener('DOMContentLoaded', function() {
     // Apply saved language
     translatePage(currentLanguage);
-    
-    // Update dropdown to show correct language
-    updateDropdownDisplay(currentLanguage);
 });
 
-// Update the language dropdown display
+// Update the desktop language dropdown display
 function updateDropdownDisplay(lang) {
     const languageOptions = document.querySelectorAll('.language-option');
     const currentFlag = document.getElementById('currentFlag');
@@ -222,7 +273,13 @@ function updateDropdownDisplay(lang) {
     });
 }
 
-// Existing dropdown functionality
+// GLOBAL function for mobile menu language toggle
+window.toggleLanguage = function(lang) {
+    translatePage(lang);
+    console.log(`Language changed to: ${lang === 'so' ? 'Somali' : 'English'} (${lang})`);
+}
+
+// Desktop dropdown functionality
 const languageTrigger = document.getElementById('languageTrigger');
 const languageDropdown = document.getElementById('languageDropdown');
 const currentFlag = document.getElementById('currentFlag');
@@ -233,11 +290,13 @@ if (languageTrigger) {
     languageTrigger.addEventListener('click', function(e) {
         e.stopPropagation();
         languageTrigger.classList.toggle('active');
-        languageDropdown.classList.toggle('show');
+        if (languageDropdown) {
+            languageDropdown.classList.toggle('show');
+        }
     });
 }
 
-// Handle language selection
+// Handle desktop language selection
 languageOptions.forEach(option => {
     option.addEventListener('click', function() {
         const lang = this.getAttribute('data-lang');
