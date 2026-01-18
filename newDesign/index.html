@@ -19,10 +19,10 @@
 
         <div class="the-navs">
             <ul>
-                <a href="#">
+                <a href="../">
                     <li class="home-link" data-translate="nav_home">Home</li>
                 </a>
-                <a href="products/">
+                <a href="../products/">
                     <li data-translate="nav_products">Products</li>
                 </a>
                 <a href="pricing/">
@@ -74,6 +74,61 @@
         </div>
     </div>
 
+    <div class="the-menu">
+    <div class="menu-header">
+        <h3 data-translate="nav_home">Navigation</h3>
+        <p>Explore our services</p>
+    </div>
+    
+    <ul>
+        <a href="../">
+            <li class="home-link">
+                <i class="fas fa-home"></i>
+                <span data-translate="nav_home">Home</span>
+            </li>
+        </a>
+        <a href="../products/">
+            <li>
+                <i class="fas fa-box"></i>
+                <span data-translate="nav_products">Products</span>
+            </li>
+        </a>
+        <a href="../pricing/">
+            <li>
+                <i class="fas fa-tag"></i>
+                <span data-translate="nav_pricing">Pricing</span>
+            </li>
+        </a>
+        <a href="../aboutus/">
+            <li>
+                <i class="fas fa-info-circle"></i>
+                <span data-translate="nav_about">About Us</span>
+            </li>
+        </a>
+    </ul>
+
+    <div class="language-section">
+        <div class="language-label">
+            <i class="fas fa-globe"></i>
+            <span data-translate="menu_language">Language</span>
+        </div>
+        <div class="language-toggle">
+            <button class="lang-option" data-lang="so" onclick="toggleLanguage('so')">
+                <span data-translate="lang_somali">Soomaali</span>
+            </button>
+            <button class="lang-option" data-lang="en" onclick="toggleLanguage('en')">
+                <span data-translate="lang_english">English</span>
+            </button>
+        </div>
+    </div>
+
+    <button class="Login" style="display: none;">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Login</span>
+    </button>
+</div>
+
+    
 
     <div class="hero-section">
         <!-- here background color is background: linear-gradient(135deg, #000000 0%, #343434 100%); -->
@@ -165,107 +220,112 @@
 
 
         <div class="work-content">
-            <!-- supports this background  background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #0a0a0a 100%); -->
-            <div class="how-1">
-                <div class="how-numbers">
-                    <div class="no-one">
-                        <div class="one">
-                            <h4>01</h4>
-                        </div>
-                        <div class="no-heads">
-                            <h4 data-translate="step_1_title">Install Raad</h4>
-                            <p data-translate="step_1_desc">Install Raad Pos App from playstore</p>
-                        </div>
-                    </div>
+    <div class="how-1">
+        <div class="how-numbers">
+            <div class="no-one">
+                <div class="one">
+                    <h4>01</h4>
                 </div>
-
-                <div class="how-numbers">
-                    <div class="no-one">
-                        <div class="one">
-                            <h4>02</h4>
-                        </div>
-                        <div class="no-heads">
-                            <h4 data-translate="step_1_title">Create Your Account</h4>
-                            <p data-translate="step_1_desc">Sign up with your email and personalize your business profile.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="how-numbers">
-                    <div class="no-one">
-                        <div class="one">
-                            <h4>03</h4>
-                        </div>
-                        <div class="no-heads">
-                            <h4 data-translate="step_1_title">Add & List Your Products</h4>
-                            <p data-translate="step_1_desc">Easily add products with barcode</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="how-numbers">
-                    <div class="no-one">
-                        <div class="one">
-                            <h4>04</h4>
-                        </div>
-                        <div class="no-heads">
-                            <h4 data-translate="step_1_title">Make a Sale</h4>
-                            <p data-translate="step_1_desc">Select items and bill.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="how-2">
-                <div class="mobil">
-                    <img src="../assets/images/mobil.png" alt="">
-                </div>
-            </div>
-            <div class="how-3">
-                <div class="how-numbers">
-                    <div class="no-one">
-                        <div class="one">
-                            <h4>05</h4>
-                        </div>
-                        <div class="no-heads">
-                            <h4 data-translate="step_1_title">Install Raad</h4>
-                            <p data-translate="step_1_desc">Install Raad Pos App from playstore</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="how-numbers">
-                    <div class="no-one">
-                        <div class="one">
-                            <h4>06</h4>
-                        </div>
-                        <div class="no-heads">
-                            <h4 data-translate="step_1_title">Sell on Credit (Debt Sale)</h4>
-                            <p data-translate="step_1_desc">Record debt easily.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="how-numbers">
-                    <div class="no-one">
-                        <div class="one">
-                            <h4>07</h4>
-                        </div>
-                        <div class="no-heads">
-                            <h4 data-translate="step_1_title">Get Business Reports</h4>
-                            <p data-translate="step_1_desc">Check daily sales.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="how-numbers">
-                    <div class="no-one">
-                        <div class="one">
-                            <h4>08</h4>
-                        </div>
-                        <div class="no-heads">
-                            <h4 data-translate="step_1_title">Add & Manage Staff</h4>
-                            <p data-translate="step_1_desc">Add team with roles.</p>
-                        </div>
-                    </div>
+                <div class="no-heads">
+                    <h4 data-translate="step_1_title">Install Raad</h4>
+                    <p data-translate="step_1_desc">Install Raad Pos App from playstore</p>
                 </div>
             </div>
         </div>
+
+        <div class="how-numbers">
+            <div class="no-one">
+                <div class="one">
+                    <h4>02</h4>
+                </div>
+                <div class="no-heads">
+                    <h4 data-translate="step_2_title">Create Your Account</h4>
+                    <p data-translate="step_2_desc">Sign up with your email and personalize your business profile.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="how-numbers">
+            <div class="no-one">
+                <div class="one">
+                    <h4>03</h4>
+                </div>
+                <div class="no-heads">
+                    <h4 data-translate="step_3_title">Add & List Your Products</h4>
+                    <p data-translate="step_3_desc">Easily add products with barcode</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="how-numbers">
+            <div class="no-one">
+                <div class="one">
+                    <h4>04</h4>
+                </div>
+                <div class="no-heads">
+                    <h4 data-translate="step_4_title">Make a Sale</h4>
+                    <p data-translate="step_4_desc">Select items and bill.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="how-2">
+        <div class="mobil">
+            <img src="../assets/images/mobil.png" alt="">
+        </div>
+    </div>
+    
+    <div class="how-3">
+        <div class="how-numbers">
+            <div class="no-one">
+                <div class="one">
+                    <h4>05</h4>
+                </div>
+                <div class="no-heads">
+                    <h4 data-translate="step_5_title">Track Your Inventory</h4>
+                    <p data-translate="step_5_desc">Monitor stock levels in real-time</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="how-numbers">
+            <div class="no-one">
+                <div class="one">
+                    <h4>06</h4>
+                </div>
+                <div class="no-heads">
+                    <h4 data-translate="step_6_title">Sell on Credit (Debt Sale)</h4>
+                    <p data-translate="step_6_desc">Record debt easily.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="how-numbers">
+            <div class="no-one">
+                <div class="one">
+                    <h4>07</h4>
+                </div>
+                <div class="no-heads">
+                    <h4 data-translate="step_7_title">Get Business Reports</h4>
+                    <p data-translate="step_7_desc">Check daily sales.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="how-numbers">
+            <div class="no-one">
+                <div class="one">
+                    <h4>08</h4>
+                </div>
+                <div class="no-heads">
+                    <h4 data-translate="step_8_title">Add & Manage Staff</h4>
+                    <p data-translate="step_8_desc">Add team with roles.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     </div>
 
 
@@ -504,6 +564,64 @@
             <p class="copyright" data-translate="footer_copyright">© 2026 Raad - Pos Sales Tracker. All Rights Reserved.</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.querySelector('.menu');
+            const menuIcon = menuButton.querySelector('i');
+            const theMenu = document.querySelector('.the-menu');
+            const menuLinks = theMenu.querySelectorAll('a');
+
+            // Toggle menu on button click
+            menuButton.addEventListener('click', function () {
+                theMenu.classList.toggle('show');
+                theMenu.classList.toggle('hidden');
+
+                // Change icon from menu to X and back
+                if (theMenu.classList.contains('show')) {
+                    menuIcon.classList.remove('bx-menu');
+                    menuIcon.classList.add('bx-x');
+                } else {
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                }
+            });
+
+            // Close menu when a link is clicked
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    theMenu.classList.remove('show');
+                    theMenu.classList.add('hidden');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                });
+            });
+
+            // Close menu when login button is clicked
+            const loginButton = theMenu.querySelector('.Login');
+            if (loginButton) {
+                loginButton.addEventListener('click', function () {
+                    theMenu.classList.remove('show');
+                    theMenu.classList.add('hidden');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                });
+            }
+
+            // Optional: Close menu when clicking outside of it
+            document.addEventListener('click', function (event) {
+                const isClickInsideMenu = theMenu.contains(event.target);
+                const isClickOnMenuButton = menuButton.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnMenuButton && theMenu.classList.contains('show')) {
+                    theMenu.classList.remove('show');
+                    theMenu.classList.add('hidden');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                }
+            });
+        });
+    </script>
 
     <script src="../frontJs/translation.js"></script>
     <script src="../frontJs/theme.js"></script>

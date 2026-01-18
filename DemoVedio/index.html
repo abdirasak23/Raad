@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../favicon/favicon-v2.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon-v2.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon-v2.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon-v2.png" />
+    <link rel="manifest" href="../favicon/site-v2.webmanifest" />
+
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch a Video | Raad</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            color: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Styles */
+        .navigation {
+            height: 10vh;
+            width: min(900px, 90%);
+            max-width: 1200px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.63);
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20px;
+            border-radius: 20px;
+            display: flex;
+            z-index: 999;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            height: 50px;
+            width: 140px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .the-navs {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            margin: 0 20px;
+        }
+
+        .the-navs ul {
+            list-style: none;
+            display: flex;
+            gap: clamp(15px, 2vw, 20px);
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .the-navs ul a {
+            text-decoration: none;
+            font-size: clamp(16px, 1.5vw, 20px);
+            white-space: nowrap;
+            color: #1C2582;
+            transition: opacity 0.3s;
+        }
+
+        .the-navs ul a:hover {
+            opacity: 0.7;
+        }
+
+        .home-link {
+            font-weight: 600;
+        }
+
+        .Login {
+            height: 40px;
+            width: 100px;
+            border: none;
+            background-color: #1C2582;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            font-family: 'Outfit';
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .Login:hover {
+            transform: scale(1.05);
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .products {
+            font-weight: 600;
+        }
+
+        /* Main Content - Center Video */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 20px 60px;
+            width: 100%;
+        }
+
+        /* Video Container - Centered */
+        .video-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero Section - Minimal */
+        .video-hero {
+            text-align: center;
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .video-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -1.5px;
+            color: #000;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .video-hero p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #666;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        /* Video Player Wrapper - Center Stage */
+        .video-player-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+            background: #000;
+            margin: 20px auto 40px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-player-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            display: block;
+        }
+
+        /* Video Controls */
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 30px 20px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .video-player-wrapper:hover .video-controls {
+            opacity: 1;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 24px;
+            color: #1C2582;
+            transition: all 0.3s;
+        }
+
+        .control-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        /* Video Info - Centered Below Video */
+        .video-info {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .video-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .video-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .video-meta i {
+            font-size: 1.2rem;
+        }
+
+        .video-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        /* Related Videos - Centered */
+        .related-videos {
+            width: 100%;
+            max-width: 1200px;
+            margin: 60px auto 40px;
+            text-align: center;
+        }
+
+        .related-videos h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: #000;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-color: #1C2582;
+        }
+
+        .related-thumbnail {
+            width: 100%;
+            height: 180px;
+            background: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .related-card:hover .related-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(28, 37, 130, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            opacity: 0.9;
+        }
+
+        .related-info {
+            padding: 20px;
+        }
+
+        .related-info h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .related-info p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .related-duration {
+            font-size: 0.8rem;
+            color: #1C2582;
+            font-weight: 600;
+        }
+
+        /* Animation */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Menu Styles */
+        .the-menu {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navigation {
+                width: 90%;
+                max-width: 360px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0 15px;
+                height: 60px;
+            }
+
+            .logo {
+                width: 110px;
+                height: 40px;
+                top: 5px;
+            }
+
+            .the-navs {
+                display: none;
+            }
+
+            .Login {
+                display: none;
+            }
+
+            .menu {
+                height: 40px;
+                width: 40px;
+                position: absolute;
+                right: 15px;
+                top: 13px;
+                color: #1C2582;
+                display: block;
+            }
+
+            .menu i {
+                font-size: 34px;
+            }
+
+            .main-content {
+                padding: 100px 15px 40px;
+            }
+
+            .video-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .video-hero p {
+                font-size: 1rem;
+            }
+
+            .video-player-wrapper {
+                border-radius: 12px;
+            }
+
+            .video-title {
+                font-size: 1.6rem;
+            }
+
+            .video-meta {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .related-videos h2 {
+                font-size: 1.6rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Mobile Menu */
+            .the-menu {
+                height: auto;
+                width: 360px;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 244, 255, 0.95) 50%, rgba(255, 255, 255, 0.95) 100%);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.63);
+                position: fixed;
+                z-index: 111;
+                top: 110px;
+                left: 22px;
+                right: 0;
+                border-radius: 10px;
+                padding: 20px 0;
+                display: none;
+                flex-direction: column;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                animation: slideDown 0.3s ease-out;
+            }
+
+            .the-menu ul {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            .the-menu a {
+                text-decoration: none;
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            .the-menu li {
+                padding: 16px 24px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #333;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .the-menu li:hover {
+                background-color: rgba(59, 130, 246, 0.1);
+                color: #3b82f6;
+                padding-left: 28px;
+            }
+
+            .the-menu li:last-child {
+                border-bottom: none;
+                padding-bottom: 20px;
+            }
+
+            .the-menu~.Login,
+            .menu+.the-menu .Login {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                right: 20px;
+                width: calc(100% - 40px);
+                padding: 14px 24px;
+                background: linear-gradient(135deg, #1C2582 0%, #2563eb 100%);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                z-index: 112;
+                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            }
+
+            .the-menu~.Login:hover,
+            .menu+.the-menu .Login:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+                background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .the-menu.hidden {
+                display: none;
+            }
+
+            .the-menu.show {
+                display: flex;
+            }
+        }
+
+        /* For very large screens */
+        @media (min-width: 1600px) {
+            .video-player-wrapper {
+                max-width: 1200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="navigation">
+        <div class="logo">
+            <img src="../assets/images/raadlogo.png" alt="Raad Logo">
+        </div>
+
+        <div class="the-navs">
+            <ul>
+                <a href="../">
+                    <li>Home</li>
+                </a>
+                <a href="../products/">
+                    <li>Products</li>
+                </a>
+                <a href="../pricing/">
+                    <li>Pricing</li>
+                </a>
+                <a href="../aboutus/">
+                    <li>About Us</li>
+                </a>
+                <a href="../Contact/">
+                    <li>Contact Us</li>
+                </a>
+            </ul>
+        </div>
+
+        <button class="Login">Login</button>
+
+        <div class="menu">
+            <i class='bx bx-menu'></i>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="the-menu">
+        <ul>
+            <a href="../">
+                <li class="home-link">Home</li>
+            </a>
+            <a href="../products/">
+                <li>Products</li>
+            </a>
+            <a href="../pricing/">
+                <li>Pricing</li>
+            </a>
+            <a href="../aboutus/">
+                <li>About Us</li>
+            </a>
+            <a href="../Contact/">
+                <li>Contact Us</li>
+            </a>
+        </ul>
+        <button class="Login">Login</button>
+    </div>
+
+    <!-- Main Content - Video Centered -->
+    <div class="main-content">
+        <div class="video-container">
+            <!-- Hero Section -->
+            <div class="video-hero">
+                <h1>Watch Our Video</h1>
+                <p>Discover how Raad can transform your business operations</p>
+            </div>
+
+            <!-- Video Player - Center Stage -->
+            <div class="video-player-wrapper">
+                <video class="video-player" controls poster="../assets/images/video-thumbnail.jpg">
+                    <source src="../assets/videos/demo-video.mp4" type="video/mp4">
+                    <source src="../assets/videos/demo-video.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                    <button class="control-btn" id="playBtn"><i class='bx bx-play'></i></button>
+                    <button class="control-btn" id="pauseBtn"><i class='bx bx-pause'></i></button>
+                    <button class="control-btn" id="fullscreenBtn"><i class='bx bx-fullscreen'></i></button>
+                    <button class="control-btn" id="volumeBtn"><i class='bx bx-volume-full'></i></button>
+                </div>
+            </div>
+
+            <!-- Video Info -->
+            <div class="video-info">
+                <h1 class="video-title">Raad POS: Complete Business Solution Demo</h1>
+                
+                <div class="video-meta">
+                    <span><i class='bx bx-calendar'></i> Published: March 15, 2024</span>
+                    <span><i class='bx bx-time'></i> Duration: 8:45</span>
+                    <span><i class='bx bx-show'></i> Views: 12,548</span>
+                    <span><i class='bx bx-like'></i> Likes: 856</span>
+                </div>
+
+                <div class="video-description">
+                    <p>In this comprehensive demo video, we showcase the powerful features of Raad POS system that help small and medium businesses streamline their operations.</p>
+                    
+                    <p>You'll see:</p>
+                    <ul style="margin-left: 20px; margin-top: 15px;">
+                        <li>How to set up your products and inventory in minutes</li>
+                        <li>Processing sales with our thermal receipt printer</li>
+                        <li>Managing customer credit (Dayn) seamlessly</li>
+                        <li>Generating real-time sales reports and analytics</li>
+                        <li>Using the mobile app for on-the-go management</li>
+                    </ul>
+                    
+                    <p style="margin-top: 20px;">Our system is designed to be intuitive yet powerful, giving you all the tools you need to grow your business efficiently.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Videos -->
+        <div class="related-videos">
+            <h2>Related Videos</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <div class="related-thumbnail">
+                        <img src="../assets/images/printer-demo.jpg" alt="Printer Demo">
+                        <div class="play-overlay">
+                            <i class='bx bx-play'></i>
+                        </div>
+                    </div>
+                    <div class="related-info">
+                        <h3>Thermal Printer Setup Guide</h3>
+                        <p>Learn how to set up and connect your thermal receipt printer to Raad POS</p>
+                        <div class="related-duration">4:22</div>
+                    </div>
+                </div>
+
+                <div class="related-card">
+                    <div class="related-thumbnail">
+                        <img src="../assets/images/inventory-demo.jpg" alt="Inventory Management">
+                        <div class="play-overlay">
+                            <i class='bx bx-play'></i>
+                        </div>
+                    </div>
+                    <div class="related-info">
+                        <h3>Inventory Management Tutorial</h3>
+                        <p>Master inventory tracking, alerts, and stock management features</p>
+                        <div class="related-duration">6:15</div>
+                    </div>
+                </div>
+
+                <div class="related-card">
+                    <div class="related-thumbnail">
+                        <img src="../assets/images/reports-demo.jpg" alt="Sales Reports">
+                        <div class="play-overlay">
+                            <i class='bx bx-play'></i>
+                        </div>
+                    </div>
+                    <div class="related-info">
+                        <h3>Sales Reports & Analytics</h3>
+                        <p>How to use Raad's reporting tools to analyze your business performance</p>
+                        <div class="related-duration">5:38</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.querySelector('.menu');
+            const menuIcon = menuButton.querySelector('i');
+            const theMenu = document.querySelector('.the-menu');
+            const menuLinks = theMenu.querySelectorAll('a');
+
+            // Toggle menu
+            menuButton.addEventListener('click', function () {
+                theMenu.classList.toggle('show');
+                theMenu.classList.toggle('hidden');
+                
+                if (theMenu.classList.contains('show')) {
+                    menuIcon.classList.remove('bx-menu');
+                    menuIcon.classList.add('bx-x');
+                } else {
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                }
+            });
+
+            // Close menu on link click
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    theMenu.classList.remove('show');
+                    theMenu.classList.add('hidden');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                });
+            });
+
+            // Video controls
+            const video = document.querySelector('.video-player');
+            const playBtn = document.getElementById('playBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const fullscreenBtn = document.getElementById('fullscreenBtn');
+            const volumeBtn = document.getElementById('volumeBtn');
+
+            playBtn.addEventListener('click', () => video.play());
+            pauseBtn.addEventListener('click', () => video.pause());
+            
+            fullscreenBtn.addEventListener('click', () => {
+                if (!document.fullscreenElement) {
+                    video.requestFullscreen().catch(err => {
+                        console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                    });
+                } else {
+                    document.exitFullscreen();
+                }
+            });
+
+            volumeBtn.addEventListener('click', () => {
+                video.muted = !video.muted;
+                volumeBtn.innerHTML = video.muted ? 
+                    '<i class="bx bx-volume-mute"></i>' : 
+                    '<i class="bx bx-volume-full"></i>';
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (event) {
+                const isClickInsideMenu = theMenu.contains(event.target);
+                const isClickOnMenuButton = menuButton.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnMenuButton && theMenu.classList.contains('show')) {
+                    theMenu.classList.remove('show');
+                    theMenu.classList.add('hidden');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                }
+            });
+        });
+    </script>
+
+
+ <script src="../frontJs/translation.js"></script>
+    <script src="../frontJs/theme.js"></script>
+
+<script src="../frontJs/theme.js"></script>
+</body>
+</html>
