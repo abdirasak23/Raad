@@ -1263,6 +1263,456 @@ body::after {
 
 
 
+
+        /* Animation Keyframes */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply animations to elements */
+.hero-section .left-content {
+    animation: slideInFromLeft 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-section .right img {
+    animation: slideInFromRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Staggered animation for child elements (optional enhancement) */
+.hero-section .live-side {
+    animation: slideInFromLeft 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+    animation-delay: 0.1s;
+}
+
+.hero-section .hero-text {
+    animation: slideInFromLeft 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+    animation-delay: 0.2s;
+}
+
+.hero-section .hero-desc {
+    animation: slideInFromLeft 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+}
+
+.hero-section .buttons {
+    animation: slideInFromLeft 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+    animation-delay: 0.4s;
+}
+
+
+
+/* Modern Animation Keyframes with Scale & Blur */
+@keyframes fadeSlideTop {
+    0% {
+        transform: translateY(-80px) scale(0.9);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeSlideLeft {
+    0% {
+        transform: translateX(-120px) scale(0.95) rotateY(-15deg);
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100% {
+        transform: translateX(0) scale(1) rotateY(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeSlideRight {
+    0% {
+        transform: translateX(120px) scale(0.95) rotateY(15deg);
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100% {
+        transform: translateX(0) scale(1) rotateY(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeSlideBottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+        filter: blur(5px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Initial State */
+.ways-section .head,
+.ways-section .old,
+.ways-section .new,
+.ways-section .bottom-content {
+    opacity: 0;
+}
+
+/* Animated State */
+.ways-section.animate .head {
+    animation: fadeSlideTop 1.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+.ways-section.animate .old {
+    animation: fadeSlideLeft 1.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.3s;
+}
+
+.ways-section.animate .new {
+    animation: fadeSlideRight 1.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.3s;
+}
+
+.ways-section.animate .old .bottom-content {
+    animation: fadeSlideBottom 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.1s;
+}
+
+.ways-section.animate .new .bottom-content {
+    animation: fadeSlideBottom 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.1s;
+}
+
+
+
+/* Modern Animation Keyframes */
+@keyframes fadeSlideTop {
+    0% {
+        transform: translateY(-80px) scale(0.9);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeSlideLeftStagger {
+    0% {
+        transform: translateX(-100px) scale(0.92);
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeSlideRightStagger {
+    0% {
+        transform: translateX(100px) scale(0.92);
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeSlideBottomCenter {
+    0% {
+        transform: translateY(100px) scale(0.85);
+        opacity: 0;
+        filter: blur(12px);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Initial State */
+.how-it-works .head,
+.how-it-works .how-numbers,
+.how-it-works .mobil {
+    opacity: 0;
+}
+
+/* Header Animation */
+.how-it-works.animate .head {
+    animation: fadeSlideTop 1.4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Left Side (Steps 1-4) - From Left */
+.how-it-works.animate .how-1 .how-numbers:nth-child(1) {
+    animation: fadeSlideLeftStagger 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+.how-it-works.animate .how-1 .how-numbers:nth-child(2) {
+    animation: fadeSlideLeftStagger 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.35s;
+}
+
+.how-it-works.animate .how-1 .how-numbers:nth-child(3) {
+    animation: fadeSlideLeftStagger 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.5s;
+}
+
+.how-it-works.animate .how-1 .how-numbers:nth-child(4) {
+    animation: fadeSlideLeftStagger 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.65s;
+}
+
+/* Center Phone - From Bottom */
+.how-it-works.animate .how-2 .mobil {
+    animation: fadeSlideBottomCenter 1.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.4s;
+}
+
+/* Right Side (Steps 5-8) - From Right */
+.how-it-works.animate .how-3 .how-numbers:nth-child(1) {
+    animation: fadeSlideRightStagger 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+.how-it-works.animate .how-3 .how-numbers:nth-child(2) {
+    animation: fadeSlideRightStagger 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.35s;
+}
+
+.how-it-works.animate .how-3 .how-numbers:nth-child(3) {
+    animation: fadeSlideRightStagger 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.5s;
+}
+
+.how-it-works.animate .how-3 .how-numbers:nth-child(4) {
+    animation: fadeSlideRightStagger 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.65s;
+}
+
+
+
+/* Animation Keyframes for Business Section */
+@keyframes fadeSlideLeftFlow {
+    0% {
+        transform: translateX(-120px) scale(0.9);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeSlideRightFlow {
+    0% {
+        transform: translateX(120px) scale(0.9);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeSlideBottomUp {
+    0% {
+        transform: translateY(80px) scale(0.92);
+        opacity: 0;
+        filter: blur(8px);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@keyframes fadeScaleIn {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpFade {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Initial State */
+.business .bus-head,
+.business .bus-card,
+.business .bus-man,
+.business .bus-icon,
+.business .bus-name,
+.business .bus-idea {
+    opacity: 0;
+}
+
+/* Head Animation - From Left */
+.business.animate .bus-head {
+    animation: fadeSlideLeftFlow 1.3s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+/* Image Animation - From Right */
+.business.animate .bus-man {
+    animation: fadeSlideRightFlow 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.2s;
+}
+
+/* Business Cards - From Bottom with Stagger */
+.business.animate .bus-card:nth-child(1) {
+    animation: fadeSlideBottomUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.3s;
+}
+
+.business.animate .bus-card:nth-child(2) {
+    animation: fadeSlideBottomUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.45s;
+}
+
+.business.animate .bus-card:nth-child(3) {
+    animation: fadeSlideBottomUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.6s;
+}
+
+.business.animate .bus-card:nth-child(4) {
+    animation: fadeSlideBottomUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.75s;
+}
+
+.business.animate .bus-card:nth-child(5) {
+    animation: fadeSlideBottomUp 1.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.9s;
+}
+
+/* Card Content Animations - Icon, Name, Description */
+.business.animate .bus-card:nth-child(1) .bus-icon {
+    animation: fadeScaleIn 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.5s;
+}
+
+.business.animate .bus-card:nth-child(1) .bus-name {
+    animation: slideUpFade 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.65s;
+}
+
+.business.animate .bus-card:nth-child(1) .bus-idea {
+    animation: slideUpFade 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.75s;
+}
+
+.business.animate .bus-card:nth-child(2) .bus-icon {
+    animation: fadeScaleIn 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.65s;
+}
+
+.business.animate .bus-card:nth-child(2) .bus-name {
+    animation: slideUpFade 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.8s;
+}
+
+.business.animate .bus-card:nth-child(2) .bus-idea {
+    animation: slideUpFade 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.9s;
+}
+
+.business.animate .bus-card:nth-child(3) .bus-icon {
+    animation: fadeScaleIn 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.8s;
+}
+
+.business.animate .bus-card:nth-child(3) .bus-name {
+    animation: slideUpFade 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.95s;
+}
+
+.business.animate .bus-card:nth-child(3) .bus-idea {
+    animation: slideUpFade 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.05s;
+}
+
+.business.animate .bus-card:nth-child(4) .bus-icon {
+    animation: fadeScaleIn 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 0.95s;
+}
+
+.business.animate .bus-card:nth-child(4) .bus-name {
+    animation: slideUpFade 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.1s;
+}
+
+.business.animate .bus-card:nth-child(4) .bus-idea {
+    animation: slideUpFade 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.2s;
+}
+
+.business.animate .bus-card:nth-child(5) .bus-icon {
+    animation: fadeScaleIn 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.1s;
+}
+
+.business.animate .bus-card:nth-child(5) .bus-name {
+    animation: slideUpFade 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.25s;
+}
+
+.business.animate .bus-card:nth-child(5) .bus-idea {
+    animation: slideUpFade 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: 1.35s;
+}
+
+
+
 @media (max-width: 480px) {
     .navigation {
         width: 90%;
@@ -1952,4 +2402,89 @@ body::after {
   }
 
  
+}
+
+
+@media (min-width: 1920px) {
+    body{
+        background-color: red;
+    }
+
+
+    .hero-section{
+        height: 700px;
+    }
+
+    .hero-text{
+        /* background-color: red; */
+        height: 22rem;
+    }
+
+    .download{
+        width: 24rem;
+        height: 4rem;
+    }
+
+    .watch{
+        width: 24rem;
+        height: 4rem;
+    }
+
+   .live-side{
+    position: relative;
+    top: 2rem;
+   }
+
+    .hero-text h4{
+        font-size: 5rem;
+        position: relative;
+        /* top: -3rem; */
+    }
+
+
+
+    .ways-section{
+        height: 500px;
+    }
+
+
+    .old{
+        height: 26rem;
+        position: relative;
+        left: 4rem;
+    }
+
+    .new{
+        height: 26rem;
+        position: relative;
+        left: 8rem;
+    }
+
+    .how-1{
+        position: relative;
+        left: 4rem;
+    }
+
+
+    .how-2{
+        /* background-color: red; */
+    }
+
+
+    .mobil{
+        /* background-color: grey; */
+        width: 30rem;
+        position: relative;
+        left: 5rem;
+        height: 40rem;
+    }
+
+
+    .bus-man
+    {
+        position: relative;
+        right: 0rem;
+        top: 0.2rem;
+    }
+
 }

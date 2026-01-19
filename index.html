@@ -243,7 +243,7 @@
                         <span data-translate="hero_desc_br">and taxes so you can focus on what matters growing your business.</span></p>
                 </div>
                 <div class="buttons">
-                    <button class="download" data-translate="btn_download">Download App</button>
+                    <button class="download" onclick="window.location.href='https://play.google.com/store/apps/details?id=com.raadapp.raad'" data-translate="btn_download">Download App</button>
                     <button class="watch" data-translate="btn_watch">Watch a video</button>
                 </div>
             </div>
@@ -585,7 +585,7 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="logo footer-logo">
-                    <img src="assets/images/whiteraad.png" alt="Raad POS App Home Screen">
+                    <img src="assets/images/raadlogo.png" alt="Raad POS App Home Screen">
                 </div>
                 <p data-translate="footer_desc">RAAD POS is a smart, fast, and simple point-of-sale app designed for small and medium businesses. Manage sales, track products, and run your shop effortlessly.</p>
             </div>
@@ -717,6 +717,41 @@
                 }
             });
         });
+
+
+
+      // Single Intersection Observer for ALL animated sections
+const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            observer.unobserve(entry.target); // Animate only once
+        }
+    });
+}, observerOptions);
+
+// Observe ALL sections with animations
+const waysSection = document.querySelector('.ways-section');
+const howSection = document.querySelector('.how-it-works');
+const businessSection = document.querySelector('.business');
+
+if (waysSection) {
+    observer.observe(waysSection);
+}
+
+if (howSection) {
+    observer.observe(howSection);
+}
+
+if (businessSection) {
+    observer.observe(businessSection);
+}
+
     </script>
 
     <script src="frontJs/translation.js"></script>

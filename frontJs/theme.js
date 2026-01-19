@@ -36,6 +36,10 @@
             .hero-section {
                 background: ${isDark ? 'linear-gradient(135deg, #000000 0%, #343434 100%)' : 'linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%)'} !important;
             }
+
+            .theme-icon i{
+            color: ${isDark ? '#ffffff' : '#090067ff'} !important;
+            }
             
             /* Hero Text - All elements */
             .hero-text h4,
@@ -74,8 +78,12 @@
             }
             
             /* Buttons */
-            .buttons button {
-                color: ${isDark ? '#ffffff' : '#000000'} !important;
+            .download {
+                color: ${isDark ? '#ffffff' : '#ecececff'} !important;
+            }
+
+            .watch{
+            color: ${isDark ? '#ffffff' : '#000678ff'} !important;
             }
             
             /* Ways Section */
@@ -97,7 +105,7 @@
             /* Old/New Way Text */
             .old-head h4,
             .old-head p {
-                color: ${isDark ? '#ffffff' : '#000000'} !important;
+                color: ${isDark ? '#ffffff' : '#ffffffff'} !important;
             }
             
             /* How It Works */
@@ -918,3 +926,5 @@
     
     console.log('Theme switcher initialized with theme:', initialTheme);
 })();
+
+
