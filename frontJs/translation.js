@@ -23,7 +23,7 @@ const translations = {
         old_way: "Old Way",
         old_way_desc: "Selling used to live in notebooks. Today.",
         new_way: "New Way",
-        new_way_desc: "Selling used to live in notebooks. Today.",
+        new_way_desc: "Sell, Manage and scale - all in a single AI-powered platform.",
         
         // How it Works
         how_title: "How Raad Works",
@@ -93,7 +93,7 @@ const translations = {
         footer_download_title: "Download App",
         footer_get_it: "GET IT ON",
         footer_google: "Google Play",
-        footer_copyright: "© 2026 Raad - Pos Sales Tracker. All Rights Reserved.",
+        footer_copyright: "© 2026 Raad - RaadHQ. All Rights Reserved.",
         
         // Language dropdown
         lang_english: "English",
@@ -195,7 +195,7 @@ const translations = {
         footer_download_title: "Soo Deji Abka",
         footer_get_it: "Ka Dagso",
         footer_google: "Google Play",
-        footer_copyright: "© 2026 Raad - Raadiye Iibinta Pos. Dhammaan Xuquuqda Way Dhawrsanyihiin.",
+        footer_copyright: "© 2026 Raad - RaadHQ. Dhammaan Xuquuqda Way Dhawrsanyihiin.",
         
         // Language dropdown
         lang_english: "Ingiriisi",

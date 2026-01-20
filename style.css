@@ -320,7 +320,7 @@ body::after {
 
 
 .hero-section {
-    height: 600px;
+    height: 650px;
     width: 100%;
     background: linear-gradient(135deg, #000000 0%, #343434 100%);
     display: flex;
