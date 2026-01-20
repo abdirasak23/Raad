@@ -192,45 +192,216 @@
             aspect-ratio: 16/9;
             background: #000;
             display: block;
+            cursor: pointer;
         }
 
-        /* Video Controls */
-        .video-controls {
+        /* Custom Video Controls */
+        .custom-video-controls {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            padding: 30px 20px 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 20px;
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            flex-direction: column;
+            gap: 10px;
             opacity: 0;
             transition: opacity 0.3s;
+            z-index: 10;
         }
 
-        .video-player-wrapper:hover .video-controls {
+        .video-player-wrapper:hover .custom-video-controls,
+        .custom-video-controls.show-controls {
             opacity: 1;
         }
 
+        /* Progress Bar Container */
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: #1C2582;
+            border-radius: 3px;
+            position: relative;
+            transition: width 0.1s linear;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: #1C2582;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .progress-container:hover .progress-bar::after {
+            opacity: 1;
+        }
+
+        /* Buffer Bar */
+        .buffer-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+
+        /* Controls Row */
+        .controls-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .left-controls, .right-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
         .control-btn {
-            background: rgba(255, 255, 255, 0.9);
+            background: transparent;
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            font-size: 24px;
-            color: #1C2582;
+            font-size: 20px;
+            color: white;
             transition: all 0.3s;
         }
 
         .control-btn:hover {
-            background: white;
+            background: rgba(255, 255, 255, 0.1);
             transform: scale(1.1);
+        }
+
+        .control-btn.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        #playPauseBtn {
+            width: 45px;
+            height: 45px;
+            font-size: 22px;
+            background: #1C2582;
+        }
+
+        #playPauseBtn:hover {
+            background: #0c154d;
+        }
+
+        /* Time Display */
+        .time-display {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            min-width: 100px;
+            text-align: center;
+        }
+
+        /* Volume Controls */
+        .volume-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-slider {
+            width: 80px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .volume-level {
+            height: 100%;
+            width: 100%;
+            background: white;
+            border-radius: 2px;
+        }
+
+        /* Playback Speed */
+        .speed-control {
+            position: relative;
+        }
+
+        .speed-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 0.9rem;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .speed-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .speed-options {
+            position: absolute;
+            bottom: 40px;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            border-radius: 8px;
+            padding: 10px;
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            min-width: 80px;
+            z-index: 20;
+        }
+
+        .speed-options.show {
+            display: flex;
+        }
+
+        .speed-option {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-align: left;
+            transition: background 0.2s;
+        }
+
+        .speed-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .speed-option.active {
+            background: #1C2582;
+            color: white;
         }
 
         /* Video Info - Centered Below Video */
@@ -314,6 +485,12 @@
             border-color: #1C2582;
         }
 
+        .related-card.active {
+            border-color: #1C2582;
+            box-shadow: 0 10px 25px rgba(28, 37, 130, 0.15);
+            transform: translateY(-5px);
+        }
+
         .related-thumbnail {
             width: 100%;
             height: 180px;
@@ -348,6 +525,12 @@
             color: white;
             font-size: 24px;
             opacity: 0.9;
+            transition: all 0.3s;
+        }
+
+        .related-card:hover .play-overlay {
+            background: rgba(28, 37, 130, 1);
+            transform: translate(-50%, -50%) scale(1.1);
         }
 
         .related-info {
@@ -395,6 +578,37 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Loading animation for video change */
+        .video-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #1C2582;
+            animation: spin 1s ease-in-out infinite;
+            z-index: 5;
+            display: none;
+        }
+
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         /* Mobile Menu Styles */
@@ -581,6 +795,37 @@
             .the-menu.show {
                 display: flex;
             }
+
+            /* Adjust video controls for mobile */
+            .custom-video-controls {
+                padding: 15px;
+            }
+
+            .control-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+
+            #playPauseBtn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .time-display {
+                font-size: 0.8rem;
+                min-width: 80px;
+            }
+
+            .volume-slider {
+                width: 60px;
+            }
+
+            .speed-btn {
+                padding: 4px 8px;
+                font-size: 0.8rem;
+            }
         }
 
         /* For very large screens */
@@ -659,31 +904,76 @@
 
             <!-- Video Player - Center Stage -->
             <div class="video-player-wrapper">
-                <video class="video-player" controls poster="../assets/images/video-thumbnail.jpg">
-                    <source src="../assets/videos/demo-video.mp4" type="video/mp4">
-                    <source src="../assets/videos/demo-video.webm" type="video/webm">
+                <div class="video-loading" id="videoLoading"></div>
+                <video class="video-player" id="mainVideo" poster="../assets/images/barcode.jpg">
+                    <source src="../assets/vedio/barcode.mp4" type="video/mp4">
+                    <source src="../assets/vedio/barcode.mp4" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
-                <div class="video-controls">
-                    <button class="control-btn" id="playBtn"><i class='bx bx-play'></i></button>
-                    <button class="control-btn" id="pauseBtn"><i class='bx bx-pause'></i></button>
-                    <button class="control-btn" id="fullscreenBtn"><i class='bx bx-fullscreen'></i></button>
-                    <button class="control-btn" id="volumeBtn"><i class='bx bx-volume-full'></i></button>
+                
+                <!-- Custom Video Controls -->
+                <div class="custom-video-controls" id="videoControls">
+                    <!-- Progress Bar -->
+                    <div class="progress-container" id="progressContainer">
+                        <div class="buffer-bar" id="bufferBar"></div>
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    
+                    <!-- Controls Row -->
+                    <div class="controls-row">
+                        <div class="left-controls">
+                            <button class="control-btn active" id="playPauseBtn">
+                                <i class='bx bx-play'></i>
+                            </button>
+                            <div class="time-display">
+                                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                            </div>
+                        </div>
+                        
+                        <div class="right-controls">
+                            <!-- Volume Control -->
+                            <div class="volume-container">
+                                <button class="control-btn" id="volumeBtn">
+                                    <i class='bx bx-volume-full'></i>
+                                </button>
+                                <div class="volume-slider" id="volumeSlider">
+                                    <div class="volume-level" id="volumeLevel"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Playback Speed -->
+                            <div class="speed-control">
+                                <button class="speed-btn" id="speedBtn">1x</button>
+                                <div class="speed-options" id="speedOptions">
+                                    <button class="speed-option" data-speed="0.5">0.5x</button>
+                                    <button class="speed-option" data-speed="0.75">0.75x</button>
+                                    <button class="speed-option active" data-speed="1">1x</button>
+                                    <button class="speed-option" data-speed="1.25">1.25x</button>
+                                    <button class="speed-option" data-speed="1.5">1.5x</button>
+                                    <button class="speed-option" data-speed="2">2x</button>
+                                </div>
+                            </div>
+                            
+                            <button class="control-btn" id="fullscreenBtn">
+                                <i class='bx bx-fullscreen'></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Video Info -->
             <div class="video-info">
-                <h1 class="video-title">Raad POS: Complete Business Solution Demo</h1>
+                <h1 class="video-title" id="mainVideoTitle">Raad POS: Complete Business Solution Demo</h1>
                 
                 <div class="video-meta">
-                    <span><i class='bx bx-calendar'></i> Published: March 15, 2024</span>
-                    <span><i class='bx bx-time'></i> Duration: 8:45</span>
-                    <span><i class='bx bx-show'></i> Views: 12,548</span>
-                    <span><i class='bx bx-like'></i> Likes: 856</span>
+                    <span><i class='bx bx-calendar'></i> Published: <span id="videoDate">March 15, 2024</span></span>
+                    <span><i class='bx bx-time'></i> Duration: <span id="videoDuration">8:45</span></span>
+                    <span><i class='bx bx-show'></i> Views: <span id="videoViews">12,548</span></span>
+                    <span><i class='bx bx-like'></i> Likes: <span id="videoLikes">856</span></span>
                 </div>
 
-                <div class="video-description">
+                <div class="video-description" id="videoDescription">
                     <p>In this comprehensive demo video, we showcase the powerful features of Raad POS system that help small and medium businesses streamline their operations.</p>
                     
                     <p>You'll see:</p>
@@ -704,7 +994,21 @@
         <div class="related-videos">
             <h2>Related Videos</h2>
             <div class="related-grid">
-                <div class="related-card">
+                <div class="related-card active" data-video-id="1" data-video-src="../assets/vedio/ordersreport.mp4" data-video-poster="../assets/images/barcode.jpg" data-video-title="Raad POS: Complete Business Solution Demo" data-video-date="March 15, 2024" data-video-duration="8:45" data-video-views="12,548" data-video-likes="856" data-video-description="In this comprehensive demo video, we showcase the powerful features of Raad POS system that help small and medium businesses streamline their operations. You'll see: How to set up your products and inventory in minutes, Processing sales with our thermal receipt printer, Managing customer credit (Dayn) seamlessly, Generating real-time sales reports and analytics, Using the mobile app for on-the-go management. Our system is designed to be intuitive yet powerful, giving you all the tools you need to grow your business efficiently.">
+                    <div class="related-thumbnail">
+                        <img src="../assets/images/barcode.jpg" alt="Main Demo">
+                        <div class="play-overlay">
+                            <i class='bx bx-play'></i>
+                        </div>
+                    </div>
+                    <div class="related-info">
+                        <h3>Raad POS Complete Demo</h3>
+                        <p>Full walkthrough of all Raad POS features and capabilities</p>
+                        <div class="related-duration">8:45</div>
+                    </div>
+                </div>
+
+                <div class="related-card" data-video-id="2" data-video-src="../assets/videos/printer-setup.mp4" data-video-poster="../assets/images/printer-demo.jpg" data-video-title="Thermal Printer Setup Guide" data-video-date="March 10, 2024" data-video-duration="4:22" data-video-views="8,743" data-video-likes="642" data-video-description="Learn how to set up and connect your thermal receipt printer to Raad POS. This step-by-step tutorial covers: Unboxing and hardware setup, Bluetooth/Wi-Fi connection to the app, Configuring receipt templates, Testing print functionality, Troubleshooting common issues. Get your printer working in minutes and start printing professional receipts for your customers.">
                     <div class="related-thumbnail">
                         <img src="../assets/images/printer-demo.jpg" alt="Printer Demo">
                         <div class="play-overlay">
@@ -718,115 +1022,11 @@
                     </div>
                 </div>
 
-                <div class="related-card">
+                <div class="related-card" data-video-id="3" data-video-src="../assets/videos/inventory-management.mp4" data-video-poster="../assets/images/inventory-demo.jpg" data-video-title="Inventory Management Tutorial" data-video-date="March 5, 2024" data-video-duration="6:15" data-video-views="10,215" data-video-likes="723" data-video-description="Master inventory tracking, alerts, and stock management features. This tutorial covers: Adding and categorizing products, Setting up low stock alerts, Managing bulk imports and exports, Tracking inventory movement, Generating inventory reports. Keep your stock organized and never run out of popular items again with Raad's smart inventory system.">
                     <div class="related-thumbnail">
                         <img src="../assets/images/inventory-demo.jpg" alt="Inventory Management">
                         <div class="play-overlay">
                             <i class='bx bx-play'></i>
                         </div>
                     </div>
-                    <div class="related-info">
-                        <h3>Inventory Management Tutorial</h3>
-                        <p>Master inventory tracking, alerts, and stock management features</p>
-                        <div class="related-duration">6:15</div>
-                    </div>
-                </div>
-
-                <div class="related-card">
-                    <div class="related-thumbnail">
-                        <img src="../assets/images/reports-demo.jpg" alt="Sales Reports">
-                        <div class="play-overlay">
-                            <i class='bx bx-play'></i>
-                        </div>
-                    </div>
-                    <div class="related-info">
-                        <h3>Sales Reports & Analytics</h3>
-                        <p>How to use Raad's reporting tools to analyze your business performance</p>
-                        <div class="related-duration">5:38</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Mobile Menu Toggle
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuButton = document.querySelector('.menu');
-            const menuIcon = menuButton.querySelector('i');
-            const theMenu = document.querySelector('.the-menu');
-            const menuLinks = theMenu.querySelectorAll('a');
-
-            // Toggle menu
-            menuButton.addEventListener('click', function () {
-                theMenu.classList.toggle('show');
-                theMenu.classList.toggle('hidden');
-                
-                if (theMenu.classList.contains('show')) {
-                    menuIcon.classList.remove('bx-menu');
-                    menuIcon.classList.add('bx-x');
-                } else {
-                    menuIcon.classList.remove('bx-x');
-                    menuIcon.classList.add('bx-menu');
-                }
-            });
-
-            // Close menu on link click
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function () {
-                    theMenu.classList.remove('show');
-                    theMenu.classList.add('hidden');
-                    menuIcon.classList.remove('bx-x');
-                    menuIcon.classList.add('bx-menu');
-                });
-            });
-
-            // Video controls
-            const video = document.querySelector('.video-player');
-            const playBtn = document.getElementById('playBtn');
-            const pauseBtn = document.getElementById('pauseBtn');
-            const fullscreenBtn = document.getElementById('fullscreenBtn');
-            const volumeBtn = document.getElementById('volumeBtn');
-
-            playBtn.addEventListener('click', () => video.play());
-            pauseBtn.addEventListener('click', () => video.pause());
-            
-            fullscreenBtn.addEventListener('click', () => {
-                if (!document.fullscreenElement) {
-                    video.requestFullscreen().catch(err => {
-                        console.log(`Error attempting to enable fullscreen: ${err.message}`);
-                    });
-                } else {
-                    document.exitFullscreen();
-                }
-            });
-
-            volumeBtn.addEventListener('click', () => {
-                video.muted = !video.muted;
-                volumeBtn.innerHTML = video.muted ? 
-                    '<i class="bx bx-volume-mute"></i>' : 
-                    '<i class="bx bx-volume-full"></i>';
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', function (event) {
-                const isClickInsideMenu = theMenu.contains(event.target);
-                const isClickOnMenuButton = menuButton.contains(event.target);
-
-                if (!isClickInsideMenu && !isClickOnMenuButton && theMenu.classList.contains('show')) {
-                    theMenu.classList.remove('show');
-                    theMenu.classList.add('hidden');
-                    menuIcon.classList.remove('bx-x');
-                    menuIcon.classList.add('bx-menu');
-                }
-            });
-        });
-    </script>
-
-
- <script src="../frontJs/translation.js"></script>
-    <script src="../frontJs/theme.js"></script>
-
-<script src="../frontJs/theme.js"></script>
-</body>
-</html>
+                    <div class
