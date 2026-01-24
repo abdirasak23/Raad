@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="../favicon/favicon-v2.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="../favicon/favicon-v2.svg" />
-    <link rel="shortcut icon" href="../favicon/favicon-v2.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon-v2.png" />
-    <link rel="manifest" href="../favicon/site-v2.webmanifest" />
-
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
-    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
     <title>Watch a Video | Raad</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
@@ -31,7 +25,6 @@
             flex-direction: column;
         }
 
-        /* Navigation Styles */
         .navigation {
             height: 10vh;
             width: min(900px, 90%);
@@ -94,10 +87,6 @@
             opacity: 0.7;
         }
 
-        .home-link {
-            font-weight: 600;
-        }
-
         .Login {
             height: 40px;
             width: 100px;
@@ -120,11 +109,6 @@
             display: none;
         }
 
-        .products {
-            font-weight: 600;
-        }
-
-        /* Main Content - Center Video */
         .main-content {
             flex: 1;
             display: flex;
@@ -135,7 +119,6 @@
             width: 100%;
         }
 
-        /* Video Container - Centered */
         .video-container {
             width: 100%;
             max-width: 1200px;
@@ -145,7 +128,6 @@
             justify-content: center;
         }
 
-        /* Hero Section - Minimal */
         .video-hero {
             text-align: center;
             margin-bottom: 40px;
@@ -169,7 +151,6 @@
             animation: fadeInUp 0.8s ease 0.2s both;
         }
 
-        /* Video Player Wrapper - Center Stage */
         .video-player-wrapper {
             position: relative;
             width: 100%;
@@ -195,7 +176,6 @@
             cursor: pointer;
         }
 
-        /* Custom Video Controls */
         .custom-video-controls {
             position: absolute;
             bottom: 0;
@@ -216,7 +196,6 @@
             opacity: 1;
         }
 
-        /* Progress Bar Container */
         .progress-container {
             width: 100%;
             height: 6px;
@@ -254,7 +233,6 @@
             opacity: 1;
         }
 
-        /* Buffer Bar */
         .buffer-bar {
             position: absolute;
             top: 0;
@@ -264,7 +242,6 @@
             border-radius: 3px;
         }
 
-        /* Controls Row */
         .controls-row {
             display: flex;
             align-items: center;
@@ -313,7 +290,6 @@
             background: #0c154d;
         }
 
-        /* Time Display */
         .time-display {
             color: white;
             font-size: 0.9rem;
@@ -322,7 +298,6 @@
             text-align: center;
         }
 
-        /* Volume Controls */
         .volume-container {
             display: flex;
             align-items: center;
@@ -345,7 +320,6 @@
             border-radius: 2px;
         }
 
-        /* Playback Speed */
         .speed-control {
             position: relative;
         }
@@ -404,7 +378,6 @@
             color: white;
         }
 
-        /* Video Info - Centered Below Video */
         .video-info {
             width: 100%;
             max-width: 800px;
@@ -448,7 +421,6 @@
             text-align: left;
         }
 
-        /* Related Videos - Centered */
         .related-videos {
             width: 100%;
             max-width: 1200px;
@@ -557,7 +529,25 @@
             font-weight: 600;
         }
 
-        /* Animation */
+        .video-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #1C2582;
+            animation: spin 1s ease-in-out infinite;
+            z-index: 5;
+            display: none;
+        }
+
+        .the-menu {
+            display: none;
+        }
+
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -580,49 +570,14 @@
             }
         }
 
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Loading animation for video change */
-        .video-loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            border-top-color: #1C2582;
-            animation: spin 1s ease-in-out infinite;
-            z-index: 5;
-            display: none;
-        }
-
         @keyframes spin {
             to { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
-        /* Mobile Menu Styles */
-        .the-menu {
-            display: none;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
             .navigation {
                 width: 90%;
                 max-width: 360px;
-                left: 50%;
-                transform: translateX(-50%);
                 padding: 0 15px;
                 height: 60px;
             }
@@ -630,7 +585,6 @@
             .logo {
                 width: 110px;
                 height: 40px;
-                top: 5px;
             }
 
             .the-navs {
@@ -689,114 +643,6 @@
                 grid-template-columns: 1fr;
             }
 
-            /* Mobile Menu */
-            .the-menu {
-                height: auto;
-                width: 360px;
-                background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 244, 255, 0.95) 50%, rgba(255, 255, 255, 0.95) 100%);
-                backdrop-filter: blur(15px);
-                -webkit-backdrop-filter: blur(15px);
-                border: 1px solid rgba(255, 255, 255, 0.63);
-                position: fixed;
-                z-index: 111;
-                top: 110px;
-                left: 22px;
-                right: 0;
-                border-radius: 10px;
-                padding: 20px 0;
-                display: none;
-                flex-direction: column;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                animation: slideDown 0.3s ease-out;
-            }
-
-            .the-menu ul {
-                display: flex;
-                flex-direction: column;
-                gap: 0;
-                list-style: none;
-                padding: 0;
-                margin: 0;
-                width: 100%;
-            }
-
-            .the-menu a {
-                text-decoration: none;
-                width: 100%;
-                display: flex;
-                align-items: center;
-            }
-
-            .the-menu li {
-                padding: 16px 24px;
-                font-size: 16px;
-                font-weight: 500;
-                color: #333;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-                width: 100%;
-                box-sizing: border-box;
-            }
-
-            .the-menu li:hover {
-                background-color: rgba(59, 130, 246, 0.1);
-                color: #3b82f6;
-                padding-left: 28px;
-            }
-
-            .the-menu li:last-child {
-                border-bottom: none;
-                padding-bottom: 20px;
-            }
-
-            .the-menu~.Login,
-            .menu+.the-menu .Login {
-                position: fixed;
-                bottom: 20px;
-                left: 20px;
-                right: 20px;
-                width: calc(100% - 40px);
-                padding: 14px 24px;
-                background: linear-gradient(135deg, #1C2582 0%, #2563eb 100%);
-                color: white;
-                border: none;
-                border-radius: 8px;
-                font-size: 16px;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                z-index: 112;
-                box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            }
-
-            .the-menu~.Login:hover,
-            .menu+.the-menu .Login:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-                background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-            }
-
-            @keyframes slideDown {
-                from {
-                    opacity: 0;
-                    transform: translateY(-10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            .the-menu.hidden {
-                display: none;
-            }
-
-            .the-menu.show {
-                display: flex;
-            }
-
-            /* Adjust video controls for mobile */
             .custom-video-controls {
                 padding: 15px;
             }
@@ -821,105 +667,146 @@
             .volume-slider {
                 width: 60px;
             }
-
-            .speed-btn {
-                padding: 4px 8px;
-                font-size: 0.8rem;
-            }
-        }
-
-        /* For very large screens */
-        @media (min-width: 1600px) {
-            .video-player-wrapper {
-                max-width: 1200px;
-            }
         }
     </style>
 </head>
-
 <body>
-    <!-- Navigation -->
     <div class="navigation">
         <div class="logo">
-            <img src="../assets/images/raadlogo.png" alt="Raad Logo">
+            <img src="../assets/images/raadlogo.png" alt="Raad POS App Home Screen">
         </div>
 
         <div class="the-navs">
             <ul>
                 <a href="../">
-                    <li>Home</li>
+                    <li class="home-link" data-translate="nav_home">Home</li>
                 </a>
-                <a href="../products/">
-                    <li>Products</li>
+                <a href="products/">
+                    <li data-translate="nav_products">Products</li>
                 </a>
-                <a href="../pricing/">
-                    <li>Pricing</li>
+                <a href="pricing/">
+                    <li data-translate="nav_pricing">Pricing</li>
                 </a>
-                <a href="../aboutus/">
-                    <li>About Us</li>
+                <a href="aboutus/">
+                    <li data-translate="nav_about">About Us</li>
                 </a>
-                <a href="../Contact/">
-                    <li>Contact Us</li>
+                <a href="Contact/">
+                    <li data-translate="nav_contact">Contact Us</li>
                 </a>
             </ul>
         </div>
 
-        <button class="Login">Login</button>
+        <div class="theme-icon">
+            <i class='bx  bx-sun-bright'></i>
+        </div>
+
+        <div class="language-selector-wrapper">
+            <div class="language-trigger" id="languageTrigger">
+                <div class="language-icon">
+                    <img src="https://flagcdn.com/w40/so.png" alt="Somali" id="currentFlag">
+                </div>
+            </div>
+
+            <div class="language-dropdown" id="languageDropdown">
+                <!-- SOMALI - DEFAULT -->
+                <div class="language-option active" data-lang="so" data-flag="https://flagcdn.com/w40/so.png">
+                    <div class="option-flag">
+                        <img src="https://flagcdn.com/w40/so.png" alt="Somali">
+                    </div>
+                    <span class="option-text" data-translate="lang_somali">Soomaali</span>
+                    <span class="checkmark">✓</span>
+                </div>
+                
+                <!-- ENGLISH -->
+                <div class="language-option" data-lang="en" data-flag="https://flagcdn.com/w40/us.png">
+                    <div class="option-flag">
+                        <img src="https://flagcdn.com/w40/us.png" alt="English">
+                    </div>
+                    <span class="option-text" data-translate="lang_english">English</span>
+                    <span class="checkmark">✓</span>
+                </div>
+            </div>
+        </div>
 
         <div class="menu">
-            <i class='bx bx-menu'></i>
+            <i class='bxr  bx-menu'></i>
         </div>
     </div>
 
-    <!-- Mobile Menu -->
     <div class="the-menu">
-        <ul>
-            <a href="../">
-                <li class="home-link">Home</li>
-            </a>
-            <a href="../products/">
-                <li>Products</li>
-            </a>
-            <a href="../pricing/">
-                <li>Pricing</li>
-            </a>
-            <a href="../aboutus/">
-                <li>About Us</li>
-            </a>
-            <a href="../Contact/">
-                <li>Contact Us</li>
-            </a>
-        </ul>
-        <button class="Login">Login</button>
+    <div class="menu-header">
+        <h3 data-translate="nav_home">Navigation</h3>
+        <p>Explore our services</p>
+    </div>
+    
+    <ul>
+        <a href="../">
+            <li class="home-link">
+                <i class="fas fa-home"></i>
+                <span data-translate="nav_home">Home</span>
+            </li>
+        </a>
+        <a href="products/">
+            <li>
+                <i class="fas fa-box"></i>
+                <span data-translate="nav_products">Products</span>
+            </li>
+        </a>
+        <a href="pricing/">
+            <li>
+                <i class="fas fa-tag"></i>
+                <span data-translate="nav_pricing">Pricing</span>
+            </li>
+        </a>
+        <a href="aboutus/">
+            <li>
+                <i class="fas fa-info-circle"></i>
+                <span data-translate="nav_about">About Us</span>
+            </li>
+        </a>
+    </ul>
+
+    <div class="language-section">
+        <div class="language-label">
+            <i class="fas fa-globe"></i>
+            <span data-translate="menu_language">Language</span>
+        </div>
+        <div class="language-toggle">
+            <button class="lang-option" data-lang="so" onclick="toggleLanguage('so')">
+                <span data-translate="lang_somali">Soomaali</span>
+            </button>
+            <button class="lang-option" data-lang="en" onclick="toggleLanguage('en')">
+                <span data-translate="lang_english">English</span>
+            </button>
+        </div>
     </div>
 
-    <!-- Main Content - Video Centered -->
+    <button class="Login" style="display: none;">
+        <i class="fas fa-sign-in-alt"></i>
+        <span>Login</span>
+    </button>
+</div>
+
     <div class="main-content">
         <div class="video-container">
-            <!-- Hero Section -->
             <div class="video-hero">
                 <h1>Watch Our Video</h1>
                 <p>Discover how Raad can transform your business operations</p>
             </div>
 
-            <!-- Video Player - Center Stage -->
             <div class="video-player-wrapper">
                 <div class="video-loading" id="videoLoading"></div>
-                <video class="video-player" id="mainVideo" poster="../assets/images/barcode.jpg">
-                    <source src="../assets/vedio/barcode.mp4" type="video/mp4">
-                    <source src="../assets/vedio/barcode.mp4" type="video/webm">
+                <video class="video-player" id="mainVideo" poster="../assets/images/Promosss.png">
+                    <source src="../assets/vedio/demovedio.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 
-                <!-- Custom Video Controls -->
                 <div class="custom-video-controls" id="videoControls">
-                    <!-- Progress Bar -->
                     <div class="progress-container" id="progressContainer">
                         <div class="buffer-bar" id="bufferBar"></div>
                         <div class="progress-bar" id="progressBar"></div>
                     </div>
                     
-                    <!-- Controls Row -->
                     <div class="controls-row">
                         <div class="left-controls">
                             <button class="control-btn active" id="playPauseBtn">
@@ -931,7 +818,6 @@
                         </div>
                         
                         <div class="right-controls">
-                            <!-- Volume Control -->
                             <div class="volume-container">
                                 <button class="control-btn" id="volumeBtn">
                                     <i class='bx bx-volume-full'></i>
@@ -941,7 +827,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Playback Speed -->
                             <div class="speed-control">
                                 <button class="speed-btn" id="speedBtn">1x</button>
                                 <div class="speed-options" id="speedOptions">
@@ -962,15 +847,14 @@
                 </div>
             </div>
 
-            <!-- Video Info -->
             <div class="video-info">
                 <h1 class="video-title" id="mainVideoTitle">Raad POS: Complete Business Solution Demo</h1>
                 
                 <div class="video-meta">
-                    <span><i class='bx bx-calendar'></i> Published: <span id="videoDate">March 15, 2024</span></span>
-                    <span><i class='bx bx-time'></i> Duration: <span id="videoDuration">8:45</span></span>
-                    <span><i class='bx bx-show'></i> Views: <span id="videoViews">12,548</span></span>
-                    <span><i class='bx bx-like'></i> Likes: <span id="videoLikes">856</span></span>
+                    <span><i class='bx bx-calendar'></i> Published: <span id="videoDate">Jan 20, 2026</span></span>
+                    <span><i class='bx bx-time'></i> Duration: <span id="videoDuration">11:53</span></span>
+                    <!-- <span><i class='bx bx-show'></i> Views: <span id="videoViews">12,548</span></span> -->
+                    <!-- <span><i class='bx bx-like'></i> Likes: <span id="videoLikes">856</span></span> -->
                 </div>
 
                 <div class="video-description" id="videoDescription">
@@ -978,7 +862,9 @@
                     
                     <p>You'll see:</p>
                     <ul style="margin-left: 20px; margin-top: 15px;">
+                        <li>How to Register and Create Business Account</li>
                         <li>How to set up your products and inventory in minutes</li>
+                        <li>Processing sales with our thermal receipt printer</li>
                         <li>Processing sales with our thermal receipt printer</li>
                         <li>Managing customer credit (Dayn) seamlessly</li>
                         <li>Generating real-time sales reports and analytics</li>
@@ -990,11 +876,18 @@
             </div>
         </div>
 
-        <!-- Related Videos -->
-        <div class="related-videos">
+        <!-- <div class="related-videos">
             <h2>Related Videos</h2>
             <div class="related-grid">
-                <div class="related-card active" data-video-id="1" data-video-src="../assets/vedio/ordersreport.mp4" data-video-poster="../assets/images/barcode.jpg" data-video-title="Raad POS: Complete Business Solution Demo" data-video-date="March 15, 2024" data-video-duration="8:45" data-video-views="12,548" data-video-likes="856" data-video-description="In this comprehensive demo video, we showcase the powerful features of Raad POS system that help small and medium businesses streamline their operations. You'll see: How to set up your products and inventory in minutes, Processing sales with our thermal receipt printer, Managing customer credit (Dayn) seamlessly, Generating real-time sales reports and analytics, Using the mobile app for on-the-go management. Our system is designed to be intuitive yet powerful, giving you all the tools you need to grow your business efficiently.">
+                <div class="related-card active" 
+                     data-video-id="1" 
+                     data-video-src="../assets/vedio/barcode.mp4" 
+                     data-video-poster="../assets/images/barcode.jpg" 
+                     data-video-title="Raad POS: Complete Business Solution Demo" 
+                     data-video-date="March 15, 2024" 
+                     data-video-views="12,548" 
+                     data-video-likes="856" 
+                     data-video-description="In this comprehensive demo video, we showcase the powerful features of Raad POS system that help small and medium businesses streamline their operations. You'll see: How to set up your products and inventory in minutes, Processing sales with our thermal receipt printer, Managing customer credit (Dayn) seamlessly, Generating real-time sales reports and analytics, Using the mobile app for on-the-go management. Our system is designed to be intuitive yet powerful, giving you all the tools you need to grow your business efficiently.">
                     <div class="related-thumbnail">
                         <img src="../assets/images/barcode.jpg" alt="Main Demo">
                         <div class="play-overlay">
@@ -1004,11 +897,19 @@
                     <div class="related-info">
                         <h3>Raad POS Complete Demo</h3>
                         <p>Full walkthrough of all Raad POS features and capabilities</p>
-                        <div class="related-duration">8:45</div>
+                        <div class="related-duration">Loading...</div>
                     </div>
                 </div>
 
-                <div class="related-card" data-video-id="2" data-video-src="../assets/videos/printer-setup.mp4" data-video-poster="../assets/images/printer-demo.jpg" data-video-title="Thermal Printer Setup Guide" data-video-date="March 10, 2024" data-video-duration="4:22" data-video-views="8,743" data-video-likes="642" data-video-description="Learn how to set up and connect your thermal receipt printer to Raad POS. This step-by-step tutorial covers: Unboxing and hardware setup, Bluetooth/Wi-Fi connection to the app, Configuring receipt templates, Testing print functionality, Troubleshooting common issues. Get your printer working in minutes and start printing professional receipts for your customers.">
+                <div class="related-card" 
+                     data-video-id="2" 
+                     data-video-src="../assets/videos/printer-setup.mp4" 
+                     data-video-poster="../assets/images/printer-demo.jpg" 
+                     data-video-title="Thermal Printer Setup Guide" 
+                     data-video-date="March 10, 2024" 
+                     data-video-views="8,743" 
+                     data-video-likes="642" 
+                     data-video-description="Learn how to set up and connect your thermal receipt printer to Raad POS. This step-by-step tutorial covers: Unboxing and hardware setup, Bluetooth/Wi-Fi connection to the app, Configuring receipt templates, Testing print functionality, Troubleshooting common issues. Get your printer working in minutes and start printing professional receipts for your customers.">
                     <div class="related-thumbnail">
                         <img src="../assets/images/printer-demo.jpg" alt="Printer Demo">
                         <div class="play-overlay">
@@ -1018,15 +919,324 @@
                     <div class="related-info">
                         <h3>Thermal Printer Setup Guide</h3>
                         <p>Learn how to set up and connect your thermal receipt printer to Raad POS</p>
-                        <div class="related-duration">4:22</div>
+                        <div class="related-duration">Loading...</div>
                     </div>
                 </div>
 
-                <div class="related-card" data-video-id="3" data-video-src="../assets/videos/inventory-management.mp4" data-video-poster="../assets/images/inventory-demo.jpg" data-video-title="Inventory Management Tutorial" data-video-date="March 5, 2024" data-video-duration="6:15" data-video-views="10,215" data-video-likes="723" data-video-description="Master inventory tracking, alerts, and stock management features. This tutorial covers: Adding and categorizing products, Setting up low stock alerts, Managing bulk imports and exports, Tracking inventory movement, Generating inventory reports. Keep your stock organized and never run out of popular items again with Raad's smart inventory system.">
+                <div class="related-card" 
+                     data-video-id="3" 
+                     data-video-src="../assets/videos/inventory-management.mp4" 
+                     data-video-poster="../assets/images/inventory-demo.jpg" 
+                     data-video-title="Inventory Management Tutorial" 
+                     data-video-date="March 5, 2024" 
+                     data-video-views="10,215" 
+                     data-video-likes="723" 
+                     data-video-description="Master inventory tracking, alerts, and stock management features. This tutorial covers: Adding and categorizing products, Setting up low stock alerts, Managing bulk imports and exports, Tracking inventory movement, Generating inventory reports. Keep your stock organized and never run out of popular items again with Raad's smart inventory system.">
                     <div class="related-thumbnail">
                         <img src="../assets/images/inventory-demo.jpg" alt="Inventory Management">
                         <div class="play-overlay">
                             <i class='bx bx-play'></i>
                         </div>
                     </div>
-                    <div class
+                    <div class="related-info">
+                        <h3>Inventory Management Tutorial</h3>
+                        <p>Master inventory tracking, alerts, and stock management features</p>
+                        <div class="related-duration">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <script>
+        // Video Player Controller
+        const video = document.getElementById('mainVideo');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressContainer = document.getElementById('progressContainer');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const volumeBtn = document.getElementById('volumeBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const volumeLevel = document.getElementById('volumeLevel');
+        const speedBtn = document.getElementById('speedBtn');
+        const speedOptions = document.getElementById('speedOptions');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const videoControls = document.getElementById('videoControls');
+        const videoLoading = document.getElementById('videoLoading');
+        const bufferBar = document.getElementById('bufferBar');
+
+        // Format time helper
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        // Play/Pause
+        playPauseBtn.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.querySelector('i').className = 'bx bx-pause';
+            } else {
+                video.pause();
+                playPauseBtn.querySelector('i').className = 'bx bx-play';
+            }
+        });
+
+        video.addEventListener('click', () => {
+            playPauseBtn.click();
+        });
+
+        // Update progress bar
+        video.addEventListener('timeupdate', () => {
+            const progress = (video.currentTime / video.duration) * 100;
+            progressBar.style.width = progress + '%';
+            currentTimeEl.textContent = formatTime(video.currentTime);
+        });
+
+        // Update duration when loaded
+        video.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(video.duration);
+            const mainDurationEl = document.getElementById('videoDuration');
+            if (mainDurationEl) {
+                mainDurationEl.textContent = formatTime(video.duration);
+            }
+        });
+
+        // Seek
+        progressContainer.addEventListener('click', (e) => {
+            const rect = progressContainer.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            video.currentTime = percent * video.duration;
+        });
+
+        // Buffer progress
+        video.addEventListener('progress', () => {
+            if (video.buffered.length > 0) {
+                const buffered = (video.buffered.end(video.buffered.length - 1) / video.duration) * 100;
+                bufferBar.style.width = buffered + '%';
+            }
+        });
+
+        // Volume control
+        let lastVolume = 1;
+        volumeBtn.addEventListener('click', () => {
+            if (video.volume > 0) {
+                lastVolume = video.volume;
+                video.volume = 0;
+                volumeLevel.style.width = '0%';
+                volumeBtn.querySelector('i').className = 'bx bx-volume-mute';
+            } else {
+                video.volume = lastVolume;
+                volumeLevel.style.width = (lastVolume * 100) + '%';
+                volumeBtn.querySelector('i').className = 'bx bx-volume-full';
+            }
+        });
+
+        volumeSlider.addEventListener('click', (e) => {
+            const rect = volumeSlider.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            video.volume = percent;
+            volumeLevel.style.width = (percent * 100) + '%';
+            
+            if (percent === 0) {
+                volumeBtn.querySelector('i').className = 'bx bx-volume-mute';
+            } else {
+                volumeBtn.querySelector('i').className = 'bx bx-volume-full';
+            }
+        });
+
+        // Speed control
+        speedBtn.addEventListener('click', () => {
+            speedOptions.classList.toggle('show');
+        });
+
+        document.querySelectorAll('.speed-option').forEach(option => {
+            option.addEventListener('click', (e) => {
+                const speed = parseFloat(e.target.dataset.speed);
+                video.playbackRate = speed;
+                speedBtn.textContent = speed + 'x';
+                
+                document.querySelectorAll('.speed-option').forEach(opt => opt.classList.remove('active'));
+                e.target.classList.add('active');
+                speedOptions.classList.remove('show');
+            });
+        });
+
+        // Close speed menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.speed-control')) {
+                speedOptions.classList.remove('show');
+            }
+        });
+
+        // Fullscreen
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                video.parentElement.requestFullscreen();
+                fullscreenBtn.querySelector('i').className = 'bx bx-exit-fullscreen';
+            } else {
+                document.exitFullscreen();
+                fullscreenBtn.querySelector('i').className = 'bx bx-fullscreen';
+            }
+        });
+
+        // Show controls on mouse move
+        let controlsTimeout;
+        video.parentElement.addEventListener('mousemove', () => {
+            videoControls.classList.add('show-controls');
+            clearTimeout(controlsTimeout);
+            controlsTimeout = setTimeout(() => {
+                if (!video.paused) {
+                    videoControls.classList.remove('show-controls');
+                }
+            }, 3000);
+        });
+
+        // Related Videos Functionality
+        const relatedCards = document.querySelectorAll('.related-card');
+        const mainVideoTitle = document.getElementById('mainVideoTitle');
+        const videoDate = document.getElementById('videoDate');
+        const videoDuration = document.getElementById('videoDuration');
+        const videoViews = document.getElementById('videoViews');
+        const videoLikes = document.getElementById('videoLikes');
+        const videoDescription = document.getElementById('videoDescription');
+
+        // Function to load video durations for all related cards
+        function loadVideoDurations() {
+            relatedCards.forEach(card => {
+                const videoSrc = card.dataset.videoSrc;
+                const durationEl = card.querySelector('.related-duration');
+                
+                // Create temporary video element to get duration
+                const tempVideo = document.createElement('video');
+                tempVideo.preload = 'metadata';
+                
+                tempVideo.addEventListener('loadedmetadata', () => {
+                    durationEl.textContent = formatTime(tempVideo.duration);
+                    // Store duration in dataset for later use
+                    card.dataset.videoDuration = formatTime(tempVideo.duration);
+                });
+                
+                tempVideo.addEventListener('error', () => {
+                    durationEl.textContent = 'N/A';
+                    card.dataset.videoDuration = 'N/A';
+                });
+                
+                tempVideo.src = videoSrc;
+            });
+        }
+
+        // Function to switch video
+        function switchVideo(card) {
+            // Show loading
+            videoLoading.style.display = 'block';
+            
+            // Get video data from clicked card
+            const videoSrc = card.dataset.videoSrc;
+            const videoPoster = card.dataset.videoPoster;
+            const videoTitle = card.dataset.videoTitle;
+            const date = card.dataset.videoDate;
+            const views = card.dataset.videoViews;
+            const likes = card.dataset.videoLikes;
+            const description = card.dataset.videoDescription;
+            const duration = card.dataset.videoDuration || 'Loading...';
+            
+            // Save current video state
+            const currentVideoData = {
+                src: video.querySelector('source').src,
+                poster: video.poster,
+                title: mainVideoTitle.textContent,
+                date: videoDate.textContent,
+                views: videoViews.textContent,
+                likes: videoLikes.textContent,
+                description: videoDescription.innerHTML,
+                duration: videoDuration.textContent
+            };
+            
+            // Find current active card
+            const currentActiveCard = document.querySelector('.related-card.active');
+            
+            // Update current active card with main video data
+            if (currentActiveCard && currentActiveCard !== card) {
+                currentActiveCard.dataset.videoSrc = currentVideoData.src;
+                currentActiveCard.dataset.videoPoster = currentVideoData.poster;
+                currentActiveCard.dataset.videoTitle = currentVideoData.title;
+                currentActiveCard.dataset.videoDate = currentVideoData.date;
+                currentActiveCard.dataset.videoViews = currentVideoData.views;
+                currentActiveCard.dataset.videoLikes = currentVideoData.likes;
+                currentActiveCard.dataset.videoDescription = currentVideoData.description;
+                currentActiveCard.dataset.videoDuration = currentVideoData.duration;
+                
+                // Update thumbnail and info
+                const thumbnail = currentActiveCard.querySelector('.related-thumbnail img');
+                const cardTitle = currentActiveCard.querySelector('.related-info h3');
+                const cardDuration = currentActiveCard.querySelector('.related-duration');
+                
+                if (thumbnail) thumbnail.src = currentVideoData.poster;
+                if (cardTitle) cardTitle.textContent = currentVideoData.title;
+                if (cardDuration) cardDuration.textContent = currentVideoData.duration;
+            }
+            
+            // Update main video
+            video.pause();
+            video.querySelector('source').src = videoSrc;
+            video.poster = videoPoster;
+            video.load();
+            
+            // Update video info
+            mainVideoTitle.textContent = videoTitle;
+            videoDate.textContent = date;
+            videoViews.textContent = views;
+            videoLikes.textContent = likes;
+            videoDescription.innerHTML = description;
+            videoDuration.textContent = duration;
+            
+            // Update clicked card with new data
+            card.dataset.videoSrc = videoSrc;
+            card.dataset.videoPoster = videoPoster;
+            
+            // Remove active class from all cards
+            relatedCards.forEach(c => c.classList.remove('active'));
+            
+            // Add active class to clicked card
+            card.classList.add('active');
+            
+            // When video is ready, hide loading and play
+            video.addEventListener('loadeddata', function onLoaded() {
+                videoLoading.style.display = 'none';
+                video.play();
+                playPauseBtn.querySelector('i').className = 'bx bx-pause';
+                video.removeEventListener('loadeddata', onLoaded);
+            });
+            
+            // Scroll to video smoothly
+            video.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Add click event to all related cards
+        relatedCards.forEach(card => {
+            card.addEventListener('click', () => {
+                switchVideo(card);
+            });
+        });
+
+        // Load all video durations on page load
+        loadVideoDurations();
+
+        // Menu toggle for mobile
+        const menuBtn = document.querySelector('.menu');
+        const mobileMenu = document.querySelector('.the-menu');
+        
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('show')) {
+                    mobileMenu.classList.remove('show');
+                } else {
+                    mobileMenu.classList.add('show');
+                }
+            });
+        }
+    </script>
