@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="../favicon/favicon-v2.png" sizes="96x96" />
@@ -183,7 +184,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -251,7 +252,8 @@
             gap: 15px;
         }
 
-        .left-controls, .right-controls {
+        .left-controls,
+        .right-controls {
             display: flex;
             align-items: center;
             gap: 15px;
@@ -555,6 +557,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -566,6 +569,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -573,7 +577,9 @@
         }
 
         @keyframes spin {
-            to { transform: translate(-50%, -50%) rotate(360deg); }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
         }
 
         @media (max-width: 768px) {
@@ -672,6 +678,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="navigation">
         <div class="logo">
@@ -681,7 +688,7 @@
         <div class="the-navs">
             <ul>
                 <a href="../">
-                    <li  data-translate="nav_home">Home</li>
+                    <li data-translate="nav_home">Home</li>
                 </a>
                 <a href="products/">
                     <li data-translate="nav_products">Products</li>
@@ -718,7 +725,7 @@
                     <span class="option-text" data-translate="lang_somali">Soomaali</span>
                     <span class="checkmark">✓</span>
                 </div>
-                
+
                 <!-- ENGLISH -->
                 <div class="language-option" data-lang="en" data-flag="https://flagcdn.com/w40/us.png">
                     <div class="option-flag">
@@ -736,64 +743,64 @@
     </div>
 
     <div class="the-menu">
-    <div class="menu-header">
-        <h3 data-translate="nav_home">Navigation</h3>
-        <p>Explore our services</p>
-    </div>
-    
-    <ul>
-        <a href="../">
-            <li class="home-link">
-                <i class="fas fa-home"></i>
-                <span data-translate="nav_home">Home</span>
-            </li>
-        </a>
-        <a href="products/">
-            <li>
-                <i class="fas fa-box"></i>
-                <span data-translate="nav_products">Products</span>
-            </li>
-        </a>
-        <a href="pricing/">
-            <li>
-                <i class="fas fa-tag"></i>
-                <span data-translate="nav_pricing">Pricing</span>
-            </li>
-        </a>
-        <a href="aboutus/">
-            <li>
-                <i class="fas fa-info-circle"></i>
-                <span data-translate="nav_about">About Us</span>
-            </li>
-        </a>
-    </ul>
-
-    <div class="language-section">
-        <div class="language-label">
-            <i class="fas fa-globe"></i>
-            <span data-translate="menu_language">Language</span>
+        <div class="menu-header">
+            <h3 data-translate="nav_home">Navigation</h3>
+            <p>Explore our services</p>
         </div>
-        <div class="language-toggle">
-            <button class="lang-option" data-lang="so" onclick="toggleLanguage('so')">
-                <span data-translate="lang_somali">Soomaali</span>
-            </button>
-            <button class="lang-option" data-lang="en" onclick="toggleLanguage('en')">
-                <span data-translate="lang_english">English</span>
-            </button>
-        </div>
-    </div>
 
-    <button class="Login" style="display: none;">
-        <i class="fas fa-sign-in-alt"></i>
-        <span>Login</span>
-    </button>
-</div>
+        <ul>
+            <a href="../">
+                <li class="home-link">
+                    <i class="fas fa-home"></i>
+                    <span data-translate="nav_home">Home</span>
+                </li>
+            </a>
+            <a href="products/">
+                <li>
+                    <i class="fas fa-box"></i>
+                    <span data-translate="nav_products">Products</span>
+                </li>
+            </a>
+            <a href="pricing/">
+                <li>
+                    <i class="fas fa-tag"></i>
+                    <span data-translate="nav_pricing">Pricing</span>
+                </li>
+            </a>
+            <a href="aboutus/">
+                <li>
+                    <i class="fas fa-info-circle"></i>
+                    <span data-translate="nav_about">About Us</span>
+                </li>
+            </a>
+        </ul>
+
+        <div class="language-section">
+            <div class="language-label">
+                <i class="fas fa-globe"></i>
+                <span data-translate="menu_language">Language</span>
+            </div>
+            <div class="language-toggle">
+                <button class="lang-option" data-lang="so" onclick="toggleLanguage('so')">
+                    <span data-translate="lang_somali">Soomaali</span>
+                </button>
+                <button class="lang-option" data-lang="en" onclick="toggleLanguage('en')">
+                    <span data-translate="lang_english">English</span>
+                </button>
+            </div>
+        </div>
+
+        <button class="Login" style="display: none;">
+            <i class="fas fa-sign-in-alt"></i>
+            <span>Login</span>
+        </button>
+    </div>
 
     <div class="main-content">
         <div class="video-container">
             <div class="video-hero">
-                <h1>Watch Our Video</h1>
-                <p>Discover how Raad can transform your business operations</p>
+                <h1 data-translate="video_hero_title">Watch Our Video</h1>
+                <p data-translate="video_hero_description">Discover how Raad can transform your business operations</p>
             </div>
 
             <div class="video-player-wrapper">
@@ -802,13 +809,13 @@
                     <source src="../assets/vedio/demovedio.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                
+
                 <div class="custom-video-controls" id="videoControls">
                     <div class="progress-container" id="progressContainer">
                         <div class="buffer-bar" id="bufferBar"></div>
                         <div class="progress-bar" id="progressBar"></div>
                     </div>
-                    
+
                     <div class="controls-row">
                         <div class="left-controls">
                             <button class="control-btn active" id="playPauseBtn">
@@ -818,7 +825,7 @@
                                 <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
                             </div>
                         </div>
-                        
+
                         <div class="right-controls">
                             <div class="volume-container">
                                 <button class="control-btn" id="volumeBtn">
@@ -828,7 +835,7 @@
                                     <div class="volume-level" id="volumeLevel"></div>
                                 </div>
                             </div>
-                            
+
                             <div class="speed-control">
                                 <button class="speed-btn" id="speedBtn">1x</button>
                                 <div class="speed-options" id="speedOptions">
@@ -840,7 +847,7 @@
                                     <button class="speed-option" data-speed="2">2x</button>
                                 </div>
                             </div>
-                            
+
                             <button class="control-btn" id="fullscreenBtn">
                                 <i class='bx bx-fullscreen'></i>
                             </button>
@@ -849,33 +856,30 @@
                 </div>
             </div>
 
-            <div class="video-info">
-                <h1 class="video-title" id="mainVideoTitle">Raad POS: Complete Business Solution Demo</h1>
-                
-                <div class="video-meta">
-                    <span><i class='bx bx-calendar'></i> Published: <span id="videoDate">Jan 20, 2026</span></span>
-                    <span><i class='bx bx-time'></i> Duration: <span id="videoDuration">11:53</span></span>
-                    <!-- <span><i class='bx bx-show'></i> Views: <span id="videoViews">12,548</span></span> -->
-                    <!-- <span><i class='bx bx-like'></i> Likes: <span id="videoLikes">856</span></span> -->
-                </div>
+           <div class="video-info">
+    <h1 class="video-title" id="mainVideoTitle" data-translate="video_main_title">Raad POS: Complete Business Solution Demo</h1>
+    
+    <div class="video-meta">
+        <span><i class='bx bx-calendar'></i> <span data-translate="video_published">Published:</span> <span id="videoDate">Jan 20, 2026</span></span>
+        <span><i class='bx bx-time'></i> <span data-translate="video_duration_label">Duration:</span> <span id="videoDuration">11:53</span></span>
+    </div>
 
-                <div class="video-description" id="videoDescription">
-                    <p>In this comprehensive demo video, we showcase the powerful features of Raad POS system that help small and medium businesses streamline their operations.</p>
-                    
-                    <p>You'll see:</p>
-                    <ul style="margin-left: 20px; margin-top: 15px;">
-                        <li>How to Register and Create Business Account</li>
-                        <li>How to set up your products and inventory in minutes</li>
-                        <li>Processing sales with our thermal receipt printer</li>
-                        <li>Processing sales with our thermal receipt printer</li>
-                        <li>Managing customer credit (Dayn) seamlessly</li>
-                        <li>Generating real-time sales reports and analytics</li>
-                        <li>Using the mobile app for on-the-go management</li>
-                    </ul>
-                    
-                    <p style="margin-top: 20px;">Our system is designed to be intuitive yet powerful, giving you all the tools you need to grow your business efficiently.</p>
-                </div>
-            </div>
+    <div class="video-description" id="videoDescription">
+        <p data-translate="video_desc_intro">In this comprehensive demo video, we showcase the powerful features of Raad POS system that help small and medium businesses streamline their operations.</p>
+        
+        <p data-translate="video_desc_see">You'll see:</p>
+        <ul style="margin-left: 20px; margin-top: 15px;">
+            <li data-translate="video_desc_point1">How to Register and Create Business Account</li>
+            <li data-translate="video_desc_point2">How to set up your products and inventory in minutes</li>
+            <li data-translate="video_desc_point3">Processing sales with our thermal receipt printer</li>
+            <li data-translate="video_desc_point4">Managing customer credit (Dayn) seamlessly</li>
+            <li data-translate="video_desc_point5">Generating real-time sales reports and analytics</li>
+            <li data-translate="video_desc_point6">Using the mobile app for on-the-go management</li>
+        </ul>
+        
+        <p style="margin-top: 20px;" data-translate="video_desc_outro">Our system is designed to be intuitive yet powerful, giving you all the tools you need to grow your business efficiently.</p>
+    </div>
+</div>
         </div>
 
         <!-- <div class="related-videos">
@@ -949,6 +953,8 @@
             </div>
         </div> -->
     </div>
+    <script type="module" src="../frontJs/translation.js"></script>
+    <script type="module" src="../frontJs/theme.js"></script>
 
     <script>
         // Video Player Controller
@@ -1042,7 +1048,7 @@
             const percent = (e.clientX - rect.left) / rect.width;
             video.volume = percent;
             volumeLevel.style.width = (percent * 100) + '%';
-            
+
             if (percent === 0) {
                 volumeBtn.querySelector('i').className = 'bx bx-volume-mute';
             } else {
@@ -1060,7 +1066,7 @@
                 const speed = parseFloat(e.target.dataset.speed);
                 video.playbackRate = speed;
                 speedBtn.textContent = speed + 'x';
-                
+
                 document.querySelectorAll('.speed-option').forEach(opt => opt.classList.remove('active'));
                 e.target.classList.add('active');
                 speedOptions.classList.remove('show');
@@ -1111,22 +1117,22 @@
             relatedCards.forEach(card => {
                 const videoSrc = card.dataset.videoSrc;
                 const durationEl = card.querySelector('.related-duration');
-                
+
                 // Create temporary video element to get duration
                 const tempVideo = document.createElement('video');
                 tempVideo.preload = 'metadata';
-                
+
                 tempVideo.addEventListener('loadedmetadata', () => {
                     durationEl.textContent = formatTime(tempVideo.duration);
                     // Store duration in dataset for later use
                     card.dataset.videoDuration = formatTime(tempVideo.duration);
                 });
-                
+
                 tempVideo.addEventListener('error', () => {
                     durationEl.textContent = 'N/A';
                     card.dataset.videoDuration = 'N/A';
                 });
-                
+
                 tempVideo.src = videoSrc;
             });
         }
@@ -1135,7 +1141,7 @@
         function switchVideo(card) {
             // Show loading
             videoLoading.style.display = 'block';
-            
+
             // Get video data from clicked card
             const videoSrc = card.dataset.videoSrc;
             const videoPoster = card.dataset.videoPoster;
@@ -1145,7 +1151,7 @@
             const likes = card.dataset.videoLikes;
             const description = card.dataset.videoDescription;
             const duration = card.dataset.videoDuration || 'Loading...';
-            
+
             // Save current video state
             const currentVideoData = {
                 src: video.querySelector('source').src,
@@ -1157,10 +1163,10 @@
                 description: videoDescription.innerHTML,
                 duration: videoDuration.textContent
             };
-            
+
             // Find current active card
             const currentActiveCard = document.querySelector('.related-card.active');
-            
+
             // Update current active card with main video data
             if (currentActiveCard && currentActiveCard !== card) {
                 currentActiveCard.dataset.videoSrc = currentVideoData.src;
@@ -1171,23 +1177,23 @@
                 currentActiveCard.dataset.videoLikes = currentVideoData.likes;
                 currentActiveCard.dataset.videoDescription = currentVideoData.description;
                 currentActiveCard.dataset.videoDuration = currentVideoData.duration;
-                
+
                 // Update thumbnail and info
                 const thumbnail = currentActiveCard.querySelector('.related-thumbnail img');
                 const cardTitle = currentActiveCard.querySelector('.related-info h3');
                 const cardDuration = currentActiveCard.querySelector('.related-duration');
-                
+
                 if (thumbnail) thumbnail.src = currentVideoData.poster;
                 if (cardTitle) cardTitle.textContent = currentVideoData.title;
                 if (cardDuration) cardDuration.textContent = currentVideoData.duration;
             }
-            
+
             // Update main video
             video.pause();
             video.querySelector('source').src = videoSrc;
             video.poster = videoPoster;
             video.load();
-            
+
             // Update video info
             mainVideoTitle.textContent = videoTitle;
             videoDate.textContent = date;
@@ -1195,17 +1201,17 @@
             videoLikes.textContent = likes;
             videoDescription.innerHTML = description;
             videoDuration.textContent = duration;
-            
+
             // Update clicked card with new data
             card.dataset.videoSrc = videoSrc;
             card.dataset.videoPoster = videoPoster;
-            
+
             // Remove active class from all cards
             relatedCards.forEach(c => c.classList.remove('active'));
-            
+
             // Add active class to clicked card
             card.classList.add('active');
-            
+
             // When video is ready, hide loading and play
             video.addEventListener('loadeddata', function onLoaded() {
                 videoLoading.style.display = 'none';
@@ -1213,7 +1219,7 @@
                 playPauseBtn.querySelector('i').className = 'bx bx-pause';
                 video.removeEventListener('loadeddata', onLoaded);
             });
-            
+
             // Scroll to video smoothly
             video.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
@@ -1231,7 +1237,7 @@
         // Menu toggle for mobile
         const menuBtn = document.querySelector('.menu');
         const mobileMenu = document.querySelector('.the-menu');
-        
+
         if (menuBtn && mobileMenu) {
             menuBtn.addEventListener('click', () => {
                 if (mobileMenu.classList.contains('show')) {
@@ -1242,3 +1248,8 @@
             });
         }
     </script>
+
+
+</body>
+
+</html>

@@ -100,7 +100,26 @@ const translations = {
         lang_somali: "Somali",
         
         // Mobile menu
-        menu_language: "Language"
+        menu_language: "Language",
+        menu_navigation: "Navigation",
+        menu_explore: "Explore our services",
+        
+        // Video Page
+        page_title: "Watch a Video | Raad",
+        video_hero_title: "Watch Our Video",
+        video_hero_description: "Discover how Raad can transform your business operations",
+        video_main_title: "Raad POS: Complete Business Solution Demo",
+        video_published: "Published:",
+        video_duration_label: "Duration:",
+        video_desc_intro: "In this comprehensive demo video, we showcase the powerful features of Raad POS system that help small and medium businesses streamline their operations.",
+        video_desc_see: "You'll see:",
+        video_desc_point1: "How to Register and Create Business Account",
+        video_desc_point2: "How to set up your products and inventory in minutes",
+        video_desc_point3: "Processing sales with our thermal receipt printer",
+        video_desc_point4: "Managing customer credit (Dayn) seamlessly",
+        video_desc_point5: "Generating real-time sales reports and analytics",
+        video_desc_point6: "Using the mobile app for on-the-go management",
+        video_desc_outro: "Our system is designed to be intuitive yet powerful, giving you all the tools you need to grow your business efficiently."
     },
     so: {
         // Navigation
@@ -202,7 +221,26 @@ const translations = {
         lang_somali: "Soomaali",
         
         // Mobile menu
-        menu_language: "Luqadda"
+        menu_language: "Luqadda",
+        menu_navigation: "Socodka",
+        menu_explore: "Sahami adeegyadeena",
+        
+        // Video Page
+        page_title: "Daawo Muuqaal | Raad",
+        video_hero_title: "Daawo Muuqaalkayaga",
+        video_hero_description: "Baro sida Raad uu u bedeli karo howlaha ganacsigaaga",
+        video_main_title: "Raad POS: Muuqaalka Xalka Ganacsiga oo Dhamaystiran",
+        video_published: "La Daabacay:",
+        video_duration_label: "Muddada:",
+        video_desc_intro: "Muuqaalkan oo dhamaystiran, waxaan soo bandhigaynaa astaamaha awooda leh ee nidaamka Raad POS oo ka caawiya ganacsiyada yaryar iyo kuwa dhexdhexaad inay fududeeyaan howlahooda.",
+        video_desc_see: "Waxaad arki doontaa:",
+        video_desc_point1: "Sida loo diiwaangeliyo oo loo abuuro koonto ganacsi",
+        video_desc_point2: "Sida ugu dhaqsaha badan loogu habeeyo alaabta iyo kaydka daqiiqado gudahood",
+        video_desc_point3: "Sida loo sameeyo iibinta iyada oo la adeegsanayo daabacadda kulaylka",
+        video_desc_point4: "Sida loo maareeyo deynta macaamiisha (Dayn) si fudud",
+        video_desc_point5: "Sida loo soo saaro warbixinnada iibka iyo falanqaynta waqtiga dhabta ah",
+        video_desc_point6: "Isticmaalka appka moobilka maaraynta socdaalka",
+        video_desc_outro: "Nidaamkayagu waxa loo qorsheeyay inuu noqdo mid la fahmi karo laakiin awood leh, oo ku siinaya dhammaan qalabka aad u baahan tahay si aad ganacsigaaga ugu kobciso si hufan."
     }
 };
 
@@ -219,6 +257,11 @@ function translatePage(lang) {
             element.textContent = translations[lang][key];
         }
     });
+    
+    // Update page title if on video page
+    if (translations[lang].page_title && document.title.includes('Video')) {
+        document.title = translations[lang].page_title;
+    }
     
     // Save the selected language
     localStorage.setItem('selectedLanguage', lang);
