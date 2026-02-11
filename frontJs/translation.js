@@ -14,8 +14,8 @@ const translations = {
         hero_title_span: "Business.",
         hero_desc: "Raad POS simplifies sales, invoices,",
         hero_desc_br: "and taxes so you can focus on what matters growing your business.",
-        btn_download: "Download App",
-        btn_watch: "Watch a video",
+        btn_download: "Start Selling",
+        btn_watch: "View Demo",
         
         // Ways Section
         ways_title: "A New Way of Selling",

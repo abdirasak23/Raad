@@ -45,7 +45,7 @@ body::after {
 }
 
 .theme-icon:hover{
-    background-color: whitesmoke;
+    background-color: rgba(245, 245, 245, 0.167);
     color: #1C2582;
 }
 
