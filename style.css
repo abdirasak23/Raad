@@ -447,8 +447,8 @@ body::after {
 
 .download {
     height: 3rem;
-    width: 15rem;
-    border-radius: 999px; /* pill shape = modern */
+    width: 12rem;
+    border-radius: 10px; /* pill shape = modern */
     border: none;
     background: linear-gradient(135deg, #0000ae, #2a2aff);
     font-size: 1.1rem;
@@ -476,8 +476,8 @@ body::after {
 
 .watch {
     height: 3rem;
-    width: 15rem;
-    border-radius: 999px; /* pill shape to match download */
+    width: 12rem;
+    border-radius: 10px; /* pill shape to match download */
     border: 1.5px solid rgb(0, 0, 174);
     background: transparent;
     font-size: 1.1rem;
