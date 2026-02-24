@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="../favicon/favicon-v2.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon-v2.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon-v2.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon-v2.png" />
+    <link rel="manifest" href="../favicon/site-v2.webmanifest" />
+    
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <title>Terms of Use - Raad POS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            color: #1a1a1a;
+        }
+
+        /* Navigation Styles */
+        .navigation {
+            height: 10vh;
+            width: min(900px, 90%);
+            max-width: 1200px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(240, 244, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.63);
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20px;
+            border-radius: 20px;
+            display: flex;
+            z-index: 999;
+            align-items: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            height: 50px;
+            width: 140px;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .the-navs {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            margin: 0 20px;
+        }
+
+        .the-navs ul {
+            list-style: none;
+            display: flex;
+            gap: clamp(15px, 2vw, 20px);
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .the-navs ul a {
+            text-decoration: none;
+            font-size: clamp(16px, 1.5vw, 20px);
+            white-space: nowrap;
+            color: #1C2582;
+            transition: opacity 0.3s;
+        }
+
+        .the-navs ul a:hover {
+            opacity: 0.7;
+        }
+
+        .home-link {
+            font-weight: 600;
+        }
+
+        .Login {
+            height: 40px;
+            width: 100px;
+            border: none;
+            background-color: #1C2582;
+            border-radius: 10px;
+            color: white;
+            font-size: 18px;
+            font-family: 'Outfit';
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+
+        .Login:hover {
+            transform: scale(1.05);
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .products {
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .terms-hero {
+            text-align: center;
+            padding: 140px 20px 60px;
+            background: linear-gradient(135deg, #f8faff 0%, #f0f5ff 100%);
+            margin-bottom: 40px;
+        }
+
+        .terms-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            color: #000;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .terms-hero p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #666;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .effective-date {
+            display: inline-block;
+            background: rgba(28, 37, 130, 0.1);
+            color: #1C2582;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 1px solid rgba(28, 37, 130, 0.2);
+            font-size: 1rem;
+        }
+
+        /* Policy Container */
+        .policy-container {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        /* Table of Contents */
+        .toc-sidebar {
+            flex: 0 0 280px;
+            position: sticky;
+            top: 120px;
+            align-self: flex-start;
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e5e5;
+        }
+
+        .toc-sidebar h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1C2582;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc-sidebar ul {
+            list-style: none;
+        }
+
+        .toc-sidebar li {
+            margin-bottom: 12px;
+        }
+
+        .toc-sidebar a {
+            text-decoration: none;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .toc-sidebar a:hover {
+            background: rgba(28, 37, 130, 0.08);
+            color: #1C2582;
+        }
+
+        .toc-sidebar a.active {
+            background: rgba(28, 37, 130, 0.1);
+            color: #1C2582;
+            font-weight: 600;
+        }
+
+        .toc-sidebar i {
+            font-size: 0.9rem;
+        }
+
+        /* Policy Content */
+        .policy-content {
+            flex: 1;
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e5e5;
+        }
+
+        .policy-section {
+            margin-bottom: 50px;
+            scroll-margin-top: 120px;
+        }
+
+        .policy-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1C2582;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e5e5e5;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .policy-section h2 i {
+            background: rgba(28, 37, 130, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1C2582;
+        }
+
+        .policy-section h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            color: #333;
+        }
+
+        .policy-section p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            color: #444;
+            font-size: 1.05rem;
+        }
+
+        .policy-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .policy-section li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .info-box {
+            background: rgba(28, 37, 130, 0.05);
+            border-left: 4px solid #1C2582;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+
+        .info-box p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .info-box i {
+            color: #1C2582;
+            margin-top: 4px;
+        }
+
+        .warning-box {
+            background: rgba(255, 152, 0, 0.05);
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 25px 0;
+        }
+
+        .warning-box p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: #d84315;
+        }
+
+        .warning-box i {
+            color: #ff9800;
+            margin-top: 4px;
+        }
+
+        .highlight {
+            background: rgba(28, 37, 130, 0.08);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 500;
+            color: #1C2582;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        /* Contact Cards */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .contact-card {
+            flex: 1;
+            min-width: 250px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e5e5;
+            border-top: 4px solid #1C2582;
+        }
+
+        .contact-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1C2582;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-card p {
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: #1C2582;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-card a:hover {
+            color: #0c154d;
+            text-decoration: underline;
+        }
+
+        /* Mobile Menu Styles */
+        .the-menu {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .policy-container {
+                flex-direction: column;
+            }
+            
+            .toc-sidebar {
+                position: static;
+                width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navigation {
+                width: 90%;
+                max-width: 360px;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0 15px;
+                height: 60px;
+            }
+
+            .logo {
+                width: 110px;
+                height: 40px;
+                top: 5px;
+            }
+
+            .the-navs {
+                display: none;
+            }
+
+            .Login {
+                display: none;
+            }
+
+            .menu {
+                height: 40px;
+                width: 40px;
+                position: absolute;
+                right: 15px;
+                top: 13px;
+                color: #1C2582;
+                display: block;
+            }
+
+            .menu i {
+                font-size: 34px;
+            }
+
+            .terms-hero {
+                padding: 100px 20px 40px;
+            }
+
+            .terms-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .terms-hero p {
+                font-size: 1rem;
+            }
+
+            .policy-content {
+                padding: 25px;
+            }
+
+            .policy-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+            }
+
+            /* Mobile Menu */
+            .the-menu {
+                height: auto;
+                width: 360px;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 244, 255, 0.95) 50%, rgba(255, 255, 255, 0.95) 100%);
+                backdrop-filter: blur(15px);
+                -webkit-backdrop-filter: blur(15px);
+                border: 1px solid rgba(255, 255, 255, 0.63);
+                position: fixed;
+                z-index: 111;
+                top: 110px;
+                left: 22px;
+                right: 0;
+                border-radius: 10px;
+                padding: 20px 0;
+                display: none;
+                flex-direction: column;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                animation: slideDown 0.3s ease-out;
+            }
+
+            .the-menu ul {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+
+            .the-menu a {
+                text-decoration: none;
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            .the-menu li {
+                padding: 16px 24px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #333;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .the-menu li:hover {
+                background-color: rgba(28, 37, 130, 0.1);
+                color: #1C2582;
+                padding-left: 28px;
+            }
+
+            .the-menu li:last-child {
+                border-bottom: none;
+                padding-bottom: 20px;
+            }
+
+            @keyframes slideDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .the-menu.hidden {
+                display: none;
+            }
+
+            .the-menu.show {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .policy-content {
+                padding: 20px;
+            }
+            
+            .policy-section h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1C2582;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(28, 37, 130, 0.3);
+            z-index: 998;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(28, 37, 130, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="navigation">
+        <div class="logo">
+            <img src="../assets/images/raadlogo.png" alt="Raad POS Logo">
+        </div>
+
+        <div class="the-navs">
+            <ul>
+                <a href="../">
+                    <li data-translate="nav_home">Home</li>
+                </a>
+                <a href="../products/">
+                    <li data-translate="nav_products">Products</li>
+                </a>
+                <a href="../pricing/">
+                    <li data-translate="nav_pricing">Pricing</li>
+                </a>
+                <a href="../aboutus/">
+                    <li data-translate="nav_about">About Us</li>
+                </a>
+                <a href="../Contact/">
+                    <li class="home-link" data-translate="nav_contact">Contact Us</li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="menu">
+            <i class='bx bx-menu'></i>
+        </div>
+    </div>
+
+    <div class="the-menu">
+        <ul>
+            <a href="../">
+                <li class="home-link">
+                    <i class="fas fa-home"></i>
+                    <span data-translate="nav_home">Home</span>
+                </li>
+            </a>
+            <a href="../products/">
+                <li>
+                    <i class="fas fa-box"></i>
+                    <span data-translate="nav_products">Products</span>
+                </li>
+            </a>
+            <a href="../pricing/">
+                <li>
+                    <i class="fas fa-tag"></i>
+                    <span data-translate="nav_pricing">Pricing</span>
+                </li>
+            </a>
+            <a href="../aboutus/">
+                <li>
+                    <i class="fas fa-info-circle"></i>
+                    <span data-translate="nav_about">About Us</span>
+                </li>
+            </a>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="terms-hero">
+        <h1>Terms of Use</h1>
+        <p>Please read these terms carefully before using Raad POS. By using our service, you agree to be bound by these terms.</p>
+        <div class="effective-date">
+            <i class="fas fa-calendar-alt"></i> Last Updated: February 14, 2026
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="policy-container">
+        <!-- Table of Contents -->
+        <aside class="toc-sidebar">
+            <h3><i class="fas fa-list"></i> Contents</h3>
+            <ul>
+                <li><a href="#welcome" class="active"><i class="fas fa-chevron-right"></i> Welcome</a></li>
+                <li><a href="#service"><i class="fas fa-chevron-right"></i> Service Description</a></li>
+                <li><a href="#registration"><i class="fas fa-chevron-right"></i> Account Registration</a></li>
+                <li><a href="#subscriptions"><i class="fas fa-chevron-right"></i> Subscriptions & Payments</a></li>
+                <li><a href="#offline"><i class="fas fa-chevron-right"></i> Offline Data & Syncing</a></li>
+                <li><a href="#responsibilities"><i class="fas fa-chevron-right"></i> User Responsibilities</a></li>
+                <li><a href="#ip"><i class="fas fa-chevron-right"></i> Intellectual Property</a></li>
+                <li><a href="#termination"><i class="fas fa-chevron-right"></i> Termination</a></li>
+                <li><a href="#liability"><i class="fas fa-chevron-right"></i> Limitation of Liability</a></li>
+                <li><a href="#law"><i class="fas fa-chevron-right"></i> Governing Law</a></li>
+                <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+            </ul>
+        </aside>
+
+        <!-- Policy Content -->
+        <main class="policy-content">
+            <!-- Welcome -->
+            <section id="welcome" class="policy-section">
+                <h2><i class="fas fa-handshake"></i> Welcome to Raad POS</h2>
+                <p>Welcome to Raad POS! By downloading, accessing, or using the Raad POS mobile application or website ("Service"), you agree to be bound by these Terms of Use ("Terms").</p>
+                
+                <div class="warning-box">
+                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Important:</strong> If you do not agree to these Terms, please do not use our Service.</p>
+                </div>
+
+                <p>Raad POS is a product owned and operated by Raad POS Technologies, based in Mogadishu, Somalia.</p>
+            </section>
+
+            <!-- Service Description -->
+            <section id="service" class="policy-section">
+                <h2><i class="fas fa-cog"></i> Description of Service</h2>
+                <p>Raad POS is a comprehensive Point of Sale (POS) and inventory management system designed specifically for small to medium-sized businesses (B2B).</p>
+                
+                <div class="info-box">
+                    <p><i class="fas fa-check-circle"></i> Track sales and transactions in real-time</p>
+                    <p><i class="fas fa-check-circle"></i> Manage inventory and product catalogs</p>
+                    <p><i class="fas fa-check-circle"></i> Calculate profit and loss statements</p>
+                    <p><i class="fas fa-check-circle"></i> Manage customer debts and credits</p>
+                    <p><i class="fas fa-check-circle"></i> Work seamlessly both online and offline</p>
+                    <p><i class="fas fa-check-circle"></i> Generate detailed business reports and analytics</p>
+                </div>
+
+                <p>The Service is provided via a mobile application that works both online and offline, ensuring your business operations continue uninterrupted regardless of internet connectivity.</p>
+            </section>
+
+            <!-- Account Registration -->
+            <section id="registration" class="policy-section">
+                <h2><i class="fas fa-user-plus"></i> Account Registration</h2>
+                <p>To use Raad POS, you must register for an account. By creating an account, you agree to:</p>
+                
+                <h3>Your Obligations</h3>
+                <div class="info-box">
+                    <p><i class="fas fa-check"></i> Provide accurate, current, and complete business information during registration</p>
+                    <p><i class="fas fa-check"></i> Maintain the security of your password and login credentials</p>
+                    <p><i class="fas fa-check"></i> Accept responsibility for all activities that occur under your account</p>
+                    <p><i class="fas fa-check"></i> Take responsibility for actions taken by your staff and employees using your account</p>
+                    <p><i class="fas fa-check"></i> Notify us immediately of any unauthorized use of your account</p>
+                </div>
+
+                <div class="warning-box">
+                    <p><i class="fas fa-shield-alt"></i> <strong>Security Notice:</strong> You are responsible for maintaining the confidentiality of your account credentials. Raad POS will not be liable for any loss or damage arising from your failure to protect your account information.</p>
+                </div>
+            </section>
+
+            <!-- Subscriptions and Payments -->
+            <section id="subscriptions" class="policy-section">
+                <h2><i class="fas fa-credit-card"></i> Subscriptions and Payments</h2>
+                
+                <h3>3.1 Freemium Model</h3>
+                <p>Raad POS offers a free version with limited features to help you get started:</p>
+                <ul>
+                    <li>Limited product count in your inventory</li>
+                    <li>Basic reporting and analytics</li>
+                    <li>Essential POS functionality</li>
+                </ul>
+                <p class="highlight">We reserve the right to modify the limitations of the free plan at any time with reasonable notice.</p>
+
+                <h3>3.2 Raad PRO Subscription</h3>
+                <p>Access to premium features requires a paid subscription (Raad PRO), which includes:</p>
+                <div class="info-box">
+                    <p><i class="fas fa-star"></i> Advanced Reports and Analytics</p>
+                    <p><i class="fas fa-star"></i> Comprehensive Debt Management System</p>
+                    <p><i class="fas fa-star"></i> Unlimited Products in Inventory</p>
+                    <p><i class="fas fa-star"></i> Multi-user Access and Staff Management</p>
+                    <p><i class="fas fa-star"></i> Priority Customer Support</p>
+                    <p><i class="fas fa-star"></i> Advanced Tax Configuration Options</p>
+                </div>
+
+                <h3>Billing Terms</h3>
+                <p><strong>Billing Cycle:</strong> Subscription fees are billed on a monthly or annual basis, depending on your selected plan.</p>
+                <p><strong>Payment Methods:</strong> We accept payments via:</p>
+                <ul>
+                    <li>Waafi (EVC Plus) for local Somali transactions</li>
+                    <li>Major credit and debit cards via Stripe</li>
+                </ul>
+
+                <h3>Automatic Renewal</h3>
+                <div class="warning-box">
+                    <p><i class="fas fa-sync-alt"></i> <strong>Auto-Renewal:</strong> Your subscription will automatically renew at the end of each billing period unless canceled at least 24 hours before the end of the current period. You will be charged for the renewal unless you cancel in advance.</p>
+                </div>
+
+                <h3>3.3 Refund Policy</h3>
+                <p>Payments are generally non-refundable. However:</p>
+                <ul>
+                    <li>If you cancel your subscription, you will retain access to Pro features until the end of your current billing cycle</li>
+                    <li>No refunds will be provided for partial billing periods</li>
+                    <li>In exceptional circumstances, refunds may be considered at our sole discretion</li>
+                </ul>
+            </section>
+
+            <!-- Offline Data and Syncing -->
+            <section id="offline" class="policy-section">
+                <h2><i class="fas fa-wifi"></i> Offline Data and Syncing</h2>
+                <p>Raad POS is designed to work seamlessly in offline mode, ensuring your business never stops.</p>
+
+                <h3>How Offline Mode Works</h3>
+                <div class="info-box">
+                    <p><i class="fas fa-mobile-alt"></i> Data recorded while offline is stored locally on your device</p>
+                    <p><i class="fas fa-cloud-upload-alt"></i> Data automatically syncs to our cloud servers (Supabase) when internet connection is restored</p>
+                    <p><i class="fas fa-database"></i> All your transactions remain accessible even without internet</p>
+                </div>
+
+                <h3>Important Data Sync Warnings</h3>
+                <div class="warning-box">
+                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Device Loss:</strong> If you lose your device or uninstall the app before connecting to the internet, any unsynced data may be permanently lost.</p>
+                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Data Responsibility:</strong> Raad POS is not liable for data lost due to device failure, theft, damage, or failure to sync.</p>
+                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Best Practice:</strong> We strongly recommend connecting to the internet regularly to ensure your data is backed up to the cloud.</p>
+                </div>
+            </section>
+
+            <!-- User Responsibilities -->
+            <section id="responsibilities" class="policy-section">
+                <h2><i class="fas fa-tasks"></i> User Responsibilities</h2>
+                
+                <h3>5.1 Acceptable Use</h3>
+                <p>You agree to use the Service responsibly and lawfully. Specifically, you agree NOT to:</p>
+                <ul>
+                    <li>Use the Service for any unlawful purpose or illegal activity</li>
+                    <li>Use the Service for the sale of illegal goods or services</li>
+                    <li>Violate any local, state, national, or international laws</li>
+                    <li>Attempt to hack, compromise, or gain unauthorized access to the Service</li>
+                    <li>Use the Service to transmit malware, viruses, or harmful code</li>
+                    <li>Interfere with other users' access to the Service</li>
+                </ul>
+
+                <div class="info-box">
+                    <p><i class="fas fa-gavel"></i> You must comply with all local laws and regulations regarding your business operations, including but not limited to licensing requirements, health and safety standards, and consumer protection laws.</p>
+                </div>
+
+                <h3>5.2 Tax Compliance</h3>
+                <p>Raad POS provides tools to help calculate sales tax for your transactions. However:</p>
+                
+                <div class="warning-box">
+                    <p><i class="fas fa-calculator"></i> <strong>Your Responsibility:</strong> You are solely responsible for configuring the correct tax rates in the system</p>
+                    <p><i class="fas fa-file-invoice-dollar"></i> <strong>Tax Declaration:</strong> You are responsible for declaring and paying all applicable taxes to the relevant government authorities</p>
+                    <p><i class="fas fa-user-tie"></i> <strong>Not Tax Advice:</strong> Raad POS is not a tax advisor and does not provide tax advice. Consult a qualified tax professional for tax-related questions.</p>
+                </div>
+
+                <h3>5.3 Debt Management</h3>
+                <p>The "Debt/Credit" feature is a record-keeping tool designed to help you track customer debts and credits.</p>
+                <p><strong>Important Limitations:</strong></p>
+                <ul>
+                    <li>Raad POS is not responsible for collecting debts on your behalf</li>
+                    <li>We do not guarantee the accuracy of debt records if users enter incorrect data</li>
+                    <li>You are responsible for following up with customers on outstanding debts</li>
+                    <li>Raad POS does not provide legal advice regarding debt collection</li>
+                </ul>
+            </section>
+
+            <!-- Intellectual Property -->
+            <section id="ip" class="policy-section">
+                <h2><i class="fas fa-copyright"></i> Intellectual Property</h2>
+                <p>The Service and all of its original content, features, and functionality are the exclusive property of Raad POS Technologies.</p>
+
+                <div class="info-box">
+                    <p><i class="fas fa-code"></i> <strong>Source Code:</strong> All software, source code, and algorithms are proprietary</p>
+                    <p><i class="fas fa-paint-brush"></i> <strong>Design Elements:</strong> All design elements, graphics, and user interface are protected</p>
+                    <p><i class="fas fa-trademark"></i> <strong>Trademarks:</strong> "Raad," "Raad POS," and associated logos are our registered trademarks</p>
+                </div>
+
+                <h3>Your License</h3>
+                <p>You are granted a limited, non-exclusive, non-transferable license to use the app for your business operations. This license does not permit you to:</p>
+                <ul>
+                    <li>Copy, modify, or create derivative works of the Service</li>
+                    <li>Reverse engineer, decompile, or disassemble the app</li>
+                    <li>Sell, rent, lease, or sublicense the Service to others</li>
+                    <li>Remove or alter any copyright, trademark, or proprietary notices</li>
+                </ul>
+            </section>
+
+            <!-- Termination -->
+            <section id="termination" class="policy-section">
+                <h2><i class="fas fa-ban"></i> Termination</h2>
+                <p>We reserve the right to terminate or suspend your account and access to the Service immediately, without prior notice or liability, for any reason, including but not limited to:</p>
+
+                <div class="warning-box">
+                    <p><i class="fas fa-times-circle"></i> Breach of these Terms of Use</p>
+                    <p><i class="fas fa-times-circle"></i> Fraudulent activity or misuse of the Service</p>
+                    <p><i class="fas fa-times-circle"></i> Violation of applicable laws or regulations</p>
+                    <p><i class="fas fa-times-circle"></i> Extended periods of inactivity</p>
+                    <p><i class="fas fa-times-circle"></i> Non-payment of subscription fees</p>
+                </div>
+
+                <h3>Effects of Termination</h3>
+                <p>Upon termination of your account:</p>
+                <ul>
+                    <li>Your right to use the Service will immediately cease</li>
+                    <li>You will lose access to all data stored in the cloud</li>
+                    <li>Any outstanding subscription fees will remain payable</li>
+                    <li>We may, at our discretion, delete your account data after 30 days</li>
+                </ul>
+
+                <p><strong>Your Right to Terminate:</strong> You may terminate your account at any time by contacting our support team or using the account deletion feature in the app.</p>
+            </section>
+
+            <!-- Limitation of Liability -->
+            <section id="liability" class="policy-section">
+                <h2><i class="fas fa-shield-alt"></i> Limitation of Liability</h2>
+                <p>To the maximum extent permitted by applicable law, Raad POS and its affiliates, officers, employees, agents, and licensors shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+
+                <div class="warning-box">
+                    <p><i class="fas fa-dollar-sign"></i> Loss of profits or revenue</p>
+                    <p><i class="fas fa-database"></i> Data loss or corruption</p>
+                    <p><i class="fas fa-pause-circle"></i> Business interruption</p>
+                    <p><i class="fas fa-chart-line"></i> Loss of business opportunities</p>
+                    <p><i class="fas fa-users"></i> Loss of goodwill or reputation</p>
+                </div>
+
+                <h3>Service Availability</h3>
+                <p>The Service is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis. We make no warranties or guarantees regarding:</p>
+                <ul>
+                    <li>Uninterrupted or error-free operation of the Service</li>
+                    <li>The accuracy, reliability, or completeness of any content or data</li>
+                    <li>The security of the Service or protection against cyberattacks</li>
+                    <li>The correction of defects or errors in the Service</li>
+                </ul>
+
+                <h3>Maximum Liability</h3>
+                <p class="highlight">In no event shall our total liability to you for all damages exceed the amount you paid us in the 12 months preceding the claim.</p>
+
+                <p><strong>Some jurisdictions do not allow the exclusion of certain warranties or limitations of liability. In such cases, our liability will be limited to the maximum extent permitted by law.</strong></p>
+            </section>
+
+            <!-- Governing Law -->
+            <section id="law" class="policy-section">
+                <h2><i class="fas fa-balance-scale"></i> Governing Law</h2>
+                <p>These Terms of Use shall be governed and construed in accordance with the laws of Somalia, without regard to its conflict of law provisions.</p>
+
+                <h3>Dispute Resolution</h3>
+                <p>In the event of any dispute arising out of or relating to these Terms or the Service:</p>
+                <ul>
+                    <li>The parties agree to first attempt to resolve the dispute through good faith negotiations</li>
+                    <li>If negotiations fail, the dispute may be submitted to mediation</li>
+                    <li>Any legal proceedings shall be conducted in the courts of Mogadishu, Somalia</li>
+                </ul>
+
+                <div class="info-box">
+                    <p><i class="fas fa-info-circle"></i> By using the Service, you consent to the exclusive jurisdiction of the courts in Mogadishu, Somalia for the resolution of any disputes.</p>
+                </div>
+            </section>
+
+            <!-- Contact Us -->
+            <section id="contact" class="policy-section">
+                <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+                <p>If you have any questions, concerns, or feedback about these Terms of Use, please don't hesitate to contact us. We're here to help!</p>
+                
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h4><i class="fas fa-envelope"></i> Email Support</h4>
+                        <p><a href="mailto:support@raadapp.com">support@raadapp.com</a></p>
+                        <p><a href="mailto:info@raadapp.com">info@raadapp.com</a></p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h4><i class="fab fa-whatsapp"></i> WhatsApp Support</h4>
+                        <p>+252 [Your Number]</p>
+                        <p>Available 9 AM - 6 PM EAT</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h4><i class="fas fa-map-marker-alt"></i> Our Location</h4>
+                        <p>Raad POS Technologies</p>
+                        <p>Mogadishu, Somalia</p>
+                    </div>
+                </div>
+
+                <div class="info-box" style="margin-top: 30px;">
+                    <p><i class="fas fa-clock"></i> <strong>Response Time:</strong> We aim to respond to all inquiries within 24-48 business hours. For urgent issues, please use WhatsApp support for faster assistance.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.querySelector('.menu');
+            const menuIcon = menuButton.querySelector('i');
+            const theMenu = document.querySelector('.the-menu');
+            const menuLinks = theMenu.querySelectorAll('a');
+
+            // Toggle menu
+            menuButton.addEventListener('click', function () {
+                theMenu.classList.toggle('show');
+                theMenu.classList.toggle('hidden');
+                
+                if (theMenu.classList.contains('show')) {
+                    menuIcon.classList.remove('bx-menu');
+                    menuIcon.classList.add('bx-x');
+                } else {
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                }
+            });
+
+            // Close menu on link click
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    theMenu.classList.remove('show');
+                    theMenu.classList.add('hidden');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (event) {
+                const isClickInsideMenu = theMenu.contains(event.target);
+                const isClickOnMenuButton = menuButton.contains(event.target);
+
+                if (!isClickInsideMenu && !isClickOnMenuButton && theMenu.classList.contains('show')) {
+                    theMenu.classList.remove('show');
+                    theMenu.classList.add('hidden');
+                    menuIcon.classList.remove('bx-x');
+                    menuIcon.classList.add('bx-menu');
+                }
+            });
+
+            // Back to top button functionality
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Table of Contents highlighting
+            const sections = document.querySelectorAll('.policy-section');
+            const navLinks = document.querySelectorAll('.toc-sidebar a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (pageYOffset >= (sectionTop - 150)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').substring(1) === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
