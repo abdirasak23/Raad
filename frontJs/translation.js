@@ -135,7 +135,7 @@ const translations = {
         hero_title_span: "Ganacsigaaga.",
         hero_desc: "Raad POS wuxuu fududeeyaa iibka, xisaabaadka,",
         hero_desc_br: "iyo canshuuraha si aad diirada saarto waxa muhiimka - koritaanka ganacsigaaga.",
-        btn_download: "Soo Dagso Appka",
+        btn_download: "Bilow Gadida Hada",
         btn_watch: "Daawo muuqaal",
         
         // Ways Section
